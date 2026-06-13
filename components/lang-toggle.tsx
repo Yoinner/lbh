@@ -18,7 +18,7 @@ export function LangToggle({ variant = 'desktop' }: { variant?: 'desktop' | 'mob
             className={`rounded-full border px-5 py-2 text-xs font-bold uppercase tracking-widest transition-colors ${
               lang === l
                 ? 'border-primary bg-primary text-primary-foreground'
-                : 'border-border bg-white/5 text-muted-foreground hover:text-foreground'
+                : 'border-border bg-secondary text-muted-foreground hover:text-foreground'
             }`}
           >
             {l}
@@ -30,7 +30,7 @@ export function LangToggle({ variant = 'desktop' }: { variant?: 'desktop' | 'mob
 
   return (
     <div
-      className="flex items-center overflow-hidden rounded-full border border-border bg-white/5"
+      className="flex items-center overflow-hidden rounded-full border border-border bg-secondary"
       role="group"
       aria-label="Seleccionar idioma"
     >

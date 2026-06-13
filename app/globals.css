@@ -33,8 +33,7 @@
   --color-ocean: var(--ocean);
   --color-ocean-deep: var(--ocean-deep);
   --color-steel: var(--steel);
-  --color-copper: var(--copper);
-  --color-copper-light: var(--copper-light);
+  --color-seafoam: var(--seafoam);
   --color-mist: var(--mist);
 
   --radius-sm: calc(var(--radius) * 0.6);
@@ -46,35 +45,53 @@
 }
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
-  /* Maritime enterprise palette */
-  --ocean-deep: oklch(0.18 0.035 250);
-  --ocean: oklch(0.22 0.04 252);
-  --steel: oklch(0.34 0.045 248);
-  --copper: oklch(0.66 0.12 55);
-  --copper-light: oklch(0.74 0.11 60);
-  --mist: oklch(0.72 0.025 245);
+  /* Maritime enterprise palette — light dominant */
+  --ocean-deep: oklch(0.24 0.055 250);
+  --ocean: oklch(0.45 0.11 248);
+  --steel: oklch(0.55 0.07 245);
+  --seafoam: oklch(0.93 0.02 220);
+  --mist: oklch(0.55 0.02 245);
 
-  --background: oklch(0.16 0.03 250);
-  --foreground: oklch(0.97 0.005 240);
-  --card: oklch(0.21 0.035 251);
-  --card-foreground: oklch(0.97 0.005 240);
-  --popover: oklch(0.2 0.035 251);
-  --popover-foreground: oklch(0.97 0.005 240);
-  --primary: oklch(0.66 0.12 55);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.22 0.03 250);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.03 250);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.03 250);
+  /* Maritime corporate blue */
+  --primary: oklch(0.45 0.11 248);
   --primary-foreground: oklch(0.99 0.005 240);
-  --secondary: oklch(0.28 0.04 250);
+  --secondary: oklch(0.96 0.012 235);
+  --secondary-foreground: oklch(0.3 0.04 250);
+  --muted: oklch(0.97 0.008 235);
+  --muted-foreground: oklch(0.52 0.025 248);
+  --accent: oklch(0.95 0.02 230);
+  --accent-foreground: oklch(0.3 0.05 250);
+  --destructive: oklch(0.58 0.2 25);
+  --border: oklch(0.9 0.012 245);
+  --input: oklch(0.92 0.012 245);
+  --ring: oklch(0.45 0.11 248);
+  --radius: 0.7rem;
+}
+
+/* Dark sections (strategic contrast blocks) */
+.section-dark {
+  --background: var(--ocean-deep);
+  --foreground: oklch(0.97 0.005 240);
+  --card: oklch(0.29 0.05 250);
+  --card-foreground: oklch(0.97 0.005 240);
+  --muted: oklch(0.32 0.045 250);
+  --muted-foreground: oklch(0.74 0.025 240);
+  --secondary: oklch(0.33 0.05 250);
   --secondary-foreground: oklch(0.97 0.005 240);
-  --muted: oklch(0.26 0.035 250);
-  --muted-foreground: oklch(0.72 0.025 245);
-  --accent: oklch(0.3 0.04 250);
-  --accent-foreground: oklch(0.97 0.005 240);
-  --destructive: oklch(0.62 0.2 25);
-  --border: oklch(1 0 0 / 9%);
-  --input: oklch(1 0 0 / 12%);
-  --ring: oklch(0.66 0.12 55);
-  --radius: 0.625rem;
+  --accent: oklch(0.36 0.05 250);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 14%);
+  color-scheme: dark;
+  background: var(--ocean-deep);
+  color: var(--foreground);
 }
 
 @layer base {
@@ -91,7 +108,7 @@
     scroll-behavior: smooth;
   }
   ::selection {
-    background: var(--copper);
+    background: var(--primary);
     color: oklch(0.99 0 0);
   }
 }
@@ -100,28 +117,32 @@
   .font-heading {
     font-family: var(--font-heading);
   }
-  .glass {
-    background: oklch(1 0 0 / 5%);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid oklch(1 0 0 / 10%);
-  }
   .text-balance {
     text-wrap: balance;
   }
   .text-pretty {
     text-wrap: pretty;
   }
-  /* Nautical chart grid */
+  /* Subtle nautical chart grid */
   .chart-grid {
     background-image:
-      linear-gradient(oklch(0.45 0.05 248 / 18%) 1px, transparent 1px),
-      linear-gradient(90deg, oklch(0.45 0.05 248 / 18%) 1px, transparent 1px);
+      linear-gradient(oklch(0.45 0.05 248 / 8%) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.45 0.05 248 / 8%) 1px, transparent 1px);
+    background-size: 64px 64px;
+  }
+  .chart-grid-dark {
+    background-image:
+      linear-gradient(oklch(0.7 0.05 240 / 10%) 1px, transparent 1px),
+      linear-gradient(90deg, oklch(0.7 0.05 240 / 10%) 1px, transparent 1px);
     background-size: 64px 64px;
   }
   .mask-radial {
     -webkit-mask-image: radial-gradient(ellipse at 60% 45%, black 25%, transparent 78%);
     mask-image: radial-gradient(ellipse at 60% 45%, black 25%, transparent 78%);
+  }
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
   }
 }
 
@@ -172,7 +193,7 @@
   height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: var(--ocean-deep);
+  background: var(--secondary);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--steel);

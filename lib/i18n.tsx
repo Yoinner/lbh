@@ -406,24 +406,132 @@ export const dict: Dict = {
   'footer.privacy': { es: 'Política de Privacidad', en: 'Privacy Policy' },
   'footer.terms': { es: 'Términos de Uso', en: 'Terms of Use' },
 
-  // Amanda
-  'amanda.status': { es: 'Disponible ahora', en: 'Available now' },
-  'amanda.greeting': {
-    es: 'Hola, soy AMANDA, su asistente de inteligencia marítima. ¿En qué puerto necesita coordinar una operación?',
-    en: 'Hi, I’m AMANDA, your maritime intelligence assistant. At which port do you need to coordinate an operation?',
-  },
-  'amanda.placeholder': {
-    es: 'Escriba su consulta marítima...',
-    en: 'Type your maritime inquiry...',
-  },
-  'amanda.reply': {
-    es: 'Gracias por su mensaje. Un especialista de LBH Colombia coordinará su operación. Para atención inmediata, escríbanos por WhatsApp al +57 315 736 0015.',
-    en: 'Thank you for your message. An LBH Colombia specialist will coordinate your operation. For immediate attention, reach us on WhatsApp at +57 315 736 0015.',
-  },
   'certs.activeLabel': {
     es: 'Certificaciones activas',
     en: 'Active certifications',
   },
+
+  // Nav routes
+  'nav.home': { es: 'Inicio', en: 'Home' },
+  'nav.coverage': { es: 'Cobertura', en: 'Coverage' },
+  'nav.contact': { es: 'Contacto', en: 'Contact' },
+  'nav.servicesMenu': { es: 'Nuestros servicios', en: 'Our services' },
+  'nav.viewAllServices': { es: 'Ver todos los servicios', en: 'View all services' },
+
+  // Service routes (labels + short desc for dropdown)
+  'route.agency': { es: 'Agencia Marítima', en: 'Ship Agency' },
+  'route.agency.short': {
+    es: 'Representación integral del buque en puerto.',
+    en: 'Full vessel representation in port.',
+  },
+  'route.logistics': { es: 'Logística', en: 'Logistics' },
+  'route.logistics.short': {
+    es: 'Coordinación de carga de extremo a extremo.',
+    en: 'End-to-end cargo coordination.',
+  },
+  'route.port': { es: 'Operaciones Portuarias', en: 'Port Operations' },
+  'route.port.short': {
+    es: 'Supervisión de maniobras y estiba.',
+    en: 'Maneuver and stowage supervision.',
+  },
+  'route.customs': { es: 'Aduanas', en: 'Customs' },
+  'route.customs.short': {
+    es: 'Despacho y cumplimiento normativo.',
+    en: 'Clearance and regulatory compliance.',
+  },
+
+  // Hero (simplified)
+  'hero.h1.a': { es: 'Su buque en buenas manos', en: 'Your vessel in good hands' },
+  'hero.h1.em': { es: 'en cualquier puerto de Colombia', en: 'at any port in Colombia' },
+  'hero.lead': {
+    es: 'Agencia naviera con 30 años coordinando operaciones en los 7 puertos estratégicos del país. Respuesta 24/7.',
+    en: 'Ship agency with 30 years coordinating operations across Colombia’s 7 strategic ports. 24/7 response.',
+  },
+
+  // Global CTAs
+  'cta.quote': { es: 'Solicitar Cotización', en: 'Request a Quote' },
+  'cta.advisor': { es: 'Hablar con un Asesor', en: 'Talk to an Advisor' },
+  'cta.whatsapp': { es: 'Contactar por WhatsApp', en: 'Contact via WhatsApp' },
+  'cta.solution': { es: 'Necesito una Solución Logística', en: 'I Need a Logistics Solution' },
+  'cta.info': { es: 'Solicitar Información', en: 'Request Information' },
+  'cta.viewService': { es: 'Conocer servicio', en: 'View service' },
+
+  // Fleet 3D showcase
+  'fleet.eyebrow': { es: 'Flota que Atendemos', en: 'Fleet We Service' },
+  'fleet.title': {
+    es: 'Experiencia en Cada Tipo de Buque',
+    en: 'Expertise for Every Vessel Type',
+  },
+  'fleet.subtitle': {
+    es: 'Seleccione un tipo de embarcación para explorar el modelo en 3D.',
+    en: 'Select a vessel type to explore it in 3D.',
+  },
+  'fleet.bulk': { es: 'Granelero', en: 'Bulk Carrier' },
+  'fleet.container': { es: 'Portacontenedores', en: 'Container Ship' },
+  'fleet.tanker': { es: 'Tanquero / LNG', en: 'Tanker / LNG' },
+  'fleet.cargo': { es: 'Carga General', en: 'General Cargo' },
+
+  // Trust / metrics section
+  'trust.eyebrow': { es: 'Confianza Comprobada', en: 'Proven Trust' },
+  'trust.title': {
+    es: 'Números que Respaldan Cada Operación',
+    en: 'Numbers That Back Every Operation',
+  },
+  'trust.subtitle': {
+    es: 'Tres décadas de excelencia operativa al servicio de navieras y operadores internacionales.',
+    en: 'Three decades of operational excellence serving international shipowners and operators.',
+  },
+  'trust.years': { es: 'Años de experiencia', en: 'Years of experience' },
+  'trust.ops': { es: 'Operaciones realizadas', en: 'Operations completed' },
+  'trust.ports': { es: 'Puertos cubiertos', en: 'Ports covered' },
+  'trust.attention': { es: 'Atención personalizada', en: 'Personalized attention' },
+  'trust.response': { es: 'Respuesta rápida', en: 'Rapid response' },
+
+  // Commercial form
+  'form.eyebrow': { es: 'Asesoría Comercial', en: 'Commercial Advisory' },
+  'form.title': {
+    es: 'Cuéntenos su Necesidad Logística',
+    en: 'Tell Us Your Logistics Need',
+  },
+  'form.subtitle': {
+    es: 'Complete el formulario y le responderemos de inmediato por WhatsApp.',
+    en: 'Fill out the form and we’ll respond immediately via WhatsApp.',
+  },
+  'form.name': { es: 'Nombre', en: 'Name' },
+  'form.company': { es: 'Empresa', en: 'Company' },
+  'form.phone': { es: 'Celular', en: 'Mobile' },
+  'form.email': { es: 'Correo', en: 'Email' },
+  'form.service': { es: 'Tipo de servicio', en: 'Service type' },
+  'form.servicePlaceholder': { es: 'Seleccione un servicio', en: 'Select a service' },
+  'form.description': { es: 'Descripción de la necesidad', en: 'Description of your need' },
+  'form.descriptionPlaceholder': {
+    es: 'Cuéntenos brevemente qué necesita...',
+    en: 'Briefly tell us what you need...',
+  },
+  'form.submit': { es: 'Enviar por WhatsApp', en: 'Send via WhatsApp' },
+  'form.note': {
+    es: 'Al enviar, se abrirá WhatsApp con su mensaje listo para enviar.',
+    en: 'On submit, WhatsApp will open with your message ready to send.',
+  },
+  'form.required': { es: 'Este campo es obligatorio', en: 'This field is required' },
+
+  // Coverage page
+  'coverage.eyebrow': { es: 'Cobertura Nacional', en: 'National Coverage' },
+  'coverage.title': {
+    es: 'Presencia en los 7 Puertos Estratégicos',
+    en: 'Presence at All 7 Strategic Ports',
+  },
+  'coverage.subtitle': {
+    es: 'Operación permanente en ambas costas, conectando Colombia con el comercio marítimo global.',
+    en: 'Permanent operations on both coasts, connecting Colombia with global maritime trade.',
+  },
+
+  // Generic
+  'common.backHome': { es: 'Volver al inicio', en: 'Back to home' },
+  'common.allServices': { es: 'Todos los Servicios', en: 'All Services' },
+  'common.relatedServices': { es: 'Otros servicios', en: 'Other services' },
+  'common.keyFeatures': { es: 'Qué incluye', en: 'What’s included' },
+  'common.followUs': { es: 'Síguenos', en: 'Follow us' },
 }
 
 export function I18nProvider({ children }: { children: ReactNode }) {

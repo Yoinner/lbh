@@ -1,21 +1,10 @@
 'use client'
 
-import { Anchor, Phone, Mail } from 'lucide-react'
+import Link from 'next/link'
+import { Anchor, Phone, Mail, Instagram, MessageCircle } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
-
-const services = [
-  { key: 'svc.agency.title' },
-  { key: 'svc.husbandry.title' },
-  { key: 'svc.freight.title' },
-  { key: 'footer.viewAll' },
-]
-
-const company = [
-  { key: 'footer.aboutUs', href: '#nosotros' },
-  { key: 'nav.ports', href: '#puertos' },
-  { key: 'nav.certs', href: '#certificaciones' },
-  { key: 'footer.contact', href: '#contacto' },
-]
+import { SERVICES, NAV_LINKS } from '@/lib/services'
+import { SITE, waLink, WA_MESSAGES } from '@/lib/config'
 
 const ports = [
   'Barranquilla',
@@ -31,8 +20,8 @@ export function Footer() {
   const { t } = useI18n()
 
   return (
-    <footer className="border-t border-border bg-[var(--ocean-deep)]">
-      <div className="mx-auto grid max-w-[1280px] gap-10 px-5 py-16 md:grid-cols-2 md:px-8 lg:grid-cols-[1.5fr_1fr_1fr_1fr]">
+    <footer className="section-dark border-t border-border">
+      <div className="mx-auto grid max-w-[1280px] gap-10 px-5 py-16 md:grid-cols-2 md:px-8 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-2.5">
             <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
@@ -49,33 +38,48 @@ export function Footer() {
             {t('footer.about')}
           </p>
           <div className="mt-6 space-y-2.5">
-            <a href="tel:+573157360015" className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary">
-              <Phone className="h-3.5 w-3.5" /> +57 315 736 0015
+            <a href={`tel:+${SITE.whatsappNumber}`} className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
+              <Phone className="h-3.5 w-3.5" /> {SITE.phoneDisplay}
             </a>
-            <a href="mailto:opz3@lbhcolombia.com" className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary">
-              <Mail className="h-3.5 w-3.5" /> opz3@lbhcolombia.com
+            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
+              <Mail className="h-3.5 w-3.5" /> {SITE.email}
+            </a>
+            <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
+              <Instagram className="h-3.5 w-3.5" /> @{SITE.instagram}
             </a>
           </div>
+          <a
+            href={waLink(WA_MESSAGES.advisor)}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+          >
+            <MessageCircle className="h-4 w-4" />
+            {t('cta.whatsapp')}
+          </a>
         </div>
 
         <div>
           <p className="mb-4 text-sm font-semibold text-foreground">{t('footer.services')}</p>
           <nav className="flex flex-col gap-2.5">
-            {services.map((s) => (
-              <a key={s.key} href="#servicios" className="text-sm text-muted-foreground transition-colors hover:text-primary">
-                {t(s.key)}
-              </a>
+            {SERVICES.map((s) => (
+              <Link key={s.slug} href={s.href} className="text-sm text-muted-foreground transition-colors hover:text-primary-foreground">
+                {t(s.labelKey)}
+              </Link>
             ))}
+            <Link href="/servicios" className="text-sm font-medium text-primary transition-colors hover:text-primary-foreground">
+              {t('footer.viewAll')}
+            </Link>
           </nav>
         </div>
 
         <div>
           <p className="mb-4 text-sm font-semibold text-foreground">{t('footer.company')}</p>
           <nav className="flex flex-col gap-2.5">
-            {company.map((c) => (
-              <a key={c.key} href={c.href} className="text-sm text-muted-foreground transition-colors hover:text-primary">
+            {NAV_LINKS.map((c) => (
+              <Link key={c.key} href={c.href} className="text-sm text-muted-foreground transition-colors hover:text-primary-foreground">
                 {t(c.key)}
-              </a>
+              </Link>
             ))}
           </nav>
         </div>
@@ -94,10 +98,10 @@ export function Footer() {
 
       <div className="border-t border-border">
         <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-3 px-5 py-6 text-xs text-muted-foreground sm:flex-row md:px-8">
-          <p>© 2025 LBH Colombia S.A.S. {t('footer.rights')}</p>
-          <nav className="flex gap-6">
-            <a href="#" className="transition-colors hover:text-primary">{t('footer.privacy')}</a>
-            <a href="#" className="transition-colors hover:text-primary">{t('footer.terms')}</a>
+          <p>© {new Date().getFullYear()} LBH Colombia S.A.S. {t('footer.rights')}</p>
+          <nav className="flex items-center gap-6">
+            <a href="#" className="transition-colors hover:text-primary-foreground">{t('footer.privacy')}</a>
+            <a href="#" className="transition-colors hover:text-primary-foreground">{t('footer.terms')}</a>
           </nav>
         </div>
       </div>
