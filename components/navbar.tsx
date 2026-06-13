@@ -10,6 +10,7 @@ import { InstagramIcon } from './icons/instagram-icon'
 import { useI18n } from '@/lib/i18n'
 import { LangToggle } from './lang-toggle'
 import { SERVICES } from '@/lib/services'
+import { ServiceIcon } from './icons/service-icon'
 import { SITE, waLink, WA_MESSAGES } from '@/lib/config'
 
 export function Navbar() {
