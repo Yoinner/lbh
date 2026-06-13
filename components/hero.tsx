@@ -132,6 +132,22 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.35, ease }}
           className="relative"
         >
+          {/* floating vessel badge */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1 }}
+            className="glass absolute -bottom-5 -left-5 hidden items-center gap-3 rounded-[35px] px-4 py-3 shadow-xl sm:flex italic"
+          >
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
+              <Ship className="h-5 w-5" />
+            </span>
+            <div className="leading-tight">
+              <div className="text-sm font-semibold text-foreground">LBH Network</div>
+              <div className="text-[0.7rem] text-muted-foreground">30+ {t('network.countries')}</div>
+            </div>
+          </motion.div>
+
           <div className="glass animate-float relative overflow-hidden rounded-2xl p-1.5 shadow-2xl">
             <div className="flex items-center justify-between rounded-xl bg-background/40 px-4 py-3">
               <div className="flex items-center gap-2 text-xs font-medium text-foreground/80">
@@ -164,22 +180,6 @@ export function Hero() {
               ))}
             </div>
           </div>
-
-          {/* floating vessel badge */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1 }}
-            className="glass absolute -bottom-5 -left-5 hidden items-center gap-3 rounded-xl px-4 py-3 shadow-xl sm:flex"
-          >
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/15 text-primary">
-              <Ship className="h-5 w-5" />
-            </span>
-            <div className="leading-tight">
-              <div className="text-sm font-semibold text-foreground">LBH Network</div>
-              <div className="text-[0.7rem] text-muted-foreground">30+ {t('network.countries')}</div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
