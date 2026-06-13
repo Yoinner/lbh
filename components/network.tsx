@@ -1,0 +1,44 @@
+'use client'
+
+import { useI18n } from '@/lib/i18n'
+import { SectionHeader, Reveal } from './reveal'
+import { WorldRoutes } from './world-routes'
+
+const stats = [
+  { value: '30+', key: 'network.countries' },
+  { value: '120+', key: 'network.offices' },
+  { value: '5', key: 'network.continents' },
+  { value: '24/7', key: 'network.coords' },
+]
+
+export function Network() {
+  const { t } = useI18n()
+
+  return (
+    <section id="red" className="relative overflow-hidden border-y border-border bg-secondary/30 py-24 lg:py-28">
+      <div className="pointer-events-none absolute inset-0 opacity-50">
+        <WorldRoutes className="h-full w-full" />
+      </div>
+
+      <div className="relative mx-auto max-w-[1280px] px-5 md:px-8">
+        <SectionHeader
+          eyebrow={t('network.eyebrow')}
+          title={t('network.title')}
+          subtitle={t('network.subtitle')}
+          align="center"
+        />
+
+        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border lg:grid-cols-4">
+          {stats.map((s, i) => (
+            <Reveal key={s.key} delay={i * 0.08} className="bg-card/80 p-7 text-center backdrop-blur-sm">
+              <div className="font-heading text-4xl font-bold text-primary lg:text-5xl">
+                {s.value}
+              </div>
+              <div className="mt-2 text-sm text-muted-foreground">{t(s.key)}</div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
