@@ -5,12 +5,12 @@ import Link from 'next/link'
 import { Check, MessageCircle, ArrowUpRight } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import { SERVICES, type ServiceDef } from '@/lib/services'
+import { ServiceIcon } from './icons/service-icon'
 import { waLink, WA_MESSAGES } from '@/lib/config'
 import { Reveal } from './reveal'
 
 export function ServiceDetail({ service }: { service: ServiceDef }) {
   const { t } = useI18n()
-  const Icon = service.icon
   const related = SERVICES.filter((s) => s.slug !== service.slug)
 
   return (
@@ -21,7 +21,7 @@ export function ServiceDetail({ service }: { service: ServiceDef }) {
             <div>
               <Reveal>
                 <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-primary/12 text-primary">
-                  <Icon className="h-6 w-6" />
+                  <ServiceIcon name={service.iconName} className="h-6 w-6" />
                 </span>
               </Reveal>
               <Reveal delay={0.06}>
@@ -82,7 +82,6 @@ export function ServiceDetail({ service }: { service: ServiceDef }) {
           </Reveal>
           <div className="grid gap-5 sm:grid-cols-3">
             {related.map((s, i) => {
-              const RIcon = s.icon
               return (
                 <Reveal key={s.slug} delay={i * 0.08}>
                   <Link
@@ -90,7 +89,7 @@ export function ServiceDetail({ service }: { service: ServiceDef }) {
                     className="group flex h-full flex-col rounded-2xl border border-border bg-card p-6 transition-colors hover:border-primary/40"
                   >
                     <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/12 text-primary">
-                      <RIcon className="h-5 w-5" />
+                      <ServiceIcon name={s.iconName} className="h-5 w-5" />
                     </span>
                     <h3 className="mt-4 font-heading text-lg font-bold text-foreground">
                       {t(s.labelKey)}

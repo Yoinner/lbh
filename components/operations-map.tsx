@@ -1,7 +1,15 @@
 'use client'
 
-import { useState } from 'react'
+import { Suspense, useEffect, useState } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { motion } from 'motion/react'
+import {
+  ComposableMap,
+  Geographies,
+  Geography,
+  Marker,
+} from 'react-simple-maps'
+import { MapPin } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import { SectionHeader, Reveal } from './reveal'
 
@@ -10,30 +18,39 @@ type Coast = 'caribbean' | 'pacific'
 interface Port {
   id: string
   name: string
-  // percentage coords over the map container
-  x: number
-  y: number
+  // [longitude, latitude]
+  coordinates: [number, number]
   coast: Coast
   cargo: { es: string; en: string }
 }
 
 const ports: Port[] = [
-  { id: 'barranquilla', name: 'Barranquilla', x: 44, y: 18, coast: 'caribbean', cargo: { es: 'Granel · Carga general · Contenedores', en: 'Bulk · General cargo · Containers' } },
-  { id: 'cartagena', name: 'Cartagena', x: 35, y: 23, coast: 'caribbean', cargo: { es: 'Contenedores · Cruceros · Líquidos', en: 'Containers · Cruise · Liquids' } },
-  { id: 'santamarta', name: 'Santa Marta', x: 50, y: 13, coast: 'caribbean', cargo: { es: 'Carbón · Granel · Contenedores', en: 'Coal · Bulk · Containers' } },
-  { id: 'covenas', name: 'Coveñas', x: 33, y: 31, coast: 'caribbean', cargo: { es: 'Crudo · Terminal petrolera', en: 'Crude oil · Oil terminal' } },
-  { id: 'puertobolivar', name: 'Puerto Bolívar', x: 63, y: 9, coast: 'caribbean', cargo: { es: 'Carbón · Exportación a granel', en: 'Coal · Bulk export' } },
-  { id: 'turbo', name: 'Turbo / Urabá', x: 26, y: 36, coast: 'caribbean', cargo: { es: 'Banano · Carga proyecto', en: 'Banana · Project cargo' } },
-  { id: 'buenaventura', name: 'Buenaventura', x: 21, y: 60, coast: 'pacific', cargo: { es: 'Contenedores · Granel · Pacífico', en: 'Containers · Bulk · Pacific' } },
+  { id: 'barranquilla', name: 'Barranquilla', coordinates: [-74.8, 11.0], coast: 'caribbean', cargo: { es: 'Granel · Carga general · Contenedores', en: 'Bulk · General cargo · Containers' } },
+  { id: 'cartagena', name: 'Cartagena', coordinates: [-75.51, 10.4], coast: 'caribbean', cargo: { es: 'Contenedores · Cruceros · Líquidos', en: 'Containers · Cruise · Liquids' } },
+  { id: 'santamarta', name: 'Santa Marta', coordinates: [-74.2, 11.24], coast: 'caribbean', cargo: { es: 'Carbón · Granel · Contenedores', en: 'Coal · Bulk · Containers' } },
+  { id: 'covenas', name: 'Coveñas', coordinates: [-75.69, 9.4], coast: 'caribbean', cargo: { es: 'Crudo · Terminal petrolera', en: 'Crude oil · Oil terminal' } },
+  { id: 'puertobolivar', name: 'Puerto Bolívar', coordinates: [-71.97, 12.22], coast: 'caribbean', cargo: { es: 'Carbón · Exportación a granel', en: 'Coal · Bulk export' } },
+  { id: 'turbo', name: 'Turbo / Urabá', coordinates: [-76.73, 8.09], coast: 'caribbean', cargo: { es: 'Banano · Carga proyecto', en: 'Banana · Project cargo' } },
+  { id: 'buenaventura', name: 'Buenaventura', coordinates: [-77.02, 3.88], coast: 'pacific', cargo: { es: 'Contenedores · Granel · Pacífico', en: 'Containers · Bulk · Pacific' } },
 ]
 
-// Stylized Colombia outline path (decorative, normalized to a 0-100 box-ish)
-const COLOMBIA_PATH =
-  'M58 4 L70 7 L72 16 L64 22 L60 30 L66 38 L62 50 L54 58 L46 56 L38 62 L30 60 L22 66 L16 74 L20 84 L30 90 L34 80 L40 74 L48 70 L52 60 L44 52 L40 42 L34 36 L30 30 L34 24 L42 22 L46 14 L52 8 Z'
+const GEO_URL = '/colombia.geo.json'
 
-export function OperationsMap() {
+function OperationsMapInner() {
   const { t, lang } = useI18n()
+  const searchParams = useSearchParams()
   const [active, setActive] = useState<Port>(ports[1])
+
+  // Sync selection from ?puerto= (e.g. when arriving from the footer links)
+  useEffect(() => {
+    const slug = searchParams.get('puerto')
+    if (!slug) return
+    const found = ports.find((p) => p.id === slug.toLowerCase())
+    if (found) setActive(found)
+  }, [searchParams])
+
+  const [lng, lat] = active.coordinates
+  const mapsSrc = `https://www.google.com/maps?q=${lat},${lng}&z=12&output=embed`
 
   return (
     <section id="puertos" className="py-24 lg:py-28">
@@ -45,59 +62,90 @@ export function OperationsMap() {
         />
 
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
-          {/* Map */}
+          {/* Real Colombia map */}
           <Reveal>
-            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card sm:aspect-[5/4] lg:aspect-auto lg:h-full lg:min-h-[480px]">
-              <div className="chart-grid absolute inset-0 opacity-40" />
-              <svg viewBox="0 0 90 96" className="absolute inset-0 h-full w-full p-6" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-                <path
-                  d={COLOMBIA_PATH}
-                  fill="oklch(0.28 0.04 250 / 0.6)"
-                  stroke="oklch(0.66 0.12 55 / 0.45)"
-                  strokeWidth="0.6"
-                />
-              </svg>
-
-              {/* Port nodes */}
-              {ports.map((p) => {
-                const isActive = p.id === active.id
-                return (
-                  <button
-                    key={p.id}
-                    type="button"
-                    onClick={() => setActive(p)}
-                    aria-label={p.name}
-                    aria-pressed={isActive}
-                    className="group absolute -translate-x-1/2 -translate-y-1/2"
-                    style={{ left: `${p.x}%`, top: `${p.y}%` }}
-                  >
-                    {isActive && (
-                      <span
-                        className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-1/2 rounded-full border border-primary"
-                        style={{ animation: 'pulse-ring 2s ease-out infinite' }}
+            <div className="relative aspect-[4/5] overflow-hidden rounded-2xl border border-border bg-card sm:aspect-[5/4] lg:aspect-auto lg:h-full lg:min-h-[520px]">
+              <div className="chart-grid absolute inset-0 opacity-30" />
+              <ComposableMap
+                projection="geoMercator"
+                projectionConfig={{ center: [-73.2, 4.6], scale: 1850 }}
+                className="absolute inset-0 h-full w-full"
+                style={{ width: '100%', height: '100%' }}
+              >
+                <Geographies geography={GEO_URL}>
+                  {({ geographies }) =>
+                    geographies.map((geo) => (
+                      <Geography
+                        key={geo.rsmKey}
+                        geography={geo}
+                        style={{
+                          default: {
+                            fill: 'oklch(0.30 0.045 250 / 0.55)',
+                            stroke: 'oklch(0.66 0.12 55 / 0.45)',
+                            strokeWidth: 0.4,
+                            outline: 'none',
+                          },
+                          hover: {
+                            fill: 'oklch(0.34 0.05 250 / 0.7)',
+                            stroke: 'oklch(0.66 0.12 55 / 0.6)',
+                            strokeWidth: 0.5,
+                            outline: 'none',
+                          },
+                          pressed: { outline: 'none' },
+                        }}
                       />
-                    )}
-                    <span
-                      className={`relative block h-3 w-3 rounded-full ring-2 transition-all ${
-                        isActive
-                          ? 'bg-primary ring-primary/40'
-                          : 'bg-foreground/40 ring-transparent group-hover:bg-primary group-hover:ring-primary/30'
-                      }`}
-                    />
-                    <span
-                      className={`pointer-events-none absolute left-1/2 top-full mt-1.5 -translate-x-1/2 whitespace-nowrap rounded px-1.5 py-0.5 text-[0.6rem] font-semibold transition-colors ${
-                        isActive ? 'bg-primary text-primary-foreground' : 'text-foreground/60 group-hover:text-foreground'
-                      }`}
+                    ))
+                  }
+                </Geographies>
+
+                {ports.map((p) => {
+                  const isActive = p.id === active.id
+                  return (
+                    <Marker
+                      key={p.id}
+                      coordinates={p.coordinates}
+                      onClick={() => setActive(p)}
+                      style={{ default: { cursor: 'pointer' }, hover: { cursor: 'pointer' }, pressed: {} }}
                     >
-                      {p.name}
-                    </span>
-                  </button>
-                )
-              })}
+                      {isActive && (
+                        <circle
+                          r={11}
+                          fill="none"
+                          stroke="oklch(0.66 0.12 55)"
+                          strokeWidth={1.2}
+                          opacity={0.7}
+                        >
+                          <animate attributeName="r" from="5" to="16" dur="2s" repeatCount="indefinite" />
+                          <animate attributeName="opacity" from="0.7" to="0" dur="2s" repeatCount="indefinite" />
+                        </circle>
+                      )}
+                      <circle
+                        r={isActive ? 5 : 3.5}
+                        fill={isActive ? 'oklch(0.66 0.12 55)' : 'oklch(0.85 0.02 250)'}
+                        stroke="oklch(0.20 0.03 250)"
+                        strokeWidth={1}
+                      />
+                      <text
+                        textAnchor="middle"
+                        y={-10}
+                        style={{
+                          fontFamily: 'var(--font-inter), sans-serif',
+                          fontSize: isActive ? 11 : 9,
+                          fontWeight: 700,
+                          fill: isActive ? 'oklch(0.72 0.13 55)' : 'oklch(0.9 0.02 250)',
+                          pointerEvents: 'none',
+                        }}
+                      >
+                        {p.name}
+                      </text>
+                    </Marker>
+                  )
+                })}
+              </ComposableMap>
             </div>
           </Reveal>
 
-          {/* Port detail + list */}
+          {/* Port detail + Google Maps + list */}
           <Reveal delay={0.1}>
             <div className="flex h-full flex-col gap-5">
               <motion.div
@@ -110,12 +158,25 @@ export function OperationsMap() {
                 <span className="text-[0.65rem] font-bold uppercase tracking-[0.2em] text-primary">
                   {t(`ops.coast.${active.coast}`)}
                 </span>
-                <h3 className="mt-2 font-heading text-2xl font-bold text-foreground">
+                <h3 className="mt-2 flex items-center gap-2 font-heading text-2xl font-bold text-foreground">
+                  <MapPin className="h-5 w-5 text-primary" />
                   {active.name}
                 </h3>
                 <p className="mt-1 text-sm text-muted-foreground">{t('ops.office')}</p>
-                <div className="mt-5 rounded-lg border border-border bg-secondary/40 p-4 text-sm text-foreground/85">
+                <div className="mt-4 rounded-lg border border-border bg-secondary/40 p-4 text-sm text-foreground/85">
                   {active.cargo[lang]}
+                </div>
+
+                {/* Embedded Google Maps mini view */}
+                <div className="mt-4 overflow-hidden rounded-lg border border-border">
+                  <iframe
+                    key={active.id}
+                    title={`Ubicación de ${active.name}`}
+                    src={mapsSrc}
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="h-48 w-full"
+                  />
                 </div>
               </motion.div>
 
@@ -140,5 +201,13 @@ export function OperationsMap() {
         </div>
       </div>
     </section>
+  )
+}
+
+export function OperationsMap() {
+  return (
+    <Suspense fallback={<div className="min-h-[520px]" />}>
+      <OperationsMapInner />
+    </Suspense>
   )
 }

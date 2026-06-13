@@ -1,10 +1,8 @@
-import {
-  Anchor,
-  Boxes,
-  Ship,
-  FileCheck,
-  type LucideIcon,
-} from 'lucide-react'
+// NOTE: Icons are referenced by string name (not component references) so that
+// ServiceDef objects remain fully serializable when passed from Server
+// Components to Client Components. Resolve the icon via `iconMap` inside a
+// Client Component using the `iconName` field.
+export type ServiceIconName = 'agency' | 'logistics' | 'port' | 'customs'
 
 export interface ServiceDef {
   slug: string
@@ -14,7 +12,7 @@ export interface ServiceDef {
   leadKey: string
   benefitKeys: string[]
   image: string
-  icon: LucideIcon
+  iconName: ServiceIconName
   waKey: 'agency' | 'logistics' | 'port' | 'customs'
 }
 
@@ -26,8 +24,8 @@ export const SERVICES: ServiceDef[] = [
     shortKey: 'route.agency.short',
     leadKey: 'sd.agency.lead',
     benefitKeys: ['sd.agency.b1', 'sd.agency.b2', 'sd.agency.b3', 'sd.agency.b4', 'sd.agency.b5'],
-    image: '/sector-container.png',
-    icon: Anchor,
+    image: '/service-agency.png',
+    iconName: 'agency',
     waKey: 'agency',
   },
   {
@@ -37,8 +35,8 @@ export const SERVICES: ServiceDef[] = [
     shortKey: 'route.logistics.short',
     leadKey: 'sd.logistics.lead',
     benefitKeys: ['sd.logistics.b1', 'sd.logistics.b2', 'sd.logistics.b3', 'sd.logistics.b4', 'sd.logistics.b5'],
-    image: '/sector-bulk.png',
-    icon: Boxes,
+    image: '/service-logistics.png',
+    iconName: 'logistics',
     waKey: 'logistics',
   },
   {
@@ -48,8 +46,8 @@ export const SERVICES: ServiceDef[] = [
     shortKey: 'route.port.short',
     leadKey: 'sd.port.lead',
     benefitKeys: ['sd.port.b1', 'sd.port.b2', 'sd.port.b3', 'sd.port.b4', 'sd.port.b5'],
-    image: '/sector-project.png',
-    icon: Ship,
+    image: '/service-port.png',
+    iconName: 'port',
     waKey: 'port',
   },
   {
@@ -59,8 +57,8 @@ export const SERVICES: ServiceDef[] = [
     shortKey: 'route.customs.short',
     leadKey: 'sd.customs.lead',
     benefitKeys: ['sd.customs.b1', 'sd.customs.b2', 'sd.customs.b3', 'sd.customs.b4', 'sd.customs.b5'],
-    image: '/sector-tanker.png',
-    icon: FileCheck,
+    image: '/service-customs.png',
+    iconName: 'customs',
     waKey: 'customs',
   },
 ]

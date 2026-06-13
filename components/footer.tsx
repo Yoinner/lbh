@@ -1,20 +1,21 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
-import { Anchor, Phone, Mail, MessageCircle } from 'lucide-react'
+import { Phone, Mail, MessageCircle } from 'lucide-react'
 import { InstagramIcon } from './icons/instagram-icon'
 import { useI18n } from '@/lib/i18n'
 import { SERVICES, NAV_LINKS } from '@/lib/services'
 import { SITE, waLink, WA_MESSAGES } from '@/lib/config'
 
 const ports = [
-  'Barranquilla',
-  'Cartagena',
-  'Santa Marta',
-  'Buenaventura',
-  'Coveñas',
-  'Puerto Bolívar',
-  'Turbo / Urabá',
+  { id: 'barranquilla', name: 'Barranquilla' },
+  { id: 'cartagena', name: 'Cartagena' },
+  { id: 'santamarta', name: 'Santa Marta' },
+  { id: 'buenaventura', name: 'Buenaventura' },
+  { id: 'covenas', name: 'Coveñas' },
+  { id: 'puertobolivar', name: 'Puerto Bolívar' },
+  { id: 'turbo', name: 'Turbo / Urabá' },
 ]
 
 export function Footer() {
@@ -25,11 +26,15 @@ export function Footer() {
       <div className="mx-auto grid max-w-[1280px] gap-10 px-5 py-16 md:grid-cols-2 md:px-8 lg:grid-cols-[1.6fr_1fr_1fr_1fr]">
         <div>
           <div className="flex items-center gap-2.5">
-            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
-              <Anchor className="h-5 w-5" />
-            </span>
+            <Image
+              src="/lbh-logo.png"
+              alt="LBH Group Colombia"
+              width={88}
+              height={88}
+              className="h-11 w-11 rounded-full object-cover ring-1 ring-white/15"
+            />
             <span className="flex flex-col leading-none">
-              <span className="font-heading text-lg font-bold text-foreground">LBH</span>
+              <span className="font-heading text-lg font-bold text-foreground">LBH Group</span>
               <span className="text-[0.6rem] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
                 Colombia
               </span>
@@ -89,9 +94,13 @@ export function Footer() {
           <p className="mb-4 text-sm font-semibold text-foreground">{t('footer.portCoverage')}</p>
           <div className="flex flex-wrap gap-2">
             {ports.map((p) => (
-              <span key={p} className="rounded border border-border bg-white/5 px-2.5 py-1 text-xs text-foreground/70">
-                {p}
-              </span>
+              <Link
+                key={p.id}
+                href={`/cobertura?puerto=${p.id}`}
+                className="rounded border border-border bg-white/5 px-2.5 py-1 text-xs text-foreground/70 transition-colors hover:border-primary/50 hover:bg-primary/10 hover:text-primary-foreground"
+              >
+                {p.name}
+              </Link>
             ))}
           </div>
         </div>
@@ -101,8 +110,8 @@ export function Footer() {
         <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-3 px-5 py-6 text-xs text-muted-foreground sm:flex-row md:px-8">
           <p>© {new Date().getFullYear()} LBH Colombia S.A.S. {t('footer.rights')}</p>
           <nav className="flex items-center gap-6">
-            <a href="#" className="transition-colors hover:text-primary-foreground">{t('footer.privacy')}</a>
-            <a href="#" className="transition-colors hover:text-primary-foreground">{t('footer.terms')}</a>
+            <Link href="/politica-de-privacidad" className="transition-colors hover:text-primary-foreground">{t('footer.privacy')}</Link>
+            <Link href="/terminos-y-condiciones" className="transition-colors hover:text-primary-foreground">{t('footer.terms')}</Link>
           </nav>
         </div>
       </div>

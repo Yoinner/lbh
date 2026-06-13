@@ -1,9 +1,10 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Anchor, Menu, X, ChevronDown, MessageCircle } from 'lucide-react'
+import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
 import { InstagramIcon } from './icons/instagram-icon'
 import { useI18n } from '@/lib/i18n'
@@ -45,13 +46,18 @@ export function Navbar() {
       }`}
     >
       <div className="mx-auto flex h-[72px] max-w-[1280px] items-center justify-between gap-6 px-5 md:px-8">
-        <Link href="/" className="flex items-center gap-2.5" aria-label="LBH Colombia — Inicio">
-          <span className="flex h-9 w-9 items-center justify-center rounded-md bg-primary text-primary-foreground">
-            <Anchor className="h-5 w-5" />
-          </span>
+        <Link href="/" className="flex items-center gap-2.5" aria-label="LBH Group Colombia — Inicio">
+          <Image
+            src="/lbh-logo.png"
+            alt="LBH Group Colombia"
+            width={80}
+            height={80}
+            priority
+            className="h-10 w-10 rounded-full object-cover ring-1 ring-border"
+          />
           <span className="flex flex-col leading-none">
             <span className="font-heading text-lg font-bold tracking-tight text-foreground">
-              LBH
+              LBH Group
             </span>
             <span className="text-[0.6rem] font-semibold uppercase tracking-[0.25em] text-muted-foreground">
               Colombia
@@ -108,7 +114,6 @@ export function Navbar() {
                   <div className="overflow-hidden rounded-xl border border-border bg-popover shadow-xl">
                     <div className="grid grid-cols-1 gap-1 p-2">
                       {SERVICES.map((s) => {
-                        const Icon = s.icon
                         return (
                           <Link
                             key={s.slug}
@@ -116,7 +121,7 @@ export function Navbar() {
                             className="group flex items-start gap-3 rounded-lg p-3 transition-colors hover:bg-secondary"
                           >
                             <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
-                              <Icon className="h-[18px] w-[18px]" />
+                              <ServiceIcon name={s.iconName} className="h-[18px] w-[18px]" />
                             </span>
                             <span className="leading-tight">
                               <span className="block text-sm font-semibold text-foreground group-hover:text-primary">
