@@ -3,8 +3,9 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { Anchor, Menu, X, ChevronDown, Instagram, MessageCircle } from 'lucide-react'
+import { Anchor, Menu, X, ChevronDown, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
+import { InstagramIcon } from './icons/instagram-icon'
 import { useI18n } from '@/lib/i18n'
 import { LangToggle } from './lang-toggle'
 import { SERVICES } from '@/lib/services'
@@ -167,7 +168,7 @@ export function Navbar() {
             aria-label="Instagram de LBH Colombia"
             className="hidden h-9 w-9 items-center justify-center rounded-md border border-border text-foreground/70 transition-colors hover:border-primary hover:text-primary sm:flex"
           >
-            <Instagram className="h-[18px] w-[18px]" />
+            <InstagramIcon className="h-[18px] w-[18px]" />
           </a>
           <LangToggle />
           <a
@@ -271,7 +272,7 @@ export function Navbar() {
                   aria-label="Instagram"
                   className="flex items-center gap-2 text-sm font-medium text-foreground/70"
                 >
-                  <Instagram className="h-5 w-5" />@{SITE.instagram}
+                  <InstagramIcon className="h-5 w-5" />@{SITE.instagram}
                 </a>
               </div>
             </div>

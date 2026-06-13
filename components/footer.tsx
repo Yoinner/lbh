@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { Anchor, Phone, Mail, Instagram, MessageCircle } from 'lucide-react'
+import { Anchor, Phone, Mail, MessageCircle } from 'lucide-react'
+import { InstagramIcon } from './icons/instagram-icon'
 import { useI18n } from '@/lib/i18n'
 import { SERVICES, NAV_LINKS } from '@/lib/services'
 import { SITE, waLink, WA_MESSAGES } from '@/lib/config'
@@ -45,7 +46,7 @@ export function Footer() {
               <Mail className="h-3.5 w-3.5" /> {SITE.email}
             </a>
             <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
-              <Instagram className="h-3.5 w-3.5" /> @{SITE.instagram}
+              <InstagramIcon className="h-3.5 w-3.5" /> @{SITE.instagram}
             </a>
           </div>
           <a

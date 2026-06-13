@@ -526,6 +526,113 @@ export const dict: Dict = {
     en: 'Permanent operations on both coasts, connecting Colombia with global maritime trade.',
   },
 
+  // Clients / sectors served
+  'clients.eyebrow': { es: 'Quiénes Confían en Nosotros', en: 'Who Trusts Us' },
+  'clients.title': {
+    es: 'Aliado de Navieras, Operadores y Tradings Internacionales',
+    en: 'Partner to Shipowners, Operators and International Tradings',
+  },
+  'clients.subtitle': {
+    es: 'Atendemos a los segmentos más exigentes de la industria marítima y de comercio exterior.',
+    en: 'We serve the most demanding segments of the maritime and foreign trade industry.',
+  },
+
+  // Final CTA band
+  'band.title': {
+    es: '¿Su buque llega a un puerto colombiano?',
+    en: 'Is your vessel arriving at a Colombian port?',
+  },
+  'band.subtitle': {
+    es: 'Cotización inmediata y atención 24/7. Hablemos por WhatsApp ahora.',
+    en: 'Immediate quote and 24/7 attention. Let’s talk on WhatsApp now.',
+  },
+
+  // About page
+  'aboutpage.eyebrow': { es: 'Nosotros', en: 'About Us' },
+  'aboutpage.lead': {
+    es: 'Tres décadas de excelencia operativa al servicio del comercio marítimo de Colombia.',
+    en: 'Three decades of operational excellence serving Colombia’s maritime trade.',
+  },
+  'aboutpage.missionTitle': { es: 'Nuestra Misión', en: 'Our Mission' },
+  'aboutpage.mission': {
+    es: 'Proteger los intereses de navieras y operadores en cada escala, con precisión técnica, cumplimiento normativo y respuesta inmediata en los 7 puertos estratégicos de Colombia.',
+    en: 'To protect the interests of shipowners and operators at every port call, with technical precision, regulatory compliance and immediate response across Colombia’s 7 strategic ports.',
+  },
+  'aboutpage.visionTitle': { es: 'Nuestra Visión', en: 'Our Vision' },
+  'aboutpage.vision': {
+    es: 'Ser el agente naviero de referencia en Colombia, integrando estándares globales de la red LBH con un conocimiento profundo del entorno portuario local.',
+    en: 'To be the benchmark ship agency in Colombia, integrating the LBH network’s global standards with deep knowledge of the local port environment.',
+  },
+
+  // Services index page
+  'servicespage.lead': {
+    es: 'Cuatro líneas de servicio que cubren el ciclo completo de la operación marítima y logística.',
+    en: 'Four service lines covering the complete cycle of maritime and logistics operations.',
+  },
+
+  // Contact page
+  'contactpage.eyebrow': { es: 'Contacto', en: 'Contact' },
+  'contactpage.lead': {
+    es: 'Estamos disponibles 24/7. Escríbanos y le respondemos de inmediato.',
+    en: 'We are available 24/7. Write to us and we’ll respond immediately.',
+  },
+  'contactpage.channels': { es: 'Canales directos', en: 'Direct channels' },
+  'contactpage.whatsapp': { es: 'WhatsApp', en: 'WhatsApp' },
+  'contactpage.phone': { es: 'Teléfono', en: 'Phone' },
+  'contactpage.email': { es: 'Correo', en: 'Email' },
+  'contactpage.emergency': { es: 'Emergencias 24/7', en: 'Emergencies 24/7' },
+
+  // Service detail generic
+  'svcdetail.benefits': { es: 'Beneficios clave', en: 'Key benefits' },
+  'svcdetail.cta': {
+    es: '¿Necesita este servicio? Hablemos.',
+    en: 'Need this service? Let’s talk.',
+  },
+
+  // Agencia Marítima detail
+  'sd.agency.lead': {
+    es: 'Representamos integralmente al buque y a la naviera ante todas las autoridades portuarias, aduaneras y marítimas de Colombia, coordinando cada maniobra de la escala.',
+    en: 'We fully represent the vessel and shipowner before all port, customs and maritime authorities in Colombia, coordinating every maneuver of the call.',
+  },
+  'sd.agency.b1': { es: 'Port clearance y documentación completa', en: 'Port clearance and full documentation' },
+  'sd.agency.b2': { es: 'Coordinación de practicaje y remolcadores', en: 'Pilotage and towage coordination' },
+  'sd.agency.b3': { es: 'Cuentas de desembolso transparentes', en: 'Transparent disbursement accounts' },
+  'sd.agency.b4': { es: 'Gestión de aduana e inmigración', en: 'Customs and immigration management' },
+  'sd.agency.b5': { es: 'Atención 24/7 en los 7 puertos', en: '24/7 attention at all 7 ports' },
+
+  // Logística detail
+  'sd.logistics.lead': {
+    es: 'Coordinamos la carga de extremo a extremo: granel seco y líquido, carga proyecto, OOG y breakbulk, optimizando cada eslabón de la cadena logística.',
+    en: 'We coordinate cargo end to end: dry and liquid bulk, project cargo, OOG and breakbulk, optimizing every link of the logistics chain.',
+  },
+  'sd.logistics.b1': { es: 'Granel seco y líquido especializado', en: 'Specialized dry and liquid bulk' },
+  'sd.logistics.b2': { es: 'Carga proyecto y sobredimensionada (OOG)', en: 'Project and oversized cargo (OOG)' },
+  'sd.logistics.b3': { es: 'Coordinación de estiba y trincado', en: 'Stowage and lashing coordination' },
+  'sd.logistics.b4': { es: 'Documentación DG / HAZMAT', en: 'DG / HAZMAT documentation' },
+  'sd.logistics.b5': { es: 'Optimización de costos operativos', en: 'Operational cost optimization' },
+
+  // Operaciones Portuarias detail
+  'sd.port.lead': {
+    es: 'Supervisamos las maniobras de cargue, descargue y estiba con personal técnico en muelle, garantizando seguridad, eficiencia y reportes en tiempo real.',
+    en: 'We supervise loading, discharge and stowage maneuvers with technical staff on the dock, ensuring safety, efficiency and real-time reporting.',
+  },
+  'sd.port.b1': { es: 'Supervisión de cargue y descargue', en: 'Loading and discharge supervision' },
+  'sd.port.b2': { es: 'Control de estiba y maniobras', en: 'Stowage and maneuver control' },
+  'sd.port.b3': { es: 'Reportes operativos en tiempo real', en: 'Real-time operational reporting' },
+  'sd.port.b4': { es: 'Inspecciones y tally de carga', en: 'Cargo inspections and tally' },
+  'sd.port.b5': { es: 'Coordinación con terminales', en: 'Terminal coordination' },
+
+  // Aduanas detail
+  'sd.customs.lead': {
+    es: 'Gestionamos el despacho aduanero y el cumplimiento normativo de cada operación, protegiendo a la naviera frente a contingencias regulatorias.',
+    en: 'We manage customs clearance and regulatory compliance for every operation, protecting the shipowner against regulatory contingencies.',
+  },
+  'sd.customs.b1': { es: 'Despacho aduanero de importación y exportación', en: 'Import and export customs clearance' },
+  'sd.customs.b2': { es: 'Cumplimiento normativo integral', en: 'Comprehensive regulatory compliance' },
+  'sd.customs.b3': { es: 'Gestión documental certificada', en: 'Certified documentation management' },
+  'sd.customs.b4': { es: 'Coordinación con DIAN y autoridades', en: 'Coordination with DIAN and authorities' },
+  'sd.customs.b5': { es: 'Asesoría en regímenes especiales', en: 'Advice on special regimes' },
+
   // Generic
   'common.backHome': { es: 'Volver al inicio', en: 'Back to home' },
   'common.allServices': { es: 'Todos los Servicios', en: 'All Services' },

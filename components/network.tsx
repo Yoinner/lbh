@@ -2,7 +2,6 @@
 
 import { useI18n } from '@/lib/i18n'
 import { SectionHeader, Reveal } from './reveal'
-import { WorldRoutes } from './world-routes'
 
 const stats = [
   { value: '30+', key: 'network.countries' },
@@ -16,9 +15,7 @@ export function Network() {
 
   return (
     <section id="red" className="relative overflow-hidden border-y border-border bg-secondary/30 py-24 lg:py-28">
-      <div className="pointer-events-none absolute inset-0 opacity-50">
-        <WorldRoutes className="h-full w-full" />
-      </div>
+      <div className="chart-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
 
       <div className="relative mx-auto max-w-[1280px] px-5 md:px-8">
         <SectionHeader
