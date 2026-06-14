@@ -93,12 +93,12 @@ export function Hero() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-12 border-t border-border/70 pt-6"
+            className="mt-12 border-t border-border/70 pt-6 text-center"
           >
             <p className="mb-3 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               {t('certs.activeLabel')}
             </p>
-            <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
+            <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
               {certs.map((c) => (
                 <span
                   key={c}
