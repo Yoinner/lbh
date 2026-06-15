@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from 'motion/react'
 import { Anchor, Users, Container, ArrowUpRight, Check } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
@@ -43,8 +44,7 @@ export function Services() {
             const Icon = s.icon
             return (
               <Reveal key={s.titleKey} delay={i * 0.1}>
-                <motion.a
-                  href="#contacto"
+                <motion.div
                   whileHover={{ y: -6 }}
                   transition={{ type: 'spring', stiffness: 300, damping: 24 }}
                   className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-card p-8"
@@ -67,11 +67,14 @@ export function Services() {
                       </li>
                     ))}
                   </ul>
-                  <div className="mt-7 flex items-center gap-1.5 text-sm font-semibold text-primary">
+                  <Link
+                    href="/servicios"
+                    className="mt-7 flex items-center gap-1.5 text-sm font-semibold text-primary"
+                  >
                     {t('services.viewFull')}
                     <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-                  </div>
-                </motion.a>
+                  </Link>
+                </motion.div>
               </Reveal>
             )
           })}

@@ -76,13 +76,13 @@ export function Hero() {
               <MessageCircle className="h-4 w-4" />
               {t('cta.quote')}
             </Link>
-            <a
-              href="#servicios"
+            <Link
+              href="/servicios"
               className="group inline-flex items-center gap-2 rounded-md border border-border bg-card/70 px-6 py-3.5 text-sm font-semibold text-foreground backdrop-blur-sm transition-colors hover:border-primary/40 hover:text-primary"
             >
               {t('hero.ctaSecondary')}
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </a>
+            </Link>
           </motion.div>
 
 
