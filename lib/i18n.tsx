@@ -266,6 +266,30 @@ export const dict: Dict = {
     es: 'Cámara de Comercio Colombo-Americana',
     en: 'Colombian-American Chamber',
   },
+  'certs.analdex': {
+    es: 'Asociación Nacional de Comercio Exterior',
+    en: 'National Foreign Trade Association',
+  },
+  'certs.holland': {
+    es: 'Cámara de Comercio Colombo-Holandesa',
+    en: 'Colombian-Dutch Chamber of Commerce',
+  },
+  'certs.ccsruc': {
+    es: 'Consejo Colombiano de Seguridad — RUC',
+    en: 'Colombian Security Council — RUC',
+  },
+  'certs.china': {
+    es: 'Cámara Colombo China de Inversión y Comercio',
+    en: 'Colombian-Chinese Investment & Trade Chamber',
+  },
+  'certs.pep': {
+    es: 'Promotora de Excelencia Personal',
+    en: 'Promotora de Excelencia Personal',
+  },
+  'certs.aferri': {
+    es: 'AFERRI',
+    en: 'AFERRI',
+  },
 
   // Sectors
   'sectors.eyebrow': { es: 'Sectores Industriales', en: 'Industry Sectors' },

@@ -196,7 +196,7 @@
 .lbh-marquee-track {
   display: flex;
   width: max-content;
-  animation: lbh-marquee 34s linear infinite;
+  animation: lbh-marquee 50s linear infinite;
 }
 .lbh-marquee-pause:hover .lbh-marquee-track {
   animation-play-state: paused;

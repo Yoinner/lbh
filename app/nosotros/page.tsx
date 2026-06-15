@@ -25,6 +25,7 @@ export default function NosotrosPage() {
       <TrustMetrics />
       <CertificationsMarquee
         withBackground
+        backgroundImage="/certifications-nosotros-bg.png"
         eyebrowKey="certs.activeLabel"
         titleKey="certs.title"
         subtitleKey="certs.subtitle"

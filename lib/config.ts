@@ -62,11 +62,6 @@ export const CERTIFICATIONS: CertDef[] = [
     logo: '/certifications/trace.png',
   },
   {
-    name: 'ISO',
-    description: 'ISO International Standards Certification',
-    logo: '/certifications/iso.png',
-  },
-  {
     name: 'FITAC',
     description: 'Federación Colombiana de Agentes Logísticos en Comercio Internacional',
     logo: '/certifications/fitac.png',
@@ -75,6 +70,36 @@ export const CERTIFICATIONS: CertDef[] = [
     name: 'AmCham',
     description: 'Cámara de Comercio Colombo Americana',
     logo: '/certifications/amcham.png',
+  },
+  {
+    name: 'ANALDEX',
+    description: 'Asociación Nacional de Comercio Exterior',
+    logo: '/certifications/analdex.png',
+  },
+  {
+    name: 'Holland House Colombia',
+    description: 'Cámara de Comercio Colombo-Holandesa',
+    logo: '/certifications/holland-house.png',
+  },
+  {
+    name: 'CCS / RUC',
+    description: 'Consejo Colombiano de Seguridad — Registro Uniforme para Contratistas',
+    logo: '/certifications/ccs-ruc.png',
+  },
+  {
+    name: 'Cámara Colombo China',
+    description: 'Cámara Colombo China de Inversión y Comercio',
+    logo: '/certifications/camara-colombo-china.png',
+  },
+  {
+    name: 'PEP',
+    description: 'Promotora de Excelencia Personal',
+    logo: '/certifications/pep.png',
+  },
+  {
+    name: 'AFERRI',
+    description: 'AFERRI',
+    logo: '/certifications/aferri.png',
   },
 ]
 

@@ -3,40 +3,30 @@
 import Image from 'next/image'
 import { useState } from 'react'
 import { useI18n } from '@/lib/i18n'
+import { CERTIFICATIONS, type CertDef } from '@/lib/config'
 import { SectionHeader } from './reveal'
 
-interface Cert {
-  name: string
-  descKey: string
-  logo: string
-}
+// ─── Logo card ────────────────────────────────────────────────────────────────
 
-// Logos are provided by LBH and dropped into /public/certifications.
-// File names map 1:1 to each certification/membership.
-const CERTIFICATIONS: Cert[] = [
-  { name: 'BASC', descKey: 'certs.basc', logo: '/certifications/basc.png' },
-  { name: 'TRACE', descKey: 'certs.trace', logo: '/certifications/trace.png' },
-  { name: 'ISO', descKey: 'certs.iso', logo: '/certifications/iso.png' },
-  { name: 'FITAC', descKey: 'certs.fitac', logo: '/certifications/fitac.png' },
-  { name: 'AmCham', descKey: 'certs.amcham', logo: '/certifications/amcham.png' },
-]
-
-function LogoCard({ cert }: { cert: Cert }) {
+function LogoCard({ cert }: { cert: CertDef }) {
   const [failed, setFailed] = useState(false)
 
   return (
-    <div className="mx-3 flex h-24 w-44 shrink-0 items-center justify-center rounded-xl border border-border bg-card px-6 shadow-sm">
+    <div
+      className="mx-3 flex h-24 w-48 shrink-0 items-center justify-center rounded-xl border border-border/60 bg-card px-5 shadow-sm transition-shadow duration-300 hover:shadow-md"
+      aria-label={cert.name}
+    >
       {failed ? (
-        <span className="font-heading text-lg font-bold tracking-wide text-foreground/70">
+        <span className="font-heading text-base font-bold tracking-wide text-foreground/70">
           {cert.name}
         </span>
       ) : (
         <Image
-          src={cert.logo || '/placeholder.svg'}
-          alt={`Logo ${cert.name}`}
-          width={140}
-          height={64}
-          className="h-14 w-auto object-contain"
+          src={cert.logo}
+          alt={`${cert.name} — ${cert.description}`}
+          width={150}
+          height={72}
+          className="h-14 w-auto max-w-[140px] object-contain"
           onError={() => setFailed(true)}
         />
       )}
@@ -44,14 +34,39 @@ function LogoCard({ cert }: { cert: Cert }) {
   )
 }
 
+// ─── Marquee track ────────────────────────────────────────────────────────────
+
+function MarqueeTrack({ items, paused }: { items: CertDef[]; paused: boolean }) {
+  // Duplicate exactly once so the CSS `translateX(-50%)` keyframe loops seamlessly.
+  const loop = [...items, ...items]
+
+  return (
+    <div
+      className="lbh-marquee-track py-2"
+      style={{ animationPlayState: paused ? 'paused' : 'running' }}
+      aria-hidden="false"
+    >
+      {loop.map((cert, i) => (
+        <LogoCard key={`${cert.name}-${i}`} cert={cert} />
+      ))}
+    </div>
+  )
+}
+
+// ─── Public component ─────────────────────────────────────────────────────────
+
 export function CertificationsMarquee({
+  title,
+  subtitle,
   withBackground = false,
   centered = true,
   eyebrowKey = 'certs.activeLabel',
   titleKey = 'certs.title',
   subtitleKey = 'certs.marqueeNote',
-  backgroundImage = '/certifications-bg.png',
+  backgroundImage = '/certifications-nosotros-bg.png',
 }: {
+  title?: string
+  subtitle?: string
   withBackground?: boolean
   centered?: boolean
   eyebrowKey?: string
@@ -60,45 +75,69 @@ export function CertificationsMarquee({
   backgroundImage?: string
 }) {
   const { t } = useI18n()
-  // Duplicate the list so the horizontal loop is seamless.
-  const loop = [...CERTIFICATIONS, ...CERTIFICATIONS]
+  const [paused, setPaused] = useState(false)
+
+  const resolvedTitle = title ?? t(titleKey)
+  const resolvedSubtitle = subtitle ?? t(subtitleKey)
 
   return (
     <section
       id="certificaciones"
       className={`relative overflow-hidden py-20 lg:py-24 ${withBackground ? '' : 'bg-secondary/30'}`}
     >
+      {/* Optional background image with overlay */}
       {withBackground && (
         <>
           <Image
-            src={backgroundImage || '/placeholder.svg'}
+            src={backgroundImage}
             alt=""
             fill
             sizes="100vw"
             aria-hidden="true"
-            className="object-cover opacity-[0.12]"
+            className="object-cover opacity-[0.10]"
+            priority={false}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-background/85 via-background/80 to-secondary/60" />
+          {/* Gradient overlay: keeps text legible against the faint image */}
+          <div className="absolute inset-0 bg-gradient-to-b from-background/90 via-background/80 to-background/90" />
         </>
       )}
 
       <div className="relative mx-auto max-w-[1280px] px-5 md:px-8">
         <SectionHeader
           eyebrow={t(eyebrowKey)}
-          title={t(titleKey)}
-          subtitle={t(subtitleKey)}
+          title={resolvedTitle}
+          subtitle={resolvedSubtitle}
           align={centered ? 'center' : 'left'}
         />
 
-        <div className="lbh-marquee-pause relative mt-4 w-full overflow-hidden">
-          {/* edge fades */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 z-10 w-16 bg-gradient-to-r from-background to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-background to-transparent" />
-          <div className="lbh-marquee-track py-2" aria-hidden="false">
-            {loop.map((cert, i) => (
-              <LogoCard key={`${cert.name}-${i}`} cert={cert} />
-            ))}
-          </div>
+        {/* Marquee wrapper — clips overflow and adds edge fades */}
+        <div
+          className="relative mt-10 w-full overflow-hidden"
+          onMouseEnter={() => setPaused(true)}
+          onMouseLeave={() => setPaused(false)}
+          onFocus={() => setPaused(true)}
+          onBlur={() => setPaused(false)}
+        >
+          {/* Left edge fade */}
+          <div
+            className="pointer-events-none absolute inset-y-0 left-0 z-10 w-20"
+            style={{
+              background: withBackground
+                ? 'linear-gradient(to right, var(--background), transparent)'
+                : 'linear-gradient(to right, var(--secondary), transparent)',
+            }}
+          />
+          {/* Right edge fade */}
+          <div
+            className="pointer-events-none absolute inset-y-0 right-0 z-10 w-20"
+            style={{
+              background: withBackground
+                ? 'linear-gradient(to left, var(--background), transparent)'
+                : 'linear-gradient(to left, var(--secondary), transparent)',
+            }}
+          />
+
+          <MarqueeTrack items={CERTIFICATIONS} paused={paused} />
         </div>
       </div>
     </section>
