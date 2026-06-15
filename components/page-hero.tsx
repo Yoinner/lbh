@@ -28,7 +28,7 @@ export function PageHero({
           src={backgroundImage}
           alt=""
           fill
-          className="object-cover opacity-10"
+          className="object-contain opacity-[0.15]"
           priority
           aria-hidden="true"
         />

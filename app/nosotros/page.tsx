@@ -20,6 +20,7 @@ export default function NosotrosPage() {
         titleKey="about.title"
         leadKey="aboutpage.lead"
         crumbKey="nav.about"
+        backgroundImage="/lbh-logo.png"
       />
       <AboutValues />
       <TrustMetrics />
