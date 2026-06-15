@@ -7,7 +7,7 @@ const stats = [
   { value: '30+', key: 'network.countries' },
   { value: '120+', key: 'network.offices' },
   { value: '5', key: 'network.continents' },
-  { value: '24/7', key: 'network.coords' },
+  { value: 'Oportuna', key: 'network.coords' },
 ]
 
 export function Network() {

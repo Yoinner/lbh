@@ -1,10 +1,10 @@
 'use client'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { motion } from 'motion/react'
 import { ArrowRight, MessageCircle } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
-import { waLink, WA_MESSAGES } from '@/lib/config'
 
 const certs = ['BASC', 'TRACE', 'ISO', 'FITAC', 'AmCham']
 const ease = [0.22, 1, 0.36, 1] as const
@@ -70,15 +70,13 @@ export function Hero() {
             transition={{ duration: 0.7, delay: 0.28, ease }}
             className="mt-9 flex flex-wrap gap-3"
           >
-            <a
-              href={waLink(WA_MESSAGES.general)}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href="/contacto"
               className="group inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-[var(--ocean-deep)]"
             >
               <MessageCircle className="h-4 w-4" />
               {t('cta.quote')}
-            </a>
+            </Link>
             <a
               href="#servicios"
               className="group inline-flex items-center gap-2 rounded-md border border-border bg-card/70 px-6 py-3.5 text-sm font-semibold text-foreground backdrop-blur-sm transition-colors hover:border-primary/40 hover:text-primary"

@@ -23,7 +23,7 @@ const sections: LegalSection[] = [
     heading: 'Responsable del tratamiento',
     body: [
       'LBH Colombia S.A.S. actúa como Responsable del Tratamiento de los datos personales recolectados a través de su sitio web, formularios de contacto, canales de WhatsApp comercial, correo electrónico y demás puntos de contacto comercial.',
-      'Datos de contacto del Responsable: correo electrónico opz3@lbhcolombia.com, teléfono +57 301 791 2617, con domicilio en Barranquilla, Colombia.',
+      'Datos de contacto del Responsable: correo electrónico opz3@lbhcolombia.com, teléfono +57 317 579 8972, con domicilio en Barranquilla, Colombia.',
     ],
   },
   {

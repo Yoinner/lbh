@@ -97,7 +97,7 @@ export function LegalPage({
                 opz3@lbhcolombia.com
               </a>
               <br />
-              Teléfono / WhatsApp: +57 301 791 2617
+              Teléfono / WhatsApp: +57 317 579 8972
             </p>
           </div>
         </div>

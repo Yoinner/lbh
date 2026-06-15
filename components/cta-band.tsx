@@ -1,8 +1,9 @@
 'use client'
 
+import Link from 'next/link'
 import { MessageCircle, Phone } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
-import { SITE, waLink, WA_MESSAGES } from '@/lib/config'
+import { SITE } from '@/lib/config'
 import { Reveal } from './reveal'
 
 export function CtaBand() {
@@ -22,15 +23,13 @@ export function CtaBand() {
               </p>
             </div>
             <div className="flex flex-shrink-0 flex-wrap items-center justify-center gap-3">
-              <a
-                href={waLink(WA_MESSAGES.general)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contacto"
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
               >
                 <MessageCircle className="h-4 w-4" />
                 {t('cta.quote')}
-              </a>
+              </Link>
               <a
                 href={`tel:${SITE.phoneDisplay.replace(/\s/g, '')}`}
                 className="inline-flex items-center gap-2 rounded-md border border-border bg-card/60 px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/40"

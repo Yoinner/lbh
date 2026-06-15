@@ -9,7 +9,7 @@ const service = getService('agencia-maritima')!
 export const metadata: Metadata = {
   title: 'Agencia Marítima | LBH Colombia',
   description:
-    'Representación integral del buque ante autoridades portuarias, aduaneras y marítimas. Port clearance, practicaje, cuentas de desembolso y atención 24/7 en 7 puertos.',
+    'Representación integral del buque ante autoridades portuarias, aduaneras y marítimas. Port clearance, practicaje, cuentas de desembolso y acompañamiento operativo en 7 puertos.',
   alternates: { canonical: 'https://www.lbhcolombia.com/servicios/agencia-maritima' },
 }
 

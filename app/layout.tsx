@@ -70,9 +70,12 @@ const orgSchema = {
   logo: 'https://www.lbhcolombia.com/logo.png',
   foundingDate: '1994',
   areaServed: 'Colombia',
-  telephone: '+57-301-791-2617',
+  telephone: '+57-317-579-8972',
   email: 'opz3@lbhcolombia.com',
-  sameAs: ['https://instagram.com/lbhcolombia'],
+  sameAs: [
+    'https://www.instagram.com/lbhcolombia',
+    'https://www.linkedin.com/company/lbh-colombia-s-a-s-ship-agency',
+  ],
   address: {
     '@type': 'PostalAddress',
     addressCountry: 'CO',
