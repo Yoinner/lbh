@@ -153,7 +153,7 @@ export const dict: Dict = {
   },
   'process.subtitle': {
     es: 'Cada operación sigue un protocolo de precisión que protege los intereses del armador en cada fase de la estadía en puerto.',
-    en: 'Every operation follows a precision protocol that protects the shipowner's interests at every phase of the port stay.',
+    en: "Every operation follows a precision protocol that protects the shipowner's interests at every phase of the port stay.",
   },
   'process.s1.title': { es: 'Arribo', en: 'Arrival' },
   'process.s1.desc': {
