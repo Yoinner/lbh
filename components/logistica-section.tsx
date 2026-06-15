@@ -276,7 +276,7 @@ export function LogisticaSection() {
       </section>
 
       {/* ── Bloque 4: Logística Integral Especializada ────── */}
-      <section className="bg-secondary/30 py-20 lg:py-24">
+      <section className="bg-secondary/30 py-20 pb-0 lg:py-24">
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -307,18 +307,7 @@ export function LogisticaSection() {
                 ))}
               </ul>
             </div>
-            <Reveal delay={0.1}>
-              <div className="relative overflow-hidden rounded-2xl border border-border shadow-sm">
-                <Image
-                  src="/logistica/equipo-logistica-1.jpg"
-                  alt="Equipo LBH Colombia — Directivos y comerciales"
-                  width={1440}
-                  height={810}
-                  className="w-full object-cover"
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-            </Reveal>
+
           </div>
         </div>
       </section>
