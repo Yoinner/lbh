@@ -49,7 +49,7 @@ const ports: Port[] = [
     contact: {
       code: 'OPZ1',
       address: 'Carrera 51B #76-136, Of. 607, Edif. La Previsora',
-      phones: ['+57 5 3859187', '+57 5 3457037'],
+      phones: ['+57 605 3859287'],
       email: 'opz1@lbhcolombia.com',
     },
     type: 'port',
@@ -64,7 +64,7 @@ const ports: Port[] = [
     contact: {
       code: 'OPZ3',
       address: 'Manga Av California # 26-64',
-      phones: ['+57 5 6935041', '+57 5 6686955'],
+      phones: ['+57 5 6935041'],
       email: 'opz3@lbhcolombia.com',
     },
     type: 'port',
@@ -79,7 +79,7 @@ const ports: Port[] = [
     contact: {
       code: 'OPZ2',
       address: 'Carrera 4 # 26 - 40 Of. 405, CC Prado Plaza',
-      phones: ['+57 5 4368124', '+57 5 4205072'],
+      phones: ['+57 5 4368124'],
       email: 'opz2@lbhcolombia.com',
     },
     type: 'port',
@@ -87,13 +87,14 @@ const ports: Port[] = [
   },
   {
     id: 'covenas',
-    name: 'Coveñas',
+    name: 'Coveñas / Tolú',
     coordinates: [-75.69, 9.4],
     coast: 'caribbean',
     cargo: { es: 'Crudo · Terminal petrolera', en: 'Crude oil · Oil terminal' },
     contact: {
       code: 'OPZ3',
       address: 'Cra 3ra # 3-13, Edif. Socaire Urb. Alicante 2da Etapa, Apto 201',
+      phones: ['+57 5 6935041'],
       email: 'opz3@lbhcolombia.com',
     },
     type: 'port',
@@ -108,7 +109,7 @@ const ports: Port[] = [
     contact: {
       code: 'OPZ1',
       address: 'Carrera 51B #76-136, Of. 607, Edif. La Previsora',
-      phones: ['+57 5 3859187', '+57 5 3457037'],
+      phones: ['+57 605 3859287'],
       email: 'opz1@lbhcolombia.com',
     },
     type: 'port',
@@ -122,11 +123,11 @@ const ports: Port[] = [
     cargo: { es: 'Banano · Carga proyecto', en: 'Banana · Project cargo' },
     contact: {
       code: 'OPZ5',
-      address: 'Cra 100 # 43-770 Lt 101B Oficina 202 Zona Franca Permanente Urabá, Apartadó',
+      address: 'Cr. 100 con Cl. 89 Nueva Milla de Oro de Apartadó, Centro Empresarial Santa María Oficina 326',
       email: 'opz5-uraba@lbhcolombia.com',
     },
     type: 'port',
-    mapsQuery: 'Cra 100 #43-770 Lt 101B Oficina 202 Zona Franca Permanente Urabá, Apartadó, Antioquia, Colombia',
+    mapsQuery: 'Cr. 100 con Cl. 89 Nueva Milla de Oro de Apartadó, Centro Empresarial Santa María Oficina 326, Apartadó, Antioquia, Colombia',
   },
   {
     id: 'buenaventura',
@@ -152,7 +153,7 @@ const ports: Port[] = [
     contact: {
       code: 'OPZ2',
       address: 'Calle 14G # 21A - 05, Barrio Cooperativo',
-      phones: ['+57 315 8984080'],
+      phones: ['+57 5 4368124'],
       email: 'opz2@lbhcolombia.com',
     },
     type: 'port',
