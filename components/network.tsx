@@ -28,7 +28,7 @@ export function Network() {
         <div className="mx-auto grid max-w-4xl grid-cols-2 gap-px overflow-hidden rounded-2xl border border-border bg-border lg:grid-cols-4">
           {stats.map((s, i) => (
             <Reveal key={s.key} delay={i * 0.08} className="bg-card/80 p-7 text-center backdrop-blur-sm">
-              <div className="font-heading text-4xl font-bold text-primary lg:text-5xl">
+              <div className="font-heading text-[28px] font-bold text-primary lg:text-4xl">
                 {s.value}
               </div>
               <div className="mt-2 text-sm text-muted-foreground">{t(s.key)}</div>
