@@ -46,7 +46,7 @@ export function ServiceDetail({ service }: { service: ServiceDef }) {
               </ul>
               <Reveal delay={0.5}>
                 <a
-                  href={waLink(WA_MESSAGES[service.waKey])}
+                  href={waLink(WA_MESSAGES.advisor, service.whatsappNumber)}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="mt-9 inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-colors hover:bg-[var(--ocean-deep)]"

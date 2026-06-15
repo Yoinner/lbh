@@ -13,6 +13,10 @@ export interface ServiceDef {
   benefitKeys: string[]
   image: string
   iconName: ServiceIconName
+  /** wa.me number for this service's dedicated WhatsApp line */
+  whatsappNumber: string
+  /** Human-readable phone display for this service */
+  whatsappDisplay: string
 }
 
 export const SERVICES: ServiceDef[] = [
@@ -25,6 +29,8 @@ export const SERVICES: ServiceDef[] = [
     benefitKeys: ['sd.agency.b1', 'sd.agency.b2', 'sd.agency.b3', 'sd.agency.b4', 'sd.agency.b5'],
     image: '/service-agency.png',
     iconName: 'agency',
+    whatsappNumber: '573157457075',
+    whatsappDisplay: '+57 315 745 7075',
   },
   {
     slug: 'logistica',
@@ -35,6 +41,8 @@ export const SERVICES: ServiceDef[] = [
     benefitKeys: ['sd.logistics.b1', 'sd.logistics.b2', 'sd.logistics.b3', 'sd.logistics.b4', 'sd.logistics.b5'],
     image: '/service-logistics.png',
     iconName: 'logistics',
+    whatsappNumber: '573165295744',
+    whatsappDisplay: '+57 316 529 5744',
   },
   {
     slug: 'operaciones-portuarias',
@@ -45,6 +53,8 @@ export const SERVICES: ServiceDef[] = [
     benefitKeys: ['sd.port.b1', 'sd.port.b2', 'sd.port.b3', 'sd.port.b4', 'sd.port.b5'],
     image: '/service-port.png',
     iconName: 'port',
+    whatsappNumber: '573158984080',
+    whatsappDisplay: '+57 315 898 4080',
   },
   {
     slug: 'aduanas',
@@ -55,6 +65,8 @@ export const SERVICES: ServiceDef[] = [
     benefitKeys: ['sd.customs.b1', 'sd.customs.b2', 'sd.customs.b3', 'sd.customs.b4', 'sd.customs.b5'],
     image: '/service-customs.png',
     iconName: 'customs',
+    whatsappNumber: '573183627911',
+    whatsappDisplay: '+57 318 362 7911',
   },
   {
     slug: 'husbandry-services',
@@ -72,6 +84,8 @@ export const SERVICES: ServiceDef[] = [
     ],
     image: '/service-husbandry.png',
     iconName: 'husbandry',
+    whatsappNumber: '573160104325',
+    whatsappDisplay: '+57 316 010 4325',
   },
 ]
 

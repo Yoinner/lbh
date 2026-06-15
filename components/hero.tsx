@@ -71,7 +71,7 @@ export function Hero() {
             className="mt-9 flex flex-wrap gap-3"
           >
             <a
-              href={waLink(WA_MESSAGES.quote)}
+              href={waLink(WA_MESSAGES.general)}
               target="_blank"
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground shadow-sm transition-colors hover:bg-[var(--ocean-deep)]"
