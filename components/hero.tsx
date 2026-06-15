@@ -6,7 +6,6 @@ import { motion } from 'motion/react'
 import { ArrowRight, MessageCircle } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 
-const certs = ['BASC', 'TRACE', 'ISO', 'FITAC', 'AmCham']
 const ease = [0.22, 1, 0.36, 1] as const
 
 export function Hero() {
@@ -86,27 +85,7 @@ export function Hero() {
             </a>
           </motion.div>
 
-          {/* Trust strip — flat, no nested cards */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 0.45 }}
-            className="mt-12 border-t border-border/70 pt-6 text-center"
-          >
-            <p className="mb-3 text-[0.65rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-              {t('certs.activeLabel')}
-            </p>
-            <div className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2">
-              {certs.map((c) => (
-                <span
-                  key={c}
-                  className="text-sm font-bold tracking-wide text-foreground/65"
-                >
-                  {c}
-                </span>
-              ))}
-            </div>
-          </motion.div>
+
         </div>
       </div>
     </section>
