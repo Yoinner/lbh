@@ -303,28 +303,28 @@ export const dict: Dict = {
   },
   'sector.bulk': { es: 'Carga a Granel', en: 'Bulk Cargo' },
   'sector.bulk.desc': {
-    es: 'Granel seco y líquido con supervisión especializada.',
-    en: 'Dry and liquid bulk with specialized supervision.',
+    es: 'Operaciones para granel seco y líquido con coordinación portuaria especializada.',
+    en: 'Dry and liquid bulk operations with specialized port coordination.',
   },
   'sector.project': { es: 'Carga Proyecto', en: 'Project Cargo' },
   'sector.project.desc': {
-    es: 'Piezas de gran dimensión, OOG y breakbulk.',
-    en: 'Oversized pieces, OOG and breakbulk.',
+    es: 'Coordinación para carga sobredimensionada, breakbulk y proyectos especiales.',
+    en: 'Coordination for oversized cargo, breakbulk and special projects.',
   },
   'sector.tankers': { es: 'Tanqueros', en: 'Tankers' },
   'sector.tankers.desc': {
-    es: 'Operaciones de hidrocarburos y químicos.',
-    en: 'Hydrocarbon and chemical operations.',
+    es: 'Soporte para operaciones de líquidos, combustibles y carga especializada.',
+    en: 'Support for liquid, fuel and specialized cargo operations.',
   },
   'sector.containers': { es: 'Contenedores', en: 'Containers' },
   'sector.containers.desc': {
-    es: 'Coordinación de líneas y terminales.',
-    en: 'Line and terminal coordination.',
+    es: 'Atención a líneas, operadores y carga contenerizada en puertos estratégicos.',
+    en: 'Service for lines, operators and containerized cargo at strategic ports.',
   },
   'sector.offshore': { es: 'Offshore', en: 'Offshore' },
   'sector.offshore.desc': {
-    es: 'Apoyo a operaciones costa afuera.',
-    en: 'Support for offshore operations.',
+    es: 'Apoyo logístico y marítimo para operaciones offshore y servicios especializados.',
+    en: 'Logistical and maritime support for offshore operations and specialized services.',
   },
   'sector.cruise': { es: 'Cruceros', en: 'Cruise' },
   'sector.cruise.desc': {
@@ -568,6 +568,17 @@ export const dict: Dict = {
   'clients.subtitle': {
     es: 'Atendemos a los segmentos más exigentes de la industria marítima y de comercio exterior.',
     en: 'We serve the most demanding segments of the maritime and foreign trade industry.',
+  },
+
+  // Team marquee
+  'team.eyebrow': { es: 'Nuestro Equipo', en: 'Our Team' },
+  'team.title': {
+    es: 'El equipo detrás de cada operación',
+    en: 'The team behind every operation',
+  },
+  'team.subtitle': {
+    es: 'Profesionales comerciales, operativos y logísticos coordinando soluciones marítimas en los principales puertos de Colombia.',
+    en: 'Commercial, operational and logistics professionals coordinating maritime solutions across Colombia\'s main ports.',
   },
 
   // Final CTA band

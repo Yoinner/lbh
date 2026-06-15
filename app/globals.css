@@ -207,6 +207,25 @@
   }
 }
 
+/* Team images marquee */
+@keyframes lbh-team-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.lbh-team-track {
+  display: flex;
+  width: max-content;
+  animation: lbh-team-marquee 30s linear infinite;
+}
+.lbh-team-pause:hover .lbh-team-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lbh-team-track {
+    animation: none;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

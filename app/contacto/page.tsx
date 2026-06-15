@@ -20,6 +20,7 @@ export default function ContactoPage() {
         leadKey="contactpage.lead"
         crumbKey="nav.contact"
         backgroundImage="/contact-hero-bg.png"
+        backgroundImageMode="cover"
       />
       <Suspense fallback={null}>
         <ContactForm />

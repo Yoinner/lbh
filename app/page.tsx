@@ -5,6 +5,7 @@ import { FleetShowcase } from '@/components/fleet-showcase'
 import { WhyLbh } from '@/components/why-lbh'
 import { OperationsMap } from '@/components/operations-map'
 import { Clients } from '@/components/clients'
+import { TeamMarquee } from '@/components/team-marquee'
 import { CertificationsMarquee } from '@/components/certifications-marquee'
 import { TrustMetrics } from '@/components/trust-metrics'
 import { ContactForm } from '@/components/contact-form'
@@ -24,6 +25,7 @@ export default function Page() {
       <WhyLbh />
       <OperationsMap />
       <Clients />
+      <TeamMarquee />
       <TrustMetrics />
       <Suspense fallback={null}>
         <ContactForm />

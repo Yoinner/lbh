@@ -1,16 +1,40 @@
 'use client'
 
-import { Box, Container, Fuel, Package, Anchor, Ship } from 'lucide-react'
+import Image from 'next/image'
 import { useI18n } from '@/lib/i18n'
 import { Reveal, SectionHeader } from './reveal'
 
 const segments = [
-  { icon: Box, key: 'sector.bulk' },
-  { icon: Container, key: 'sector.containers' },
-  { icon: Fuel, key: 'sector.tankers' },
-  { icon: Package, key: 'sector.project' },
-  { icon: Anchor, key: 'sector.offshore' },
-  { icon: Ship, key: 'sector.cruise' },
+  {
+    titleKey: 'sector.bulk',
+    descKey: 'sector.bulk.desc',
+    image: '/sector-bulk.png',
+    alt: 'Buque granelero en terminal portuaria',
+  },
+  {
+    titleKey: 'sector.containers',
+    descKey: 'sector.containers.desc',
+    image: '/sector-container.png',
+    alt: 'Buque portacontenedores en puerto comercial',
+  },
+  {
+    titleKey: 'sector.tankers',
+    descKey: 'sector.tankers.desc',
+    image: '/sector-tanker.png',
+    alt: 'Buque tanquero en terminal marítima',
+  },
+  {
+    titleKey: 'sector.project',
+    descKey: 'sector.project.desc',
+    image: '/sector-project.png',
+    alt: 'Carga proyecto sobredimensionada en puerto',
+  },
+  {
+    titleKey: 'sector.offshore',
+    descKey: 'sector.offshore.desc',
+    image: '/sector-offshore.png',
+    alt: 'Embarcación offshore en operación marítima',
+  },
 ]
 
 export function Clients() {
@@ -26,18 +50,35 @@ export function Clients() {
           align="center"
         />
 
-        <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-          {segments.map((s, i) => {
-            const Icon = s.icon
-            return (
-              <Reveal key={s.key} delay={i * 0.06}>
-                <div className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card px-4 py-8 text-center transition-colors hover:border-primary/40">
-                  <Icon className="h-7 w-7 text-primary" />
-                  <span className="text-sm font-semibold text-foreground">{t(s.key)}</span>
+        <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-5">
+          {segments.map((s, i) => (
+            <Reveal key={s.titleKey} delay={i * 0.07}>
+              <div className="group relative overflow-hidden rounded-xl shadow-sm transition-shadow duration-300 hover:shadow-lg">
+                {/* Background image */}
+                <div className="relative h-52 w-full lg:h-56">
+                  <Image
+                    src={s.image}
+                    alt={s.alt}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 20vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  {/* Dark navy overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.18_0.055_250/0.92)] via-[oklch(0.24_0.055_250/0.65)] to-[oklch(0.24_0.055_250/0.25)]" />
                 </div>
-              </Reveal>
-            )
-          })}
+
+                {/* Text content pinned to bottom */}
+                <div className="absolute inset-0 flex flex-col justify-end p-5">
+                  <h3 className="font-heading text-base font-bold leading-tight text-white">
+                    {t(s.titleKey)}
+                  </h3>
+                  <p className="mt-1.5 text-[0.78rem] leading-snug text-white/75">
+                    {t(s.descKey)}
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>
