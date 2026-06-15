@@ -337,7 +337,7 @@ export function LogisticaSection() {
               <div className="group overflow-hidden rounded-2xl border border-border shadow-sm transition-shadow hover:shadow-md">
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <Image
-                    src="/logistica/equipo-logistica-1.jpg"
+                    src="/logistica/equipo-lbhh-1.jpg"
                     alt="Equipo directivo y comercial de LBH Colombia"
                     fill
                     sizes="(max-width: 640px) 100vw, 50vw"
@@ -363,7 +363,7 @@ export function LogisticaSection() {
               <div className="group overflow-hidden rounded-2xl border border-border shadow-sm transition-shadow hover:shadow-md">
                 <div className="relative aspect-[16/9] overflow-hidden">
                   <Image
-                    src="/logistica/equipo-logistica-2.jpg"
+                    src="/logistica/equipo-lbhh-2.jpg"
                     alt="Equipo gerentes operativos de LBH Colombia"
                     fill
                     sizes="(max-width: 640px) 100vw, 50vw"
