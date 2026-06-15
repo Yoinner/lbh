@@ -74,32 +74,35 @@ export function AboutValues() {
 
   return (
     <section className="relative py-24 lg:py-28">
-      {/* ── Logo watermark ── */}
-      <div
-        className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
-        aria-hidden="true"
-      >
-        <Image
-          src="/lbh-logo.png"
-          alt=""
-          width={680}
-          height={340}
-          className="w-[500px] max-w-[70vw] select-none object-contain opacity-[0.045] dark:opacity-[0.06]"
-          draggable={false}
-          priority={false}
-        />
-      </div>
-
       <div className="relative mx-auto max-w-[1280px] px-5 md:px-8">
-        {/* Intro paragraph */}
-        <Reveal>
-          <p className="max-w-3xl text-pretty text-lg leading-relaxed text-foreground/80">
-            {t('about.body')}
-          </p>
-        </Reveal>
 
-        {/* Mission / Vision */}
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
+        {/* ── First info block: intro + Mission/Vision with logo watermark ── */}
+        <div className="relative">
+          {/* Logo watermark — scoped to this block only */}
+          <div
+            className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
+            aria-hidden="true"
+          >
+            <Image
+              src="/lbh-logo.png"
+              alt=""
+              width={700}
+              height={700}
+              className="w-[520px] max-w-[80vw] select-none object-contain opacity-[0.07]"
+              draggable={false}
+              priority={false}
+            />
+          </div>
+
+          {/* Intro paragraph */}
+          <Reveal>
+            <p className="relative max-w-3xl text-pretty text-lg leading-relaxed text-foreground/80">
+              {t('about.body')}
+            </p>
+          </Reveal>
+
+          {/* Mission / Vision */}
+          <div className="relative mt-16 grid gap-6 md:grid-cols-2">
           {/* Misión */}
           <TiltCard delay={0} className="group">
             <div className="flex h-full flex-col rounded-2xl border border-border bg-card/80 p-8 backdrop-blur-sm">
@@ -140,7 +143,8 @@ export function AboutValues() {
               </p>
             </div>
           </TiltCard>
-        </div>
+          </div>{/* end Mission/Vision grid */}
+        </div>{/* end first info block */}
 
         {/* Pillars */}
         <div className="mt-6 grid gap-6 md:grid-cols-3">
