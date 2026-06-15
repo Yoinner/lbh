@@ -7,11 +7,12 @@ import { usePathname } from 'next/navigation'
 import { Menu, X, ChevronDown, MessageCircle } from 'lucide-react'
 import { motion, AnimatePresence } from 'motion/react'
 import { InstagramIcon } from './icons/instagram-icon'
+import { LinkedInIcon } from './icons/linkedin-icon'
 import { useI18n } from '@/lib/i18n'
 import { LangToggle } from './lang-toggle'
 import { SERVICES } from '@/lib/services'
 import { ServiceIcon } from './icons/service-icon'
-import { SITE, waLink, WA_MESSAGES } from '@/lib/config'
+import { SITE } from '@/lib/config'
 
 export function Navbar() {
   const { t } = useI18n()
@@ -176,16 +177,23 @@ export function Navbar() {
           >
             <InstagramIcon className="h-[18px] w-[18px]" />
           </a>
-          <LangToggle />
           <a
-            href={waLink(WA_MESSAGES.quote)}
+            href={SITE.linkedinUrl}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="LinkedIn de LBH Colombia"
+            className="hidden h-9 w-9 items-center justify-center rounded-md border border-border text-foreground/70 transition-colors hover:border-primary hover:text-primary sm:flex"
+          >
+            <LinkedInIcon className="h-[18px] w-[18px]" />
+          </a>
+          <LangToggle />
+          <Link
+            href="/contacto"
             className="hidden items-center gap-1.5 rounded-md bg-primary px-4 py-2 text-[0.8rem] font-semibold text-primary-foreground transition-colors hover:bg-[var(--ocean-deep)] sm:inline-flex"
           >
             <MessageCircle className="h-4 w-4" />
             {t('cta.quote')}
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -260,26 +268,35 @@ export function Navbar() {
                 {t('nav.contact')}
               </Link>
 
-              <a
-                href={waLink(WA_MESSAGES.quote)}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/contacto"
                 className="mt-4 flex items-center justify-center gap-2 rounded-md bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
               >
                 <MessageCircle className="h-4 w-4" />
                 {t('cta.quote')}
-              </a>
+              </Link>
               <div className="mt-4 flex items-center justify-between">
                 <LangToggle variant="mobile" />
-                <a
-                  href={SITE.instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label="Instagram"
-                  className="flex items-center gap-2 text-sm font-medium text-foreground/70"
-                >
-                  <InstagramIcon className="h-5 w-5" />@{SITE.instagram}
-                </a>
+                <div className="flex items-center gap-3">
+                  <a
+                    href={SITE.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Instagram de LBH Colombia"
+                    className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground/70 transition-colors hover:border-primary hover:text-primary"
+                  >
+                    <InstagramIcon className="h-5 w-5" />
+                  </a>
+                  <a
+                    href={SITE.linkedinUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="LinkedIn de LBH Colombia"
+                    className="flex h-9 w-9 items-center justify-center rounded-md border border-border text-foreground/70 transition-colors hover:border-primary hover:text-primary"
+                  >
+                    <LinkedInIcon className="h-5 w-5" />
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

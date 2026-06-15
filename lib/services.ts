@@ -2,7 +2,7 @@
 // ServiceDef objects remain fully serializable when passed from Server
 // Components to Client Components. Resolve the icon via `iconMap` inside a
 // Client Component using the `iconName` field.
-export type ServiceIconName = 'agency' | 'logistics' | 'port' | 'customs'
+export type ServiceIconName = 'agency' | 'logistics' | 'port' | 'customs' | 'husbandry'
 
 export interface ServiceDef {
   slug: string
@@ -13,7 +13,6 @@ export interface ServiceDef {
   benefitKeys: string[]
   image: string
   iconName: ServiceIconName
-  waKey: 'agency' | 'logistics' | 'port' | 'customs'
 }
 
 export const SERVICES: ServiceDef[] = [
@@ -26,7 +25,6 @@ export const SERVICES: ServiceDef[] = [
     benefitKeys: ['sd.agency.b1', 'sd.agency.b2', 'sd.agency.b3', 'sd.agency.b4', 'sd.agency.b5'],
     image: '/service-agency.png',
     iconName: 'agency',
-    waKey: 'agency',
   },
   {
     slug: 'logistica',
@@ -37,7 +35,6 @@ export const SERVICES: ServiceDef[] = [
     benefitKeys: ['sd.logistics.b1', 'sd.logistics.b2', 'sd.logistics.b3', 'sd.logistics.b4', 'sd.logistics.b5'],
     image: '/service-logistics.png',
     iconName: 'logistics',
-    waKey: 'logistics',
   },
   {
     slug: 'operaciones-portuarias',
@@ -48,7 +45,6 @@ export const SERVICES: ServiceDef[] = [
     benefitKeys: ['sd.port.b1', 'sd.port.b2', 'sd.port.b3', 'sd.port.b4', 'sd.port.b5'],
     image: '/service-port.png',
     iconName: 'port',
-    waKey: 'port',
   },
   {
     slug: 'aduanas',
@@ -59,7 +55,23 @@ export const SERVICES: ServiceDef[] = [
     benefitKeys: ['sd.customs.b1', 'sd.customs.b2', 'sd.customs.b3', 'sd.customs.b4', 'sd.customs.b5'],
     image: '/service-customs.png',
     iconName: 'customs',
-    waKey: 'customs',
+  },
+  {
+    slug: 'husbandry-services',
+    href: '/servicios/husbandry-services',
+    labelKey: 'route.husbandry',
+    shortKey: 'route.husbandry.short',
+    leadKey: 'sd.husbandry.lead',
+    benefitKeys: [
+      'sd.husbandry.b1',
+      'sd.husbandry.b2',
+      'sd.husbandry.b3',
+      'sd.husbandry.b4',
+      'sd.husbandry.b5',
+      'sd.husbandry.b6',
+    ],
+    image: '/service-husbandry.png',
+    iconName: 'husbandry',
   },
 ]
 

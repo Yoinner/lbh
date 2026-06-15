@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { AboutValues } from '@/components/about-values'
 import { TrustMetrics } from '@/components/trust-metrics'
-import { Certifications } from '@/components/certifications'
+import { CertificationsMarquee } from '@/components/certifications-marquee'
 import { CtaBand } from '@/components/cta-band'
 
 export const metadata: Metadata = {
@@ -23,7 +23,12 @@ export default function NosotrosPage() {
       />
       <AboutValues />
       <TrustMetrics />
-      <Certifications />
+      <CertificationsMarquee
+        withBackground
+        eyebrowKey="certs.activeLabel"
+        titleKey="certs.title"
+        subtitleKey="certs.subtitle"
+      />
       <CtaBand />
     </>
   )

@@ -1,10 +1,11 @@
 'use client'
 
-import { useState, type FormEvent } from 'react'
+import { useEffect, useState, type FormEvent } from 'react'
+import { useSearchParams } from 'next/navigation'
 import { MessageCircle, Send } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
 import { SERVICES } from '@/lib/services'
-import { waLink, composeFormMessage, type FormPayload } from '@/lib/config'
+import { waLink, whatsappForService, composeFormMessage, type FormPayload } from '@/lib/config'
 import { Reveal, SectionHeader } from './reveal'
 
 const EMPTY: FormPayload = {
@@ -18,8 +19,17 @@ const EMPTY: FormPayload = {
 
 export function ContactForm() {
   const { t } = useI18n()
+  const searchParams = useSearchParams()
   const [data, setData] = useState<FormPayload>(EMPTY)
   const [errors, setErrors] = useState<Record<string, boolean>>({})
+
+  // Preselect the service from ?servicio=<slug> (e.g. /contacto?servicio=logistica)
+  useEffect(() => {
+    const servicio = searchParams.get('servicio')
+    if (servicio && SERVICES.some((s) => s.slug === servicio)) {
+      setData((d) => ({ ...d, servicio }))
+    }
+  }, [searchParams])
 
   const set = (k: keyof FormPayload, v: string) => {
     setData((d) => ({ ...d, [k]: v }))
@@ -36,7 +46,10 @@ export function ContactForm() {
     setErrors(next)
     if (Object.keys(next).length > 0) return
 
-    const url = waLink(composeFormMessage(data))
+    const selected = SERVICES.find((s) => s.slug === data.servicio)
+    const servicioLabel = selected ? t(selected.labelKey) : data.servicio
+    const number = whatsappForService(data.servicio)
+    const url = waLink(composeFormMessage(data, servicioLabel), number)
     window.open(url, '_blank', 'noopener,noreferrer')
   }
 
@@ -146,7 +159,7 @@ export function ContactForm() {
                     {t('form.servicePlaceholder')}
                   </option>
                   {SERVICES.map((s) => (
-                    <option key={s.slug} value={t(s.labelKey)}>
+                    <option key={s.slug} value={s.slug}>
                       {t(s.labelKey)}
                     </option>
                   ))}

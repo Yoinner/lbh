@@ -188,6 +188,25 @@
   animation: blink 2s ease-in-out infinite;
 }
 
+/* Certification logos marquee */
+@keyframes lbh-marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.lbh-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: lbh-marquee 34s linear infinite;
+}
+.lbh-marquee-pause:hover .lbh-marquee-track {
+  animation-play-state: paused;
+}
+@media (prefers-reduced-motion: reduce) {
+  .lbh-marquee-track {
+    animation: none;
+  }
+}
+
 ::-webkit-scrollbar {
   width: 10px;
   height: 10px;

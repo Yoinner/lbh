@@ -1,4 +1,4 @@
-import { Anchor, Boxes, Ship, FileCheck, type LucideProps } from 'lucide-react'
+import { Anchor, Boxes, Ship, FileCheck, Users, type LucideProps } from 'lucide-react'
 import type { ServiceIconName } from '@/lib/services'
 
 const iconMap: Record<ServiceIconName, React.ComponentType<LucideProps>> = {
@@ -6,6 +6,7 @@ const iconMap: Record<ServiceIconName, React.ComponentType<LucideProps>> = {
   logistics: Boxes,
   port: Ship,
   customs: FileCheck,
+  husbandry: Users,
 }
 
 /**

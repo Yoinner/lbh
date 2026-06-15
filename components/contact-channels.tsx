@@ -1,7 +1,8 @@
 'use client'
 
-import { MessageCircle, Phone, Mail, Siren } from 'lucide-react'
+import { MessageCircle, Mail } from 'lucide-react'
 import { InstagramIcon } from './icons/instagram-icon'
+import { LinkedInIcon } from './icons/linkedin-icon'
 import { useI18n } from '@/lib/i18n'
 import { SITE, waLink, WA_MESSAGES } from '@/lib/config'
 import { Reveal } from './reveal'
@@ -16,24 +17,25 @@ export function ContactChannels() {
       value: SITE.phoneDisplay,
       href: waLink(WA_MESSAGES.general),
       external: true,
-    },
-    {
-      icon: Phone,
-      label: t('contactpage.phone'),
-      value: SITE.phoneDisplay,
-      href: `tel:+${SITE.whatsappNumber}`,
+      ariaLabel: 'WhatsApp de LBH Colombia',
     },
     {
       icon: Mail,
-      label: t('contactpage.email'),
-      value: SITE.email,
-      href: `mailto:${SITE.email}`,
+      label: t('contactpage.emailMarketing'),
+      value: SITE.emailMarketing,
+      href: `mailto:${SITE.emailMarketing}`,
     },
     {
-      icon: Siren,
-      label: t('contactpage.emergency'),
-      value: SITE.emergencyPhone,
-      href: `tel:${SITE.emergencyPhone.replace(/\s/g, '')}`,
+      icon: Mail,
+      label: t('contactpage.emailLogistica'),
+      value: SITE.emailLogistica,
+      href: `mailto:${SITE.emailLogistica}`,
+    },
+    {
+      icon: Mail,
+      label: t('contactpage.emailOps'),
+      value: SITE.email,
+      href: `mailto:${SITE.email}`,
     },
     {
       icon: InstagramIcon,
@@ -41,6 +43,15 @@ export function ContactChannels() {
       value: `@${SITE.instagram}`,
       href: SITE.instagramUrl,
       external: true,
+      ariaLabel: 'Instagram de LBH Colombia',
+    },
+    {
+      icon: LinkedInIcon,
+      label: 'LinkedIn',
+      value: 'LBH Colombia',
+      href: SITE.linkedinUrl,
+      external: true,
+      ariaLabel: 'LinkedIn de LBH Colombia',
     },
   ]
 
@@ -52,7 +63,7 @@ export function ContactChannels() {
             {t('contactpage.channels')}
           </p>
         </Reveal>
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {channels.map((c, i) => {
             const Icon = c.icon
             return (
@@ -60,6 +71,7 @@ export function ContactChannels() {
                 <a
                   href={c.href}
                   {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  {...(c.ariaLabel ? { 'aria-label': c.ariaLabel } : {})}
                   className="flex h-full flex-col gap-3 rounded-xl border border-border bg-card p-5 transition-colors hover:border-primary/40"
                 >
                   <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/12 text-primary">

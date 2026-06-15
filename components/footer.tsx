@@ -2,8 +2,9 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Phone, Mail, MessageCircle } from 'lucide-react'
+import { Mail, MessageCircle } from 'lucide-react'
 import { InstagramIcon } from './icons/instagram-icon'
+import { LinkedInIcon } from './icons/linkedin-icon'
 import { useI18n } from '@/lib/i18n'
 import { SERVICES, NAV_LINKS } from '@/lib/services'
 import { SITE, waLink, WA_MESSAGES } from '@/lib/config'
@@ -44,25 +45,32 @@ export function Footer() {
             {t('footer.about')}
           </p>
           <div className="mt-6 space-y-2.5">
-            <a href={`tel:+${SITE.whatsappNumber}`} className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
-              <Phone className="h-3.5 w-3.5" /> {SITE.phoneDisplay}
+            <a
+              href={waLink(WA_MESSAGES.general)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp de LBH Colombia"
+              className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground"
+            >
+              <MessageCircle className="h-3.5 w-3.5" /> {SITE.phoneDisplay}
             </a>
             <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
               <Mail className="h-3.5 w-3.5" /> {SITE.email}
             </a>
-            <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
+            <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram de LBH Colombia" className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
               <InstagramIcon className="h-3.5 w-3.5" /> @{SITE.instagram}
             </a>
+            <a href={SITE.linkedinUrl} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn de LBH Colombia" className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
+              <LinkedInIcon className="h-3.5 w-3.5" /> {SITE.linkedin}
+            </a>
           </div>
-          <a
-            href={waLink(WA_MESSAGES.advisor)}
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            href="/contacto"
             className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
             <MessageCircle className="h-4 w-4" />
-            {t('cta.whatsapp')}
-          </a>
+            {t('cta.advisor')}
+          </Link>
         </div>
 
         <div>

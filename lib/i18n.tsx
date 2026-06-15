@@ -40,8 +40,8 @@ export const dict: Dict = {
     en: 'Across Colombian Ports',
   },
   'hero.desc': {
-    es: '30 años coordinando operaciones navieras de alta complejidad. 7 puertos estratégicos. Red LBH en 30+ países. Certificaciones BASC y TRACE. Disponibilidad total 24/7.',
-    en: '30 years coordinating complex maritime operations. 7 strategic ports. LBH network across 30+ countries. BASC and TRACE certified. Full 24/7 availability.',
+    es: '30 años coordinando operaciones navieras de alta complejidad. 7 puertos estratégicos. Red LBH en 30+ países. Certificaciones BASC y TRACE. Respuesta ágil y acompañamiento operativo.',
+    en: '30 years coordinating complex maritime operations. 7 strategic ports. LBH network across 30+ countries. BASC and TRACE certified. Agile response and operational support.',
   },
   'hero.ctaPrimary': {
     es: 'Solicitar Consultoría',
@@ -111,8 +111,8 @@ export const dict: Dict = {
     en: 'Cash to master (CTM)',
   },
   'svc.husbandry.f4': {
-    es: 'Asistencia médica 24/7',
-    en: 'Medical assistance 24/7',
+    es: 'Coordinación médica y bienestar',
+    en: 'Medical coordination & welfare',
   },
 
   'svc.freight.title': { es: 'Agente de Carga', en: 'Freight Forwarding' },
@@ -202,9 +202,9 @@ export const dict: Dict = {
     es: '7 puertos en ambas costas',
     en: '7 ports on both coasts',
   },
-  'why.r2.label': { es: 'Disponibilidad', en: 'Availability' },
+  'why.r2.label': { es: 'Acompañamiento', en: 'Support' },
   'why.r2.trad': { es: 'Horario de oficina', en: 'Office hours' },
-  'why.r2.lbh': { es: '24/7/365 garantizado', en: '24/7/365 guaranteed' },
+  'why.r2.lbh': { es: 'Acompañamiento operativo durante la escala', en: 'Operational support during the call' },
   'why.r3.label': { es: 'Cumplimiento', en: 'Compliance' },
   'why.r3.trad': { es: 'Sin certificaciones', en: 'No certifications' },
   'why.r3.lbh': { es: 'BASC · TRACE · ISO', en: 'BASC · TRACE · ISO' },
@@ -347,12 +347,12 @@ export const dict: Dict = {
     en: 'Maximum guarantee in secure commerce and anti-corruption compliance for international operations.',
   },
   'about.p2.title': {
-    es: 'Disponibilidad 24/7/365',
-    en: '24/7/365 availability',
+    es: 'Acompañamiento operativo',
+    en: 'Operational support',
   },
   'about.p2.desc': {
-    es: 'Equipo operacional activo en todos los puertos para respuesta inmediata ante cualquier contingencia.',
-    en: 'Operational team active at all ports for immediate response to any contingency.',
+    es: 'Equipo operacional presente en los puertos para acompañar y coordinar oportunamente cada fase de la operación.',
+    en: 'An operational team present at the ports to support and coordinate every phase of the operation in a timely manner.',
   },
   'about.p3.title': {
     es: 'Red LBH en 30+ países',
@@ -370,16 +370,16 @@ export const dict: Dict = {
     en: 'Is your vessel arriving at a Colombian port?',
   },
   'cta.body': {
-    es: 'Contáctenos ahora para una cotización inmediata o use AMANDA, nuestra asistente de inteligencia marítima disponible 24 horas.',
-    en: 'Contact us now for an immediate quote or use AMANDA, our maritime intelligence assistant available 24 hours.',
+    es: 'Cuéntenos los detalles de su operación y nuestro equipo canalizará su solicitud con el área correspondiente.',
+    en: 'Tell us the details of your operation and our team will channel your request to the right area.',
   },
   'cta.primary': {
-    es: 'Solicitar Cotización Ahora',
-    en: 'Request Quote Now',
+    es: 'Solicitar asesoría',
+    en: 'Request advisory',
   },
-  'cta.secondary': {
-    es: 'Línea de Emergencia 24/7',
-    en: 'Emergency Line 24/7',
+  'cta.requestAdvisory': {
+    es: 'Solicitar asesoría',
+    en: 'Request advisory',
   },
 
   // Footer
@@ -407,8 +407,12 @@ export const dict: Dict = {
   'footer.terms': { es: 'Términos de Uso', en: 'Terms of Use' },
 
   'certs.activeLabel': {
-    es: 'Certificaciones activas',
-    en: 'Active certifications',
+    es: 'Certificaciones y Membresías Activas',
+    en: 'Active Certifications & Memberships',
+  },
+  'certs.marqueeNote': {
+    es: 'Operamos bajo estándares de seguridad, transparencia y cumplimiento reconocidos por la industria.',
+    en: 'We operate under industry-recognized standards of security, transparency and compliance.',
   },
 
   // Nav routes
@@ -439,13 +443,18 @@ export const dict: Dict = {
     es: 'Despacho y cumplimiento normativo.',
     en: 'Clearance and regulatory compliance.',
   },
+  'route.husbandry': { es: 'Husbandry Services', en: 'Husbandry Services' },
+  'route.husbandry.short': {
+    es: 'Soporte integral a tripulación y buque durante la escala.',
+    en: 'Comprehensive crew and vessel support during the port call.',
+  },
 
   // Hero (simplified)
   'hero.h1.a': { es: 'Su buque en buenas manos', en: 'Your vessel in good hands' },
   'hero.h1.em': { es: 'en cualquier puerto de Colombia', en: 'at any port in Colombia' },
   'hero.lead': {
-    es: 'Agencia naviera con 30 años coordinando operaciones en los 7 puertos estratégicos del país. Respuesta 24/7.',
-    en: 'Ship agency with 30 years coordinating operations across Colombia’s 7 strategic ports. 24/7 response.',
+    es: 'Agencia naviera con 30 años coordinando operaciones en los 7 puertos estratégicos del país. Respuesta ágil y acompañamiento operativo.',
+    en: 'Ship agency with 30 years coordinating operations across Colombia’s 7 strategic ports. Agile response and operational support.',
   },
 
   // Global CTAs
@@ -539,12 +548,12 @@ export const dict: Dict = {
 
   // Final CTA band
   'band.title': {
-    es: '¿Su buque llega a un puerto colombiano?',
-    en: 'Is your vessel arriving at a Colombian port?',
+    es: '¿Su operación requiere coordinación marítima en Colombia?',
+    en: 'Does your operation require maritime coordination in Colombia?',
   },
   'band.subtitle': {
-    es: 'Cotización inmediata y atención 24/7. Hablemos por WhatsApp ahora.',
-    en: 'Immediate quote and 24/7 attention. Let’s talk on WhatsApp now.',
+    es: 'Cuéntenos los detalles de su operación y nuestro equipo canalizará su solicitud con el área correspondiente.',
+    en: 'Tell us the details of your operation and our team will channel your request to the right area.',
   },
 
   // About page
@@ -566,21 +575,23 @@ export const dict: Dict = {
 
   // Services index page
   'servicespage.lead': {
-    es: 'Cuatro líneas de servicio que cubren el ciclo completo de la operación marítima y logística.',
-    en: 'Four service lines covering the complete cycle of maritime and logistics operations.',
+    es: 'Cinco líneas de servicio que cubren el ciclo completo de la operación marítima, logística, portuaria, aduanera y de soporte a tripulación.',
+    en: 'Five service lines covering the complete cycle of maritime, logistics, port, customs and crew-support operations.',
   },
 
   // Contact page
   'contactpage.eyebrow': { es: 'Contacto', en: 'Contact' },
   'contactpage.lead': {
-    es: 'Estamos disponibles 24/7. Escríbanos y le respondemos de inmediato.',
-    en: 'We are available 24/7. Write to us and we’ll respond immediately.',
+    es: 'Comparta los detalles de su operación y nuestro equipo canalizará su solicitud con el área correspondiente.',
+    en: 'Share the details of your operation and our team will channel your request to the right area.',
   },
   'contactpage.channels': { es: 'Canales directos', en: 'Direct channels' },
   'contactpage.whatsapp': { es: 'WhatsApp', en: 'WhatsApp' },
   'contactpage.phone': { es: 'Teléfono', en: 'Phone' },
   'contactpage.email': { es: 'Correo', en: 'Email' },
-  'contactpage.emergency': { es: 'Emergencias 24/7', en: 'Emergencies 24/7' },
+  'contactpage.emailMarketing': { es: 'Marketing', en: 'Marketing' },
+  'contactpage.emailLogistica': { es: 'Logística', en: 'Logistics' },
+  'contactpage.emailOps': { es: 'Operación', en: 'Operations' },
 
   // Service detail generic
   'svcdetail.benefits': { es: 'Beneficios clave', en: 'Key benefits' },
@@ -598,7 +609,7 @@ export const dict: Dict = {
   'sd.agency.b2': { es: 'Coordinación de practicaje y remolcadores', en: 'Pilotage and towage coordination' },
   'sd.agency.b3': { es: 'Cuentas de desembolso transparentes', en: 'Transparent disbursement accounts' },
   'sd.agency.b4': { es: 'Gestión de aduana e inmigración', en: 'Customs and immigration management' },
-  'sd.agency.b5': { es: 'Atención 24/7 en los 7 puertos', en: '24/7 attention at all 7 ports' },
+  'sd.agency.b5': { es: 'Acompañamiento operativo en los 7 puertos', en: 'Operational support at all 7 ports' },
 
   // Logística detail
   'sd.logistics.lead': {
@@ -632,6 +643,24 @@ export const dict: Dict = {
   'sd.customs.b3': { es: 'Gestión documental certificada', en: 'Certified documentation management' },
   'sd.customs.b4': { es: 'Coordinación con DIAN y autoridades', en: 'Coordination with DIAN and authorities' },
   'sd.customs.b5': { es: 'Asesoría en regímenes especiales', en: 'Advice on special regimes' },
+
+  // Husbandry Services detail
+  'sd.husbandry.lead': {
+    es: 'Coordinamos servicios de soporte para el buque y su tripulación durante la estadía en puerto, integrando cambios de tripulación, transporte, provisiones, asistencia médica coordinada, efectivo al capitán y requerimientos operativos especiales.',
+    en: 'We coordinate support services for the vessel and its crew during the port stay, integrating crew changes, transportation, provisions, coordinated medical assistance, cash to master and special operational requirements.',
+  },
+  'sd.husbandry.b1': { es: 'Crew change management', en: 'Crew change management' },
+  'sd.husbandry.b2': { es: 'Provisiones y suministros', en: 'Provisions and supplies' },
+  'sd.husbandry.b3': { es: 'Cash to Master (CTM)', en: 'Cash to Master (CTM)' },
+  'sd.husbandry.b4': {
+    es: 'Transporte terrestre y hotelería para tripulación',
+    en: 'Ground transport and crew hotel arrangements',
+  },
+  'sd.husbandry.b5': { es: 'Coordinación médica y bienestar', en: 'Medical coordination and welfare' },
+  'sd.husbandry.b6': {
+    es: 'Gestión de repuestos, courier y requerimientos especiales',
+    en: 'Spare parts, courier and special requirements management',
+  },
 
   // Generic
   'common.backHome': { es: 'Volver al inicio', en: 'Back to home' },
