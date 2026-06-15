@@ -12,26 +12,37 @@ export function PageHero({
   leadKey,
   crumbKey,
   backgroundImage,
+  backgroundImageMode = 'contain',
 }: {
   eyebrowKey: string
   titleKey: string
   leadKey?: string
   crumbKey?: string
   backgroundImage?: string
+  backgroundImageMode?: 'contain' | 'cover'
 }) {
   const { t } = useI18n()
 
   return (
     <section className="relative overflow-hidden border-b border-border bg-secondary/30">
       {backgroundImage && (
-        <Image
-          src={backgroundImage}
-          alt=""
-          fill
-          className="object-contain opacity-[0.15]"
-          priority
-          aria-hidden="true"
-        />
+        <>
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            className={
+              backgroundImageMode === 'cover'
+                ? 'object-cover opacity-30'
+                : 'object-contain opacity-[0.15]'
+            }
+            priority
+            aria-hidden="true"
+          />
+          {backgroundImageMode === 'cover' && (
+            <div className="absolute inset-0 bg-gradient-to-r from-background/90 via-background/70 to-background/40" aria-hidden="true" />
+          )}
+        </>
       )}
       <div className="relative z-10 mx-auto max-w-[1280px] px-5 py-16 md:px-8 lg:py-20">
         {crumbKey && (
