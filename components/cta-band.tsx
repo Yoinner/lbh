@@ -23,7 +23,7 @@ export function CtaBand() {
             </div>
             <div className="flex flex-shrink-0 flex-wrap items-center justify-center gap-3">
               <a
-                href={waLink(WA_MESSAGES.quote)}
+                href={waLink(WA_MESSAGES.general)}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
@@ -32,7 +32,7 @@ export function CtaBand() {
                 {t('cta.quote')}
               </a>
               <a
-                href={`tel:${SITE.emergencyPhone.replace(/\s/g, '')}`}
+                href={`tel:${SITE.phoneDisplay.replace(/\s/g, '')}`}
                 className="inline-flex items-center gap-2 rounded-md border border-border bg-card/60 px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/40"
               >
                 <Phone className="h-4 w-4" />
