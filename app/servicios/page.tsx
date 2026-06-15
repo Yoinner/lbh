@@ -5,9 +5,9 @@ import { ProcessTimeline } from '@/components/process-timeline'
 import { CtaBand } from '@/components/cta-band'
 
 export const metadata: Metadata = {
-  title: 'Servicios | LBH Colombia — Agenciamiento, Logística, Operaciones y Aduanas',
+  title: 'Servicios | LBH Colombia — Agenciamiento, Logística, Operaciones, Aduanas y Husbandry',
   description:
-    'Servicios marítimos integrales de LBH Colombia: agencia marítima, logística, operaciones portuarias y aduanas en los 7 puertos estratégicos del país.',
+    'Cinco servicios marítimos de LBH Colombia: agencia marítima, logística, operaciones portuarias, aduanas y husbandry services en los 7 puertos estratégicos del país.',
   alternates: { canonical: 'https://www.lbhcolombia.com/servicios' },
 }
 

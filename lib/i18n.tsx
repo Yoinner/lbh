@@ -138,8 +138,8 @@ export const dict: Dict = {
     en: 'Full Coverage Across Colombian Ports',
   },
   'ops.subtitle': {
-    es: 'Presencia operativa permanente en los siete puertos estratégicos de Colombia, en ambas costas. Seleccione un puerto para ver su perfil operativo.',
-    en: 'Permanent operational presence at Colombia’s seven strategic ports, on both coasts. Select a port to view its operational profile.',
+    es: 'Presencia operativa permanente en los puertos estratégicos de Colombia, en ambas costas, más sedes comerciales en Bogotá y Medellín. Seleccione un punto para ver su perfil.',
+    en: 'Permanent operational presence at Colombia\'s strategic ports on both coasts, plus commercial offices in Bogotá and Medellín. Select a point to view its profile.',
   },
   'ops.coast.caribbean': { es: 'Costa Caribe', en: 'Caribbean Coast' },
   'ops.coast.pacific': { es: 'Costa Pacífico', en: 'Pacific Coast' },
@@ -551,8 +551,8 @@ export const dict: Dict = {
   // Coverage page
   'coverage.eyebrow': { es: 'Cobertura Nacional', en: 'National Coverage' },
   'coverage.title': {
-    es: 'Presencia en los 7 Puertos Estratégicos',
-    en: 'Presence at All 7 Strategic Ports',
+    es: 'Presencia en Puertos Estratégicos y Sedes Comerciales',
+    en: 'Presence at Strategic Ports and Commercial Offices',
   },
   'coverage.subtitle': {
     es: 'Operación permanente en ambas costas, conectando Colombia con el comercio marítimo global.',

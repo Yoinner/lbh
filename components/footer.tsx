@@ -12,11 +12,14 @@ import { SITE, waLink, WA_MESSAGES } from '@/lib/config'
 const ports = [
   { id: 'barranquilla', name: 'Barranquilla' },
   { id: 'cartagena', name: 'Cartagena' },
-  { id: 'santamarta', name: 'Santa Marta' },
+  { id: 'santa-marta', name: 'Santa Marta' },
   { id: 'buenaventura', name: 'Buenaventura' },
   { id: 'covenas', name: 'Coveñas' },
-  { id: 'puertobolivar', name: 'Puerto Bolívar' },
-  { id: 'turbo', name: 'Turbo / Urabá' },
+  { id: 'puerto-bolivar', name: 'Puerto Bolívar' },
+  { id: 'turbo-uraba', name: 'Turbo / Urabá' },
+  { id: 'riohacha-puerto-brisa', name: 'Riohacha / P. Brisa' },
+  { id: 'bogota', name: 'Bogotá' },
+  { id: 'medellin', name: 'Medellín' },
 ]
 
 export function Footer() {
