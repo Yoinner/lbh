@@ -74,7 +74,7 @@ export const dict: Dict = {
     en: 'View full service',
   },
 
-  'svc.agency.title': { es: 'Agenciamiento Naviero', en: 'Ship Agency' },
+  'svc.agency.title': { es: 'Agenciamiento Marítimo', en: 'Ship Agency' },
   'svc.agency.desc': {
     es: 'Representación completa ante autoridades portuarias y marítimas. Coordinación de maniobras, documentación y despacho en todos los puertos colombianos.',
     en: 'Full representation before port and maritime authorities. Maneuvering coordination, documentation and clearance at all Colombian ports.',
