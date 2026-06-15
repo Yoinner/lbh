@@ -165,7 +165,7 @@ const ports: Port[] = [
     coast: 'caribbean', // not used for office type, just a placeholder
     cargo: { es: 'Sede comercial · Relaciones internacionales', en: 'Commercial HQ · International relations' },
     contact: {
-      code: 'COMMERCIAL HQ',
+      code: 'Comercial',
       address: 'Bogotá, Colombia',
       mobile: '+57 310 728 5809',
       email: 'm.luna@lbhcolombia.com',
@@ -181,7 +181,7 @@ const ports: Port[] = [
     coast: 'caribbean', // not used for office type
     cargo: { es: 'Sede comercial · Logística', en: 'Commercial HQ · Logistics' },
     contact: {
-      code: 'COMMERCIAL HQ',
+      code: 'Comercial',
       address: 'Medellín, Antioquia',
       email: 'logistica@lbhcolombia.com',
       department: 'Logistics Department',
@@ -457,7 +457,7 @@ function OperationsMapInner() {
                   </span>
                   {active.type === 'office' && (
                     <span className="rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[0.6rem] font-bold uppercase tracking-wider text-emerald-400">
-                      Commercial HQ
+                      Comercial
                     </span>
                   )}
                 </div>

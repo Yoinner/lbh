@@ -30,7 +30,7 @@ export const dict: Dict = {
 
   // Hero
   'hero.eyebrow': {
-    es: 'Agencia Naviera — Colombia',
+    es: 'Agencia Marítima — Colombia',
     en: 'Maritime Agency — Colombia',
   },
   'hero.title1': { es: 'Ingeniería Marítima de', en: 'World-Class Maritime' },
@@ -40,7 +40,7 @@ export const dict: Dict = {
     en: 'Across Colombian Ports',
   },
   'hero.desc': {
-    es: '30 años coordinando operaciones navieras de alta complejidad. 7 puertos estratégicos. Red LBH en 30+ países. Certificaciones BASC y TRACE. Respuesta ágil y acompañamiento operativo.',
+    es: '30 años coordinando operaciones marítimas de alta complejidad. 7 puertos estratégicos. Red LBH en 30+ países. Certificaciones BASC y TRACE. Respuesta ágil y acompañamiento operativo.',
     en: '30 years coordinating complex maritime operations. 7 strategic ports. LBH network across 30+ countries. BASC and TRACE certified. Agile response and operational support.',
   },
   'hero.ctaPrimary': {
@@ -152,8 +152,8 @@ export const dict: Dict = {
     en: 'The Port Call, Coordinated End to End',
   },
   'process.subtitle': {
-    es: 'Cada operación sigue un protocolo de precisión que protege los intereses de la naviera en cada fase de la estadía en puerto.',
-    en: 'Every operation follows a precision protocol that protects the shipowner’s interests at every phase of the port stay.',
+    es: 'Cada operación sigue un protocolo de precisión que protege los intereses del armador en cada fase de la estadía en puerto.',
+    en: 'Every operation follows a precision protocol that protects the shipowner's interests at every phase of the port stay.',
   },
   'process.s1.title': { es: 'Arribo', en: 'Arrival' },
   'process.s1.desc': {
@@ -358,12 +358,12 @@ export const dict: Dict = {
   // About / authority
   'about.eyebrow': { es: 'Sobre LBH Colombia', en: 'About LBH Colombia' },
   'about.title': {
-    es: 'Tres Décadas Protegiendo los Intereses de Navieras en Colombia',
-    en: 'Three Decades Protecting Shipowner Interests in Colombia',
+    es: 'Tres Décadas Protegiendo los Intereses Marítimos en Colombia',
+    en: 'Three Decades Protecting Maritime Interests in Colombia',
   },
   'about.body': {
-    es: 'Desde 1994 operamos como parte de la red internacional LBH, uno de los grupos de agenciamiento marítimo con mayor presencia en el mundo. En Colombia, somos el socio estratégico de navieras y operadores que exigen precisión, cumplimiento normativo y respuesta inmediata.',
-    en: 'Since 1994 we have operated as part of the international LBH network, one of the maritime agency groups with the greatest global presence. In Colombia, we are the strategic partner of shipowners and operators who demand precision, regulatory compliance, and immediate response.',
+    es: 'Desde 1994 operamos como parte de la red internacional LBH, uno de los grupos de agenciamiento marítimo con mayor presencia en el mundo. En Colombia, somos el socio estratégico de operadores marítimos e internacionales que exigen precisión, cumplimiento normativo y respuesta inmediata.',
+    en: 'Since 1994 we have operated as part of the international LBH network, one of the maritime agency groups with the greatest global presence. In Colombia, we are the strategic partner of maritime operators and international companies who demand precision, regulatory compliance, and immediate response.',
   },
   'about.p1.title': { es: 'BASC & TRACE certificados', en: 'BASC & TRACE certified' },
   'about.p1.desc': {
@@ -408,7 +408,7 @@ export const dict: Dict = {
 
   // Footer
   'footer.about': {
-    es: 'Agencia naviera con presencia en 7 puertos estratégicos de Colombia. Parte de la red internacional LBH en 30+ países desde 1994.',
+    es: 'Agencia marítima con presencia en 7 puertos estratégicos de Colombia. Parte de la red internacional LBH en 30+ países desde 1994.',
     en: 'Maritime agency with presence at 7 strategic Colombian ports. Part of the international LBH network in 30+ countries since 1994.',
   },
   'footer.services': { es: 'Servicios', en: 'Services' },
@@ -477,8 +477,8 @@ export const dict: Dict = {
   'hero.h1.a': { es: 'Su buque en buenas manos', en: 'Your vessel in good hands' },
   'hero.h1.em': { es: 'en cualquier puerto de Colombia', en: 'at any port in Colombia' },
   'hero.lead': {
-    es: 'Agencia naviera con 30 años coordinando operaciones en los 7 puertos estratégicos del país. Respuesta ágil y acompañamiento operativo.',
-    en: 'Ship agency with 30 years coordinating operations across Colombia’s 7 strategic ports. Agile response and operational support.',
+    es: 'Agencia marítima con 30 años coordinando operaciones en los 7 puertos estratégicos del país. Respuesta ágil y acompañamiento operativo.',
+    en: 'Maritime agency with 30 years coordinating operations across Colombia's 7 strategic ports. Agile response and operational support.',
   },
 
   // Global CTAs
@@ -511,8 +511,8 @@ export const dict: Dict = {
     en: 'Numbers That Back Every Operation',
   },
   'trust.subtitle': {
-    es: 'Tres décadas de excelencia operativa al servicio de navieras y operadores internacionales.',
-    en: 'Three decades of operational excellence serving international shipowners and operators.',
+    es: 'Tres décadas de excelencia operativa al servicio de operadores marítimos e internacionales.',
+    en: 'Three decades of operational excellence serving international maritime operators.',
   },
   'trust.years': { es: 'Años de experiencia', en: 'Years of experience' },
   'trust.ops': { es: 'Operaciones realizadas', en: 'Operations completed' },
@@ -562,8 +562,8 @@ export const dict: Dict = {
   // Clients / sectors served
   'clients.eyebrow': { es: 'Quiénes Confían en Nosotros', en: 'Who Trusts Us' },
   'clients.title': {
-    es: 'Aliado de Navieras, Operadores y Tradings Internacionales',
-    en: 'Partner to Shipowners, Operators and International Tradings',
+    es: 'Aliado de Operadores Marítimos, Operadores Logísticos y Tradings Internacionales',
+    en: 'Partner to Maritime Operators, Logistics Operators and International Tradings',
   },
   'clients.subtitle': {
     es: 'Atendemos a los segmentos más exigentes de la industria marítima y de comercio exterior.',
@@ -599,13 +599,13 @@ export const dict: Dict = {
   },
   'aboutpage.missionTitle': { es: 'Nuestra Misión', en: 'Our Mission' },
   'aboutpage.mission': {
-    es: 'Proteger los intereses de navieras y operadores en cada escala, con precisión técnica, cumplimiento normativo y respuesta inmediata en los 7 puertos estratégicos de Colombia.',
-    en: 'To protect the interests of shipowners and operators at every port call, with technical precision, regulatory compliance and immediate response across Colombia’s 7 strategic ports.',
+    es: 'Con una fuerza laboral altamente motivada, bien capacitada y experimentada, ofrecemos el más alto nivel de servicio profesional en los sectores portuario, aduanero, logístico y marítimo, tanto a los propietarios de carga como a los armadores. Nuestro equipo disfruta lo que hace: brindar confianza y fiabilidad. Nos aseguramos de que todo se realice de manera segura y eficiente, gestionando con precisión la documentación y las instrucciones requeridas por todas las partes involucradas y por las autoridades colombianas.\n\nCumplimos nuestra misión maximizando el potencial de nuestro talento humano, fomentando la innovación y la capacitación continua, respetando el negocio, minimizando el impacto ambiental de nuestro trabajo y dejando una impresión positiva en nuestros clientes y en las comunidades que nos acogen.',
+    en: 'With a highly motivated, well-trained and experienced workforce, we offer the highest level of professional service in the port, customs, logistics and maritime sectors, both to cargo owners and shipowners. Our team enjoys what it does: providing trust and reliability. We ensure that everything is carried out safely and efficiently, precisely managing the documentation and instructions required by all parties involved and by Colombian authorities.\n\nWe fulfill our mission by maximizing the potential of our human talent, fostering innovation and continuous training, respecting the business, minimizing the environmental impact of our work and leaving a positive impression on our clients and the communities that welcome us.',
   },
   'aboutpage.visionTitle': { es: 'Nuestra Visión', en: 'Our Vision' },
   'aboutpage.vision': {
-    es: 'Ser el agente naviero de referencia en Colombia, integrando estándares globales de la red LBH con un conocimiento profundo del entorno portuario local.',
-    en: 'To be the benchmark ship agency in Colombia, integrating the LBH network’s global standards with deep knowledge of the local port environment.',
+    es: 'Ser la agencia marítima de referencia en Colombia, integrando estándares globales de la red LBH con un conocimiento profundo del entorno portuario local.',
+    en: 'To be the benchmark maritime agency in Colombia, integrating the LBH network's global standards with deep knowledge of the local port environment.',
   },
 
   // Services index page

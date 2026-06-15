@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { ServiceDetail } from '@/components/service-detail'
 import { CtaBand } from '@/components/cta-band'
+import { LogisticaSection } from '@/components/logistica-section'
 import { getService } from '@/lib/services'
 
 const service = getService('logistica')!
@@ -22,8 +23,9 @@ export default function LogisticaPage() {
         leadKey="route.logistics.short"
         crumbKey="route.logistics"
       />
-      <ServiceDetail service={service} />
+      <ServiceDetail service={service} hideRelated />
       <CtaBand />
+      <LogisticaSection />
     </>
   )
 }

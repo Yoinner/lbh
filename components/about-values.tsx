@@ -101,9 +101,11 @@ export function AboutValues() {
               <h2 className="mt-5 font-heading text-xl font-bold text-foreground" style={{ transform: 'translateZ(24px)' }}>
                 {t('aboutpage.missionTitle')}
               </h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {t('aboutpage.mission')}
-              </p>
+              <div className="mt-3 space-y-3 text-sm leading-relaxed text-muted-foreground">
+                {t('aboutpage.mission').split('\n\n').map((para, i) => (
+                  <p key={i}>{para}</p>
+                ))}
+              </div>
             </div>
           </TiltCard>
 

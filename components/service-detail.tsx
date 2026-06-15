@@ -9,7 +9,13 @@ import { ServiceIcon } from './icons/service-icon'
 import { waLink, WA_MESSAGES } from '@/lib/config'
 import { Reveal } from './reveal'
 
-export function ServiceDetail({ service }: { service: ServiceDef }) {
+export function ServiceDetail({
+  service,
+  hideRelated = false,
+}: {
+  service: ServiceDef
+  hideRelated?: boolean
+}) {
   const { t } = useI18n()
   const related = SERVICES.filter((s) => s.slug !== service.slug)
 
@@ -73,7 +79,7 @@ export function ServiceDetail({ service }: { service: ServiceDef }) {
       </section>
 
       {/* Related services */}
-      <section className="border-t border-border py-20">
+      {!hideRelated && <section className="border-t border-border py-20">
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
           <Reveal>
             <h2 className="mb-8 font-heading text-2xl font-bold text-foreground">
@@ -107,7 +113,7 @@ export function ServiceDetail({ service }: { service: ServiceDef }) {
             })}
           </div>
         </div>
-      </section>
+      </section>}
     </>
   )
 }

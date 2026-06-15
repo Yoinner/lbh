@@ -68,11 +68,7 @@ export function TrustMetrics() {
               {t('trust.title')}
             </h2>
           </Reveal>
-          <Reveal delay={0.16}>
-            <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground">
-              {t('trust.subtitle')}
-            </p>
-          </Reveal>
+
         </div>
 
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-5">
