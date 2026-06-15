@@ -1,9 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { MessageCircle, Phone } from 'lucide-react'
+import { MessageCircle } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
-import { SITE } from '@/lib/config'
 import { Reveal } from './reveal'
 
 export function CtaBand() {
@@ -30,13 +29,7 @@ export function CtaBand() {
                 <MessageCircle className="h-4 w-4" />
                 {t('cta.quote')}
               </Link>
-              <a
-                href={`tel:${SITE.phoneDisplay.replace(/\s/g, '')}`}
-                className="inline-flex items-center gap-2 rounded-md border border-border bg-card/60 px-6 py-3.5 text-sm font-semibold text-foreground transition-colors hover:border-primary/40"
-              >
-                <Phone className="h-4 w-4" />
-                {t('cta.secondary')}
-              </a>
+
             </div>
           </div>
         </Reveal>

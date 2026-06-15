@@ -28,7 +28,6 @@ export function LangToggle({ variant = 'desktop' }: { variant?: 'desktop' | 'mob
             }`}
           >
             <span aria-hidden="true">{LANG_META[l].flag}</span>
-            <span className="text-xs uppercase tracking-widest">{l}</span>
           </button>
         ))}
       </div>
@@ -55,7 +54,6 @@ export function LangToggle({ variant = 'desktop' }: { variant?: 'desktop' | 'mob
           }`}
         >
           <span aria-hidden="true" className="text-base leading-none">{LANG_META[l].flag}</span>
-          <span className="text-[0.7rem] font-bold uppercase tracking-widest">{l}</span>
         </button>
       ))}
     </div>
