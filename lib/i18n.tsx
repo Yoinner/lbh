@@ -478,7 +478,7 @@ export const dict: Dict = {
   'hero.h1.em': { es: 'en cualquier puerto de Colombia', en: 'at any port in Colombia' },
   'hero.lead': {
     es: 'Agencia marítima con 30 años coordinando operaciones en los 7 puertos estratégicos del país. Respuesta ágil y acompañamiento operativo.',
-    en: 'Maritime agency with 30 years coordinating operations across Colombia's 7 strategic ports. Agile response and operational support.',
+    en: "Maritime agency with 30 years coordinating operations across Colombia's 7 strategic ports. Agile response and operational support.",
   },
 
   // Global CTAs
@@ -605,7 +605,7 @@ export const dict: Dict = {
   'aboutpage.visionTitle': { es: 'Nuestra Visión', en: 'Our Vision' },
   'aboutpage.vision': {
     es: 'Ser la agencia marítima de referencia en Colombia, integrando estándares globales de la red LBH con un conocimiento profundo del entorno portuario local.',
-    en: 'To be the benchmark maritime agency in Colombia, integrating the LBH network's global standards with deep knowledge of the local port environment.',
+    en: "To be the benchmark maritime agency in Colombia, integrating the LBH network's global standards with deep knowledge of the local port environment.",
   },
 
   // Services index page
