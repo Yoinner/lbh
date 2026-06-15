@@ -19,6 +19,8 @@ export default function CoberturaPage() {
         titleKey="coverage.title"
         leadKey="coverage.subtitle"
         crumbKey="nav.coverage"
+        backgroundImage="/cobertura-hero-bg.png"
+        backgroundImageMode="cover"
       />
       <OperationsMap />
       <Network />

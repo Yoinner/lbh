@@ -19,6 +19,8 @@ export default function ServiciosPage() {
         titleKey="services.title"
         leadKey="servicespage.lead"
         crumbKey="nav.services"
+        backgroundImage="/servicios-hero-bg.png"
+        backgroundImageMode="cover"
       />
       <ServicesGrid />
       <ProcessTimeline />
