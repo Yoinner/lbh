@@ -214,8 +214,39 @@
 }
 .lbh-team-track {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   width: max-content;
-  animation: lbh-team-marquee 30s linear infinite;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+  animation: lbh-team-marquee 45s linear infinite;
+}
+.lbh-team-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  flex-shrink: 0;
+  gap: 0;
+  margin: 0;
+  padding: 0;
+}
+.lbh-team-img {
+  display: block;
+  flex-shrink: 0;
+  width: auto;
+  max-width: none;
+  height: 260px;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+}
+@media (min-width: 768px) {
+  .lbh-team-img { height: 380px; }
+}
+@media (min-width: 1024px) {
+  .lbh-team-img { height: 520px; }
 }
 .lbh-team-pause:hover .lbh-team-track {
   animation-play-state: paused;

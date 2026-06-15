@@ -4,19 +4,30 @@ import Image from 'next/image'
 import { useI18n } from '@/lib/i18n'
 import { SectionHeader } from './reveal'
 
-const teamImages = [
-  {
-    src: '/equipo/equipo-1.jpg',
-    alt: 'Equipo directivo y comercial de LBH Colombia',
-  },
-  {
-    src: '/equipo/equipo-2.jpg',
-    alt: 'Equipo operativo y logístico de LBH Colombia',
-  },
-]
-
-// Duplicate for seamless infinite loop: [1, 2, 1, 2]
-const loop = [...teamImages, ...teamImages]
+function ImageGroup({ aria }: { aria?: boolean }) {
+  return (
+    <div className="lbh-team-group" aria-hidden={aria ?? undefined}>
+      <Image
+        src="/equipo/equipo-1.jpg"
+        alt={aria ? '' : 'Equipo directivo y comercial de LBH Colombia'}
+        width={2048}
+        height={1152}
+        className="lbh-team-img"
+        draggable={false}
+        priority={false}
+      />
+      <Image
+        src="/equipo/equipo-2.jpg"
+        alt={aria ? '' : 'Equipo operativo y logístico de LBH Colombia'}
+        width={2048}
+        height={1152}
+        className="lbh-team-img"
+        draggable={false}
+        priority={false}
+      />
+    </div>
+  )
+}
 
 export function TeamMarquee() {
   const { t } = useI18n()
@@ -32,7 +43,7 @@ export function TeamMarquee() {
         />
       </div>
 
-      {/* Full-width marquee — intentionally breaks out of the content container */}
+      {/* Full-width marquee strip */}
       <div
         className="lbh-team-pause relative mt-10 w-full overflow-hidden"
         aria-label="Carrusel del equipo LBH Colombia"
@@ -50,24 +61,10 @@ export function TeamMarquee() {
           aria-hidden="true"
         />
 
+        {/* Track: [equipo-1][equipo-2][equipo-1][equipo-2] */}
         <div className="lbh-team-track">
-          {loop.map((img, i) => (
-            <div
-              key={i}
-              className="shrink-0"
-              style={{ lineHeight: 0 }}
-            >
-              <Image
-                src={img.src}
-                alt={img.alt}
-                width={2048}
-                height={1152}
-                className="block h-[260px] w-auto object-cover md:h-[340px] lg:h-[400px]"
-                draggable={false}
-                priority={false}
-              />
-            </div>
-          ))}
+          <ImageGroup />
+          <ImageGroup aria />
         </div>
       </div>
     </section>
