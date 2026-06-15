@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import { Target, Eye, ShieldCheck, Clock, Globe2 } from 'lucide-react'
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react'
 import { useRef } from 'react'
@@ -76,27 +75,11 @@ export function AboutValues() {
     <section className="relative py-24 lg:py-28">
       <div className="relative mx-auto max-w-[1280px] px-5 md:px-8">
 
-        {/* ── First info block: intro + Mission/Vision with logo watermark ── */}
+        {/* Intro + Mission/Vision block */}
         <div className="relative">
-          {/* Logo watermark — scoped to this block only */}
-          <div
-            className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden"
-            aria-hidden="true"
-          >
-            <Image
-              src="/lbh-logo.png"
-              alt=""
-              width={700}
-              height={700}
-              className="w-[520px] max-w-[80vw] select-none object-contain opacity-[0.07]"
-              draggable={false}
-              priority={false}
-            />
-          </div>
-
           {/* Intro paragraph */}
           <Reveal>
-            <p className="relative max-w-3xl text-pretty text-lg leading-relaxed text-foreground/80">
+            <p className="max-w-3xl text-pretty text-lg leading-relaxed text-foreground/80">
               {t('about.body')}
             </p>
           </Reveal>
