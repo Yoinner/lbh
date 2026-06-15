@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { ChevronRight } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
@@ -10,17 +11,29 @@ export function PageHero({
   titleKey,
   leadKey,
   crumbKey,
+  backgroundImage,
 }: {
   eyebrowKey: string
   titleKey: string
   leadKey?: string
   crumbKey?: string
+  backgroundImage?: string
 }) {
   const { t } = useI18n()
 
   return (
-    <section className="border-b border-border bg-secondary/30">
-      <div className="mx-auto max-w-[1280px] px-5 py-16 md:px-8 lg:py-20">
+    <section className="relative overflow-hidden border-b border-border bg-secondary/30">
+      {backgroundImage && (
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          className="object-cover opacity-10"
+          priority
+          aria-hidden="true"
+        />
+      )}
+      <div className="relative z-10 mx-auto max-w-[1280px] px-5 py-16 md:px-8 lg:py-20">
         {crumbKey && (
           <Reveal>
             <nav className="mb-5 flex items-center gap-1.5 text-xs text-muted-foreground" aria-label="Breadcrumb">

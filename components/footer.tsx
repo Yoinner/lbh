@@ -54,8 +54,11 @@ export function Footer() {
             >
               <MessageCircle className="h-3.5 w-3.5" /> {SITE.phoneDisplay}
             </a>
-            <a href={`mailto:${SITE.email}`} className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
-              <Mail className="h-3.5 w-3.5" /> {SITE.email}
+            <a href={`mailto:${SITE.emailMarketing}`} className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
+              <Mail className="h-3.5 w-3.5" /> {SITE.emailMarketing}
+            </a>
+            <a href={`mailto:${SITE.emailLogistica}`} className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
+              <Mail className="h-3.5 w-3.5" /> {SITE.emailLogistica}
             </a>
             <a href={SITE.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram de LBH Colombia" className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
               <InstagramIcon className="h-3.5 w-3.5" /> @{SITE.instagram}

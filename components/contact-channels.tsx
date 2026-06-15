@@ -32,12 +32,6 @@ export function ContactChannels() {
       href: `mailto:${SITE.emailLogistica}`,
     },
     {
-      icon: Mail,
-      label: t('contactpage.emailOps'),
-      value: SITE.email,
-      href: `mailto:${SITE.email}`,
-    },
-    {
       icon: InstagramIcon,
       label: 'Instagram',
       value: `@${SITE.instagram}`,
