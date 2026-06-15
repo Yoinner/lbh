@@ -14,12 +14,16 @@ export default function Page() {
   return (
     <>
       <Hero />
+      <CertificationsMarquee
+        eyebrowKey="certs.activeLabel"
+        titleKey="certs.title"
+        subtitleKey="certs.marqueeNote"
+      />
       <Services />
       <FleetShowcase />
       <WhyLbh />
       <OperationsMap />
       <Clients />
-      <CertificationsMarquee />
       <TrustMetrics />
       <Suspense fallback={null}>
         <ContactForm />
