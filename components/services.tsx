@@ -12,7 +12,7 @@ const services = [
     icon: Anchor,
     titleKey: 'svc.agency.title',
     descKey: 'svc.agency.desc',
-    features: ['svc.agency.f1', 'svc.agency.f2', 'svc.agency.f3', 'svc.agency.f4'],
+    features: ['svc.agency.f1', 'svc.agency.f2', 'svc.agency.f3'],
     image: '/service-agency.png',
     imageAlt: 'Agenciamiento marítimo de buques en puerto',
   },
@@ -30,7 +30,7 @@ const services = [
     descKey: 'svc.freight.desc',
     features: ['svc.freight.f1', 'svc.freight.f2', 'svc.freight.f3', 'svc.freight.f4'],
     image: '/service-freight.png',
-    imageAlt: 'Gestión de carga marítima y logística portuaria',
+    imageAlt: 'Agente de carga internacional — logística multimodal',
   },
 ]
 
@@ -88,7 +88,7 @@ export function Services() {
                     ))}
                   </ul>
                   <Link
-                    href="/servicios"
+                    href={s.titleKey === 'svc.freight.title' ? '/servicios/logistica' : '/servicios'}
                     className="relative z-10 mt-7 flex items-center gap-1.5 text-sm font-semibold text-primary"
                   >
                     {t('services.viewFull')}
