@@ -1,13 +1,12 @@
 import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { ServicesGrid } from '@/components/services-grid'
-import { ProcessTimeline } from '@/components/process-timeline'
 import { CtaBand } from '@/components/cta-band'
 
 export const metadata: Metadata = {
-  title: 'Servicios | LBH Colombia — Agenciamiento, Logística, Operaciones, Aduanas y Husbandry',
+  title: 'Servicios | LBH Colombia — Agenciamiento Marítimo, Agente de Carga Internacional y Husbandry',
   description:
-    'Cinco servicios marítimos de LBH Colombia: agencia marítima, logística, operaciones portuarias, aduanas y husbandry services en los 7 puertos estratégicos del país.',
+    'Tres servicios especializados de LBH Colombia: agenciamiento marítimo, agente de carga internacional y husbandry services en los puertos estratégicos del país.',
   alternates: { canonical: 'https://www.lbhcolombia.com/servicios' },
 }
 
@@ -23,7 +22,6 @@ export default function ServiciosPage() {
         backgroundImageMode="cover"
       />
       <ServicesGrid />
-      <ProcessTimeline />
       <CtaBand />
     </>
   )

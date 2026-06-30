@@ -2,7 +2,6 @@ import { Suspense } from 'react'
 import { Hero } from '@/components/hero'
 import { Services } from '@/components/services'
 import { FleetShowcase } from '@/components/fleet-showcase'
-import { WhyLbh } from '@/components/why-lbh'
 import { OperationsMap } from '@/components/operations-map'
 import { Clients } from '@/components/clients'
 import { TeamMarquee } from '@/components/team-marquee'
@@ -22,7 +21,6 @@ export default function Page() {
       />
       <Services />
       <FleetShowcase />
-      <WhyLbh />
       <OperationsMap />
       <Clients />
       <TeamMarquee />

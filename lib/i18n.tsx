@@ -62,12 +62,12 @@ export const dict: Dict = {
     en: 'Specialized Services',
   },
   'services.title': {
-    es: 'Operaciones Marítimas Integrales',
-    en: 'Comprehensive Maritime Operations',
+    es: 'Nuestros Servicios',
+    en: 'Our Services',
   },
   'services.subtitle': {
-    es: 'Desde el arribo hasta el zarpe, coordinamos cada detalle de la escala con precisión técnica y disponibilidad permanente.',
-    en: 'From arrival to departure, we coordinate every detail of the port call with technical precision and permanent availability.',
+    es: '',
+    en: '',
   },
   'services.viewFull': {
     es: 'Ver servicio completo',
@@ -76,22 +76,22 @@ export const dict: Dict = {
 
   'svc.agency.title': { es: 'Agenciamiento Marítimo', en: 'Ship Agency' },
   'svc.agency.desc': {
-    es: 'Representación completa ante autoridades portuarias y marítimas. Coordinación de maniobras, documentación y despacho en todos los puertos colombianos.',
-    en: 'Full representation before port and maritime authorities. Maneuvering coordination, documentation and clearance at all Colombian ports.',
+    es: 'Atendemos todo tipo de buques con carga a granel, tanto líquida como seca, en todos los puertos de Colombia. Coordinamos servicios portuarios, supervisamos las operaciones de carga y garantizamos el cumplimiento de las regulaciones marítimas y aduaneras, brindando una atención eficiente y confiable en cada recalada.',
+    en: 'We attend all vessel types carrying bulk cargo, both liquid and dry, at all ports in Colombia. We coordinate port services, supervise cargo operations and ensure compliance with maritime and customs regulations, providing efficient and reliable attention at every call.',
   },
   'svc.agency.f1': {
-    es: 'Port clearance & documentación',
-    en: 'Port clearance & documentation',
+    es: 'Coordinación de Servicios Portuarios',
+    en: 'Port Services Coordination',
   },
   'svc.agency.f2': {
-    es: 'Practicaje y remolcadores',
-    en: 'Pilotage & towage',
+    es: 'Supervisión de Operaciones de Carga',
+    en: 'Cargo Operations Supervision',
   },
   'svc.agency.f3': {
-    es: 'Cuentas de desembolso',
-    en: 'Disbursement accounts',
+    es: 'Cumplimiento de Regulaciones Marítimas y Aduaneras',
+    en: 'Maritime and Customs Regulations Compliance',
   },
-  'svc.agency.f4': { es: 'Aduana e inmigración', en: 'Customs & immigration' },
+  'svc.agency.f4': { es: '', en: '' },
 
   'svc.husbandry.title': { es: 'Husbandry Services', en: 'Husbandry Services' },
   'svc.husbandry.desc': {
@@ -115,10 +115,10 @@ export const dict: Dict = {
     en: 'Medical coordination & welfare',
   },
 
-  'svc.freight.title': { es: 'Agente de Carga', en: 'Freight Forwarding' },
+  'svc.freight.title': { es: 'Agente de carga internacional', en: 'International Freight Agent' },
   'svc.freight.desc': {
-    es: 'Gestión especializada de carga a granel seca y líquida, carga proyecto y breakbulk. Optimización logística y coordinación operativa de extremo a extremo.',
-    en: 'Specialized management of dry and liquid bulk, project cargo and breakbulk. Logistics optimization and end-to-end operational coordination.',
+    es: 'Integramos transporte marítimo, terrestre y aéreo con coordinación documental, seguimiento operativo y acompañamiento especializado para operaciones de importación, exportación y carga proyecto.',
+    en: 'We integrate maritime, land and air transport with documentary coordination, operational tracking and specialized support for import, export and project cargo operations.',
   },
   'svc.freight.f1': { es: 'Granel seco y líquido', en: 'Dry & liquid bulk' },
   'svc.freight.f2': { es: 'Carga proyecto y OOG', en: 'Project cargo & OOG' },
@@ -127,8 +127,8 @@ export const dict: Dict = {
     en: 'Stowage coordination',
   },
   'svc.freight.f4': {
-    es: 'Documentación DG/HAZMAT',
-    en: 'DG/HAZMAT documentation',
+    es: 'Optimización de costos operativos',
+    en: 'Operational cost optimization',
   },
 
   // Ports / Operations map
@@ -452,7 +452,7 @@ export const dict: Dict = {
     es: 'Representación integral del buque en puerto.',
     en: 'Full vessel representation in port.',
   },
-  'route.logistics': { es: 'Logística', en: 'Logistics' },
+  'route.logistics': { es: 'Agente de carga internacional', en: 'International Freight Agent' },
   'route.logistics.short': {
     es: 'Coordinación de carga de extremo a extremo.',
     en: 'End-to-end cargo coordination.',
@@ -474,11 +474,11 @@ export const dict: Dict = {
   },
 
   // Hero (simplified)
-  'hero.h1.a': { es: 'Su buque en buenas manos', en: 'Your vessel in good hands' },
-  'hero.h1.em': { es: 'en cualquier puerto de Colombia', en: 'at any port in Colombia' },
+  'hero.h1.a': { es: 'Agenciamiento Marítimo y Soluciones', en: 'Maritime Agency and Integral' },
+  'hero.h1.em': { es: 'Logísticas Integrales', en: 'Logistics Solutions' },
   'hero.lead': {
-    es: 'Agencia marítima con 30 años coordinando operaciones en los 7 puertos estratégicos del país. Respuesta ágil y acompañamiento operativo.',
-    en: "Maritime agency with 30 years coordinating operations across Colombia's 7 strategic ports. Agile response and operational support.",
+    es: 'Su aliado estratégico en agenciamiento marítimo desde 1994, gestión de carga y contenedores, y soluciones logísticas integrales en Colombia.',
+    en: 'Your strategic partner in maritime agency since 1994, cargo and container management, and integral logistics solutions in Colombia.',
   },
 
   // Global CTAs
@@ -507,16 +507,17 @@ export const dict: Dict = {
   // Trust / metrics section
   'trust.eyebrow': { es: 'Confianza Comprobada', en: 'Proven Trust' },
   'trust.title': {
-    es: 'Números que Respaldan Cada Operación',
-    en: 'Numbers That Back Every Operation',
+    es: 'LBH en cifras',
+    en: 'LBH in numbers',
   },
   'trust.subtitle': {
-    es: 'Tres décadas de excelencia operativa al servicio de operadores marítimos e internacionales.',
-    en: 'Three decades of operational excellence serving international maritime operators.',
+    es: '',
+    en: '',
   },
   'trust.years': { es: 'Años de experiencia', en: 'Years of experience' },
   'trust.ops': { es: 'Operaciones realizadas', en: 'Operations completed' },
   'trust.ports': { es: 'Puertos cubiertos', en: 'Ports covered' },
+  'trust.countries': { es: 'Países con cobertura internacional', en: 'Countries with international coverage' },
   'trust.attention': { es: 'Atención personalizada', en: 'Personalized attention' },
   'trust.response': { es: 'Respuesta rápida', en: 'Rapid response' },
 
@@ -610,8 +611,8 @@ export const dict: Dict = {
 
   // Services index page
   'servicespage.lead': {
-    es: 'Cinco líneas de servicio que cubren el ciclo completo de la operación marítima, logística, portuaria, aduanera y de soporte a tripulación.',
-    en: 'Five service lines covering the complete cycle of maritime, logistics, port, customs and crew-support operations.',
+    es: 'Tres líneas de servicio especializadas: agenciamiento marítimo, agente de carga internacional y husbandry services.',
+    en: 'Three specialized service lines: ship agency, international freight agent and husbandry services.',
   },
 
   // Contact page
@@ -637,24 +638,24 @@ export const dict: Dict = {
 
   // Agencia Marítima detail
   'sd.agency.lead': {
-    es: 'Representamos integralmente al buque y a la naviera ante todas las autoridades portuarias, aduaneras y marítimas de Colombia, coordinando cada maniobra de la escala.',
-    en: 'We fully represent the vessel and shipowner before all port, customs and maritime authorities in Colombia, coordinating every maneuver of the call.',
+    es: 'Atendemos todo tipo de buques con carga a granel, tanto líquida como seca, en todos los puertos de Colombia. Coordinamos servicios portuarios, supervisamos las operaciones de carga y garantizamos el cumplimiento de las regulaciones marítimas y aduaneras, brindando una atención eficiente y confiable en cada recalada.',
+    en: 'We attend all vessel types carrying bulk cargo, both liquid and dry, at all ports in Colombia. We coordinate port services, supervise cargo operations and ensure compliance with maritime and customs regulations, providing efficient and reliable attention at every call.',
   },
-  'sd.agency.b1': { es: 'Port clearance y documentación completa', en: 'Port clearance and full documentation' },
-  'sd.agency.b2': { es: 'Coordinación de practicaje y remolcadores', en: 'Pilotage and towage coordination' },
-  'sd.agency.b3': { es: 'Cuentas de desembolso transparentes', en: 'Transparent disbursement accounts' },
+  'sd.agency.b1': { es: 'Coordinación de Servicios Portuarios', en: 'Port Services Coordination' },
+  'sd.agency.b2': { es: 'Supervisión de Operaciones de Carga', en: 'Cargo Operations Supervision' },
+  'sd.agency.b3': { es: 'Cumplimiento de Regulaciones Marítimas y Aduaneras', en: 'Maritime and Customs Regulations Compliance' },
   'sd.agency.b4': { es: 'Gestión de aduana e inmigración', en: 'Customs and immigration management' },
   'sd.agency.b5': { es: 'Acompañamiento operativo en los 7 puertos', en: 'Operational support at all 7 ports' },
 
   // Logística detail
   'sd.logistics.lead': {
-    es: 'Coordinamos la carga de extremo a extremo: granel seco y líquido, carga proyecto, OOG y breakbulk, optimizando cada eslabón de la cadena logística.',
-    en: 'We coordinate cargo end to end: dry and liquid bulk, project cargo, OOG and breakbulk, optimizing every link of the logistics chain.',
+    es: 'Servicios de Logistica integrados',
+    en: 'Integrated Logistics Services',
   },
   'sd.logistics.b1': { es: 'Granel seco y líquido especializado', en: 'Specialized dry and liquid bulk' },
   'sd.logistics.b2': { es: 'Carga proyecto y sobredimensionada (OOG)', en: 'Project and oversized cargo (OOG)' },
   'sd.logistics.b3': { es: 'Coordinación de estiba y trincado', en: 'Stowage and lashing coordination' },
-  'sd.logistics.b4': { es: 'Documentación DG / HAZMAT', en: 'DG / HAZMAT documentation' },
+  'sd.logistics.b4': { es: 'Trazabilidad y seguimiento operativo', en: 'Traceability and operational tracking' },
   'sd.logistics.b5': { es: 'Optimización de costos operativos', en: 'Operational cost optimization' },
 
   // Operaciones Portuarias detail

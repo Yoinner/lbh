@@ -8,9 +8,9 @@ import { getService } from '@/lib/services'
 const service = getService('logistica')!
 
 export const metadata: Metadata = {
-  title: 'Logística | LBH Colombia',
+  title: 'Agente de carga internacional (cod. 1218) | LBH Colombia',
   description:
-    'Coordinación de carga de extremo a extremo: granel seco y líquido, carga proyecto, OOG y breakbulk. Optimización logística en los puertos de Colombia.',
+    'Servicios de Logistica integrados. Integramos transporte marítimo, terrestre y aéreo con coordinación documental, seguimiento operativo y acompañamiento especializado.',
   alternates: { canonical: 'https://www.lbhcolombia.com/servicios/logistica' },
 }
 
@@ -20,7 +20,7 @@ export default function LogisticaPage() {
       <PageHero
         eyebrowKey="nav.services"
         titleKey="route.logistics"
-        leadKey="route.logistics.short"
+        leadKey="sd.logistics.lead"
         crumbKey="route.logistics"
       />
       <ServiceDetail service={service} hideRelated />

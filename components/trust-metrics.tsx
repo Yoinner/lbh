@@ -14,9 +14,8 @@ interface Stat {
 const STATS: Stat[] = [
   { to: 30, suffix: '+', labelKey: 'trust.years' },
   { to: 15000, suffix: '+', labelKey: 'trust.ops' },
-  { to: 7, suffix: '', labelKey: 'trust.ports' },
-  { to: 100, suffix: '%', labelKey: 'trust.attention' },
-  { to: 24, suffix: '/7', labelKey: 'trust.response' },
+  { to: 11, suffix: '', labelKey: 'trust.ports' },
+  { to: 28, suffix: '+', labelKey: 'trust.countries' },
 ]
 
 function fmt(n: number) {
@@ -59,19 +58,13 @@ export function TrustMetrics() {
       <div className="mx-auto max-w-[1280px] px-5 md:px-8">
         <div className="mb-14 max-w-3xl">
           <Reveal>
-            <p className="mb-4 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-primary">
-              {t('trust.eyebrow')}
-            </p>
-          </Reveal>
-          <Reveal delay={0.08}>
             <h2 className="font-heading text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-[2.75rem]">
               {t('trust.title')}
             </h2>
           </Reveal>
-
         </div>
 
-        <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-3 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-4">
           {STATS.map((s, i) => (
             <Reveal key={s.labelKey} delay={i * 0.08}>
               <div>
