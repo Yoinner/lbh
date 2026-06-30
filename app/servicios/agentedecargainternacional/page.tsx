@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { PageHero } from '@/components/page-hero'
 import { ServiceDetail } from '@/components/service-detail'
 import { CtaBand } from '@/components/cta-band'
+import { FreightForwarderSection } from '@/components/freight-forwarder-section'
 import { LogisticaSection } from '@/components/logistica-section'
 import { getService } from '@/lib/services'
 
@@ -22,7 +23,10 @@ export default function AgenteDeCargaInternacionalPage() {
         titleKey="route.logistics"
         leadKey="sd.logistics.lead"
         crumbKey="route.logistics"
+        backgroundImage="/agentc.png"
+        backgroundImageMode="cover"
       />
+      <FreightForwarderSection />
       <ServiceDetail service={service} hideRelated />
       <LogisticaSection />
       <CtaBand />
