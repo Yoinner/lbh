@@ -408,8 +408,8 @@ export const dict: Dict = {
 
   // Footer
   'footer.about': {
-    es: 'Agencia marítima con presencia en 7 puertos estratégicos de Colombia. Parte de la red internacional LBH en 30+ países desde 1994.',
-    en: 'Maritime agency with presence at 7 strategic Colombian ports. Part of the international LBH network in 30+ countries since 1994.',
+    es: 'Agencia marítima con presencia en 7 puertos estratégicos de Colombia. Parte de la red internacional LBH en 28+ países desde 1994.',
+    en: 'Maritime agency with presence at 7 strategic Colombian ports. Part of the international LBH network in 28+ countries since 1994.',
   },
   'footer.services': { es: 'Servicios', en: 'Services' },
   'footer.viewAll': {
