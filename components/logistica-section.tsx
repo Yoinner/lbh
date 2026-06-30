@@ -318,7 +318,7 @@ export function LogisticaSection() {
             <Reveal delay={0.1}>
               <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border shadow-sm">
                 <Image
-                  src="/agentc.png"
+                  src="/agente3.png"
                   alt="Operación logística integral LBH Colombia"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"

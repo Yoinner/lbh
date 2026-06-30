@@ -31,8 +31,8 @@ const services = [
     titleKey: 'svc.freight.title',
     descKey: 'svc.freight.desc',
     features: ['svc.freight.f1', 'svc.freight.f2', 'svc.freight.f3', 'svc.freight.f4'],
-    href: '/servicios/logistica',
-    image: '/agentc.png',
+    href: '/servicios/agentedecargainternacional',
+    image: '/agente2.png',
     imageAlt: 'Agente de carga internacional y logística',
   },
 ]
