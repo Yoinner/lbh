@@ -12,7 +12,8 @@ const services = [
     icon: Anchor,
     titleKey: 'svc.agency.title',
     descKey: 'svc.agency.desc',
-    features: ['svc.agency.f1', 'svc.agency.f2', 'svc.agency.f3', 'svc.agency.f4'],
+    features: ['svc.agency.f1', 'svc.agency.f2', 'svc.agency.f3'],
+    href: '/servicios/agencia-maritima',
     image: '/service-agency.png',
     imageAlt: 'Agenciamiento marítimo de buques en puerto',
   },
@@ -21,6 +22,7 @@ const services = [
     titleKey: 'svc.husbandry.title',
     descKey: 'svc.husbandry.desc',
     features: ['svc.husbandry.f1', 'svc.husbandry.f2', 'svc.husbandry.f3', 'svc.husbandry.f4'],
+    href: '/servicios/husbandry-services',
     image: '/service-husbandry.png',
     imageAlt: 'Servicios Husbandry para tripulación y buque',
   },
@@ -29,8 +31,9 @@ const services = [
     titleKey: 'svc.freight.title',
     descKey: 'svc.freight.desc',
     features: ['svc.freight.f1', 'svc.freight.f2', 'svc.freight.f3', 'svc.freight.f4'],
-    image: '/service-freight.png',
-    imageAlt: 'Gestión de carga marítima y logística portuaria',
+    href: '/servicios/agentedecargainternacional',
+    image: '/agente2.png',
+    imageAlt: 'Agente de carga internacional y logística',
   },
 ]
 
@@ -43,7 +46,6 @@ export function Services() {
         <SectionHeader
           eyebrow={t('services.eyebrow')}
           title={t('services.title')}
-          subtitle={t('services.subtitle')}
         />
 
         <div className="grid gap-6 lg:grid-cols-3">
@@ -76,11 +78,11 @@ export function Services() {
                   <h3 className="relative z-10 font-heading text-xl font-bold text-foreground">
                     {t(s.titleKey)}
                   </h3>
-                  <p className="relative z-10 mt-3 text-sm leading-relaxed text-muted-foreground">
+                  <p className="relative z-10 mt-3 text-sm leading-relaxed text-muted-foreground line-clamp-4">
                     {t(s.descKey)}
                   </p>
                   <ul className="relative z-10 mt-6 space-y-2.5">
-                    {s.features.map((f) => (
+                    {s.features.filter((f) => t(f)).map((f) => (
                       <li key={f} className="flex items-center gap-2.5 text-sm text-foreground/80">
                         <Check className="h-4 w-4 flex-shrink-0 text-primary" />
                         {t(f)}
@@ -88,7 +90,7 @@ export function Services() {
                     ))}
                   </ul>
                   <Link
-                    href="/servicios"
+                    href={s.href}
                     className="relative z-10 mt-7 flex items-center gap-1.5 text-sm font-semibold text-primary"
                   >
                     {t('services.viewFull')}

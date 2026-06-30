@@ -14,7 +14,6 @@ import {
   Lock,
   HeartHandshake,
   PackageSearch,
-  BarChart3,
   Globe2,
 } from 'lucide-react'
 import { Reveal } from './reveal'
@@ -59,8 +58,6 @@ const TABS: Tab[] = [
     items: [
       'OTM nacional e internacional',
       'Transporte de carga proyecto',
-      'Distribución puerta a puerta',
-      'Fletes internacionales terrestres',
     ],
   },
   {
@@ -74,7 +71,6 @@ const TABS: Tab[] = [
       'Servicio puerta a puerta',
       'Carga consolidada aérea',
       'Courier internacional',
-      'Manejo de carga sensible y urgente',
     ],
   },
 ]
@@ -110,68 +106,8 @@ export function LogisticaSection() {
 
   return (
     <div className="border-t border-border">
-      {/* ── Bloque 1: Introducción ─────────────────────────── */}
+      {/* ── Bloque 1: Modalidades de Transporte ───────────── */}
       <section className="bg-background py-20 lg:py-24">
-        <div className="mx-auto max-w-[1280px] px-5 md:px-8">
-          <Reveal>
-            <p className="mb-3 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-primary">
-              Freight Forwarder · Coordinación Global
-            </p>
-          </Reveal>
-          <Reveal delay={0.06}>
-            <h2 className="font-heading text-balance text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl lg:text-[2.6rem]">
-              Logística Internacional de Extremo a Extremo
-            </h2>
-          </Reveal>
-          <Reveal delay={0.12}>
-            <p className="mt-5 max-w-3xl text-pretty text-lg leading-relaxed text-foreground/75">
-              Integramos transporte marítimo, terrestre y aéreo con coordinación documental,
-              seguimiento operativo y acompañamiento especializado para operaciones de importación,
-              exportación y carga proyecto.
-            </p>
-          </Reveal>
-
-          {/* Freight Forwarder highlight card */}
-          <Reveal delay={0.18}>
-            <div className="mt-10 overflow-hidden rounded-2xl border border-primary/20 bg-card shadow-sm">
-              <div className="grid gap-0 lg:grid-cols-[1fr_2fr]">
-                <div className="flex flex-col justify-center bg-primary/8 px-8 py-10 lg:px-10">
-                  <Globe2 className="h-10 w-10 text-primary" aria-hidden="true" />
-                  <h3 className="mt-4 font-heading text-xl font-bold text-foreground">
-                    Freight Forwarder
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Respaldados por la red internacional de LBH Group.
-                  </p>
-                </div>
-                <div className="px-8 py-10 lg:px-10">
-                  <p className="text-base leading-relaxed text-foreground/80">
-                    Actuamos como un único punto de contacto para coordinar y gestionar su
-                    operación logística, integrando consultoría, transporte, documentación,
-                    trazabilidad y soporte personalizado.
-                  </p>
-                  <ul className="mt-6 grid gap-3 sm:grid-cols-2">
-                    {[
-                      'Consultoría logística experta',
-                      'Acompañamiento personalizado',
-                      'Punto único de coordinación',
-                      'Importación y exportación',
-                    ].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-sm text-foreground/80">
-                        <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-primary" aria-hidden="true" />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* ── Bloque 2: Modalidades de Transporte ───────────── */}
-      <section className="bg-secondary/30 py-20 lg:py-24">
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
           <Reveal>
             <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl">
@@ -245,8 +181,8 @@ export function LogisticaSection() {
         </div>
       </section>
 
-      {/* ── Bloque 3: Qué Ofrecemos ──────────────────────── */}
-      <section className="bg-background py-20 lg:py-24">
+      {/* ── Bloque 2: Qué Ofrecemos ──────────────────────── */}
+      <section className="bg-secondary/30 py-20 lg:py-24">
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
           <Reveal>
             <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl">
@@ -275,8 +211,8 @@ export function LogisticaSection() {
         </div>
       </section>
 
-      {/* ── Bloque 4: Logística Integral Especializada ────── */}
-      <section className="bg-secondary/30 py-20 pb-0 lg:py-24">
+      {/* ── Bloque 3: Logística Integral Especializada ────── */}
+      <section className="bg-background py-20 lg:py-24">
         <div className="mx-auto max-w-[1280px] px-5 md:px-8">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
             <div>
@@ -307,81 +243,15 @@ export function LogisticaSection() {
                 ))}
               </ul>
             </div>
-
-          </div>
-        </div>
-      </section>
-
-      {/* ── Bloque 5: Equipo que Respalda la Operación ───── */}
-      <section className="bg-background py-20 lg:py-24">
-        <div className="mx-auto max-w-[1280px] px-5 md:px-8">
-          <Reveal>
-            <div className="mb-8 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
-              <div>
-                <p className="mb-2 text-[0.7rem] font-bold uppercase tracking-[0.2em] text-primary">
-                  Nuestro Equipo
-                </p>
-                <h2 className="font-heading text-2xl font-bold text-foreground sm:text-3xl">
-                  El Equipo que Respalda la Operación
-                </h2>
-              </div>
-              <p className="max-w-sm text-sm leading-relaxed text-muted-foreground">
-                Profesionales especializados en logística y comercio exterior, presentes en los
-                principales puertos y ciudades de Colombia.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="grid gap-6 sm:grid-cols-2">
-            <Reveal delay={0}>
-              <div className="group overflow-hidden rounded-2xl border border-border shadow-sm transition-shadow hover:shadow-md">
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image
-                    src="/logistica/equipo-lbhh-1.jpg"
-                    alt="Equipo directivo y comercial de LBH Colombia"
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                </div>
-                <div className="bg-card px-6 py-5">
-                  <div className="flex items-center gap-2">
-                    <BarChart3 className="h-4 w-4 text-primary" aria-hidden="true" />
-                    <p className="font-heading text-base font-bold text-foreground">
-                      Equipo Directivo y Comercial
-                    </p>
-                  </div>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    Director General, Relaciones Comerciales, Planificación Estratégica y
-                    Operaciones Portuarias.
-                  </p>
-                </div>
-              </div>
-            </Reveal>
-
             <Reveal delay={0.1}>
-              <div className="group overflow-hidden rounded-2xl border border-border shadow-sm transition-shadow hover:shadow-md">
-                <div className="relative aspect-[16/9] overflow-hidden">
-                  <Image
-                    src="/logistica/equipo-lbhh-2.jpg"
-                    alt="Equipo gerentes operativos de LBH Colombia"
-                    fill
-                    sizes="(max-width: 640px) 100vw, 50vw"
-                    className="object-cover transition-transform duration-500 group-hover:scale-[1.02]"
-                  />
-                </div>
-                <div className="bg-card px-6 py-5">
-                  <div className="flex items-center gap-2">
-                    <Globe2 className="h-4 w-4 text-primary" aria-hidden="true" />
-                    <p className="font-heading text-base font-bold text-foreground">
-                      Gerentes Operativos por Área
-                    </p>
-                  </div>
-                  <p className="mt-1.5 text-sm leading-relaxed text-muted-foreground">
-                    Gerentes de las cuatro áreas operativas regionales, División de Logística e
-                    Innovación y Tecnología.
-                  </p>
-                </div>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-border shadow-sm">
+                <Image
+                  src="/agente3.png"
+                  alt="Operación logística integral LBH Colombia"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-cover"
+                />
               </div>
             </Reveal>
           </div>

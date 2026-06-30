@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import Link from 'next/link'
-import { Mail, MessageCircle } from 'lucide-react'
+import { Mail, MessageCircle, Phone } from 'lucide-react'
 import { InstagramIcon } from './icons/instagram-icon'
 import { LinkedInIcon } from './icons/linkedin-icon'
 import { useI18n } from '@/lib/i18n'
@@ -49,13 +49,20 @@ export function Footer() {
           </p>
           <div className="mt-6 space-y-2.5">
             <a
-              href={waLink(WA_MESSAGES.general)}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="WhatsApp de LBH Colombia"
+              href={`tel:+573166914871`}
+              aria-label="Teléfono Agenciamiento Marítimo LBH Colombia"
               className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground"
             >
-              <MessageCircle className="h-3.5 w-3.5" /> {SITE.phoneDisplay}
+              <Phone className="h-3.5 w-3.5" /> +57 316 691 4871{' '}
+              <span className="text-xs text-muted-foreground">(Agenciamiento Marítimo)</span>
+            </a>
+            <a
+              href={`tel:+573160184100`}
+              aria-label="Teléfono Agente de carga internacional LBH Colombia"
+              className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground"
+            >
+              <Phone className="h-3.5 w-3.5" /> +57 316 018 4100{' '}
+              <span className="text-xs text-muted-foreground">(Agente de carga internacional)</span>
             </a>
             <a href={`mailto:${SITE.emailMarketing}`} className="flex items-center gap-2 text-sm text-foreground/80 transition-colors hover:text-primary-foreground">
               <Mail className="h-3.5 w-3.5" /> {SITE.emailMarketing}
@@ -70,13 +77,16 @@ export function Footer() {
               <LinkedInIcon className="h-3.5 w-3.5" /> {SITE.linkedin}
             </a>
           </div>
-          <Link
-            href="/contacto"
+          <a
+            href={waLink(WA_MESSAGES.advisor, SITE.whatsappNumber)}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Hablar con un asesor por WhatsApp"
             className="mt-6 inline-flex items-center gap-2 rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
           >
             <MessageCircle className="h-4 w-4" />
             {t('cta.advisor')}
-          </Link>
+          </a>
         </div>
 
         <div>

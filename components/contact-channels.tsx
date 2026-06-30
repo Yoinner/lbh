@@ -1,6 +1,6 @@
 'use client'
 
-import { MessageCircle, Mail } from 'lucide-react'
+import { MessageCircle, Mail, Phone } from 'lucide-react'
 import { InstagramIcon } from './icons/instagram-icon'
 import { LinkedInIcon } from './icons/linkedin-icon'
 import { useI18n } from '@/lib/i18n'
@@ -20,8 +20,20 @@ export function ContactChannels() {
       ariaLabel: 'WhatsApp de LBH Colombia',
     },
     {
+      icon: Phone,
+      label: 'Agenciamiento Marítimo',
+      value: '+57 316 691 4871',
+      href: 'tel:+573166914871',
+    },
+    {
+      icon: Phone,
+      label: 'Agente de carga internacional',
+      value: '+57 316 018 4100',
+      href: 'tel:+573160184100',
+    },
+    {
       icon: Mail,
-      label: t('contactpage.emailMarketing'),
+      label: 'Comercial',
       value: SITE.emailMarketing,
       href: `mailto:${SITE.emailMarketing}`,
     },
@@ -61,7 +73,7 @@ export function ContactChannels() {
           {channels.map((c, i) => {
             const Icon = c.icon
             return (
-              <Reveal key={c.label} delay={i * 0.06}>
+              <Reveal key={`${c.label}-${i}`} delay={i * 0.06}>
                 <a
                   href={c.href}
                   {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
