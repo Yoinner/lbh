@@ -21,28 +21,28 @@ const playfair = Playfair_Display({
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.lbhcolombia.com'),
-  title: 'LBH Colombia | Agencia Naviera — Ship Agency & Logística Marítima',
+  title: 'LBH Colombia | Agenciamiento Marítimo y Agente de Carga Internacional',
   description:
-    'LBH Colombia — Agencia Naviera con 30 años de excelencia en 7 puertos estratégicos. Agenciamiento marítimo, logística, operaciones portuarias y aduanas. BASC y TRACE certificados.',
+    'LBH Colombia — Agenciamiento Marítimo y Agente de Carga Internacional con 30 años de excelencia en 11 puertos estratégicos. BASC y TRACE certificados.',
   keywords: [
-    'agencia naviera Colombia',
-    'ship agency Colombia',
-    'logística marítima',
-    'operaciones portuarias',
-    'agente de aduanas',
+    'agenciamiento marítimo Colombia',
+    'agente de carga internacional',
+    'maritime agency Colombia',
+    'freight forwarding',
+    'agente marítimo',
     'Barranquilla',
     'Cartagena',
     'Santa Marta',
-    'agente marítimo',
+    'operaciones marítimas',
   ],
   robots: 'index, follow',
   alternates: {
     canonical: 'https://www.lbhcolombia.com/',
   },
   openGraph: {
-    title: 'LBH Colombia | Agencia Naviera & Logística Marítima',
+    title: 'LBH Colombia | Agenciamiento Marítimo y Agente de Carga Internacional',
     description:
-      '30 años de excelencia en agenciamiento naviero. 7 puertos estratégicos. BASC certificado. Red internacional LBH en 30+ países.',
+      '30 años de excelencia en agenciamiento marítimo y carga internacional. 11 puertos estratégicos. BASC certificado. Red internacional LBH en 28+ países.',
     type: 'website',
     url: 'https://www.lbhcolombia.com/',
     images: ['/og-image.jpg'],
@@ -65,7 +65,7 @@ const orgSchema = {
   '@type': 'Organization',
   name: 'LBH Colombia',
   description:
-    'Agencia naviera que ofrece agenciamiento marítimo, logística, operaciones portuarias y aduanas en 7 puertos colombianos',
+    'Agenciamiento Marítimo y Agente de Carga Internacional en 11 puertos estratégicos colombianos',
   url: 'https://www.lbhcolombia.com',
   logo: 'https://www.lbhcolombia.com/logo.png',
   foundingDate: '1994',
