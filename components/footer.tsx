@@ -131,12 +131,25 @@ export function Footer() {
       </div>
 
       <div className="border-t border-border">
-        <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-3 px-5 py-6 text-xs text-muted-foreground sm:flex-row md:px-8">
-          <p>© {new Date().getFullYear()} LBH Colombia S.A.S. {t('footer.rights')}</p>
-          <nav className="flex items-center gap-6">
-            <Link href="/politica-de-privacidad" className="transition-colors hover:text-primary-foreground">{t('footer.privacy')}</Link>
-            <Link href="/terminos-y-condiciones" className="transition-colors hover:text-primary-foreground">{t('footer.terms')}</Link>
-          </nav>
+        <div className="mx-auto flex max-w-[1280px] flex-col items-center justify-between gap-4 px-5 py-6 text-xs text-muted-foreground md:px-8">
+          <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-between w-full">
+            <p>© {new Date().getFullYear()} LBH Colombia S.A.S. {t('footer.rights')}</p>
+            <nav className="flex items-center gap-6">
+              <Link href="/politica-de-privacidad" className="transition-colors hover:text-primary-foreground">{t('footer.privacy')}</Link>
+              <Link href="/terminos-y-condiciones" className="transition-colors hover:text-primary-foreground">{t('footer.terms')}</Link>
+            </nav>
+          </div>
+          <p className="text-center sm:text-right">
+            Desarrollado por{' '}
+            <Link
+              href="https://www.hazetech.co/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-primary transition-colors hover:text-primary-foreground hover:underline"
+            >
+              Haze
+            </Link>
+          </p>
         </div>
       </div>
     </footer>
