@@ -139,14 +139,15 @@ export function Footer() {
               <Link href="/terminos-y-condiciones" className="transition-colors hover:text-primary-foreground">{t('footer.terms')}</Link>
             </nav>
           </div>
-          <p className="text-center sm:text-right">
+          <p className="text-center sm:text-right text-xs text-muted-foreground">
+            {t('lang.dev')} {' '}
             <Link
               href="https://www.hazetech.co/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary transition-colors hover:text-primary-foreground hover:underline"
             >
-              {t('footer.credit')}
+              Haze Tech
             </Link>
           </p>
         </div>

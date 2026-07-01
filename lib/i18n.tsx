@@ -435,6 +435,7 @@ export const dict: Dict = {
   },
   'lang.spanish': { es: 'Español', en: 'Spanish' },
   'lang.english': { es: 'Inglés', en: 'English' },
+  'lang.dev': { es: 'Desarrollado por', en: 'Developed by' },
 
   'certs.activeLabel': {
     es: 'Certificaciones y Membresías Activas',
