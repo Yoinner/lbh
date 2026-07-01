@@ -408,8 +408,8 @@ export const dict: Dict = {
 
   // Footer
   'footer.about': {
-    es: 'Agencia marítima con presencia en 7 puertos estratégicos de Colombia. Parte de la red internacional LBH en 28+ países desde 1994.',
-    en: 'Maritime agency with presence at 7 strategic Colombian ports. Part of the international LBH network in 28+ countries since 1994.',
+    es: 'Agencia marítima con presencia en 11 puertos estratégicos de Colombia. Parte de la red internacional LBH en 28+ países desde 1994.',
+    en: 'Maritime agency with presence at 11 strategic Colombian ports. Part of the international LBH network in 28+ countries since 1994.',
   },
   'footer.services': { es: 'Servicios', en: 'Services' },
   'footer.viewAll': {
@@ -429,6 +429,13 @@ export const dict: Dict = {
   },
   'footer.privacy': { es: 'Política de Privacidad', en: 'Privacy Policy' },
   'footer.terms': { es: 'Términos de Uso', en: 'Terms of Use' },
+  'footer.credit': {
+    es: 'Desarrollado por Haze Tech',
+    en: 'Developed by Haze Tech',
+  },
+  'lang.spanish': { es: 'Español', en: 'Spanish' },
+  'lang.english': { es: 'Inglés', en: 'English' },
+  'lang.dev': { es: 'Desarrollado por', en: 'Developed by' },
 
   'certs.activeLabel': {
     es: 'Certificaciones y Membresías Activas',
