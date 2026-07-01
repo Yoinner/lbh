@@ -429,6 +429,12 @@ export const dict: Dict = {
   },
   'footer.privacy': { es: 'Política de Privacidad', en: 'Privacy Policy' },
   'footer.terms': { es: 'Términos de Uso', en: 'Terms of Use' },
+  'footer.credit': {
+    es: 'Desarrollado por Haze Tech',
+    en: 'Developed by Haze Tech',
+  },
+  'lang.spanish': { es: 'Español', en: 'Spanish' },
+  'lang.english': { es: 'Inglés', en: 'English' },
 
   'certs.activeLabel': {
     es: 'Certificaciones y Membresías Activas',

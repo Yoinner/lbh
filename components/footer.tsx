@@ -140,14 +140,13 @@ export function Footer() {
             </nav>
           </div>
           <p className="text-center sm:text-right">
-            Desarrollado por{' '}
             <Link
               href="https://www.hazetech.co/"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-primary transition-colors hover:text-primary-foreground hover:underline"
             >
-              Haze
+              {t('footer.credit')}
             </Link>
           </p>
         </div>
