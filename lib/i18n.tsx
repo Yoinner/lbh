@@ -132,14 +132,14 @@ export const dict: Dict = {
   },
 
   // Ports / Operations map
-  'ops.eyebrow': { es: 'Operaciones Globales', en: 'Global Operations' },
+  'ops.eyebrow': { es: 'Mapa de Cobertura', en: 'Coverage Map' },
   'ops.title': {
-    es: 'Cobertura Total en Puertos Colombianos',
-    en: 'Full Coverage Across Colombian Ports',
+    es: 'Seleccione un Puerto o Sede',
+    en: 'Select a Port or Office',
   },
   'ops.subtitle': {
-    es: 'Presencia operativa permanente en los puertos estratégicos de Colombia, en ambas costas, más sedes comerciales en Bogotá y Medellín. Seleccione un punto para ver su perfil.',
-    en: 'Permanent operational presence at Colombia\'s strategic ports on both coasts, plus commercial offices in Bogotá and Medellín. Select a point to view its profile.',
+    es: 'Haga clic en cualquier punto del mapa para ver su perfil operativo, dirección y datos de contacto.',
+    en: 'Click any point on the map to view its operational profile, address and contact details.',
   },
   'ops.coast.caribbean': { es: 'Costa Caribe', en: 'Caribbean Coast' },
   'ops.coast.pacific': { es: 'Costa Pacífico', en: 'Pacific Coast' },
@@ -561,8 +561,8 @@ export const dict: Dict = {
   // Coverage page
   'coverage.eyebrow': { es: 'Cobertura Nacional', en: 'National Coverage' },
   'coverage.title': {
-    es: 'Cobertura Nacional en Puertos Estratégicos',
-    en: 'National Coverage at Strategic Ports',
+    es: 'Cobertura Nacional',
+    en: 'National Coverage',
   },
   'coverage.subtitle': {
     es: 'Operación permanente en ambas costas colombianas — Caribe y Pacífico — más sedes comerciales en Bogotá y Medellín. Conectamos Colombia con la red LBH en 28+ países.',

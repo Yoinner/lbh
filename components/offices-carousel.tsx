@@ -11,7 +11,8 @@ interface CityCard {
   region: { es: string; en: string }
   coast: { es: string; en: string }
   photo: string
-  slug: string
+  /** slug passed as ?location= to /cobertura */
+  locationSlug: string
 }
 
 const cities: CityCard[] = [
@@ -21,7 +22,7 @@ const cities: CityCard[] = [
     region: { es: 'Atlántico', en: 'Atlántico' },
     coast: { es: 'Costa Caribe', en: 'Caribbean Coast' },
     photo: '/ciudades/Barranquilla.jpeg',
-    slug: 'barranquilla',
+    locationSlug: 'barranquilla',
   },
   {
     id: 'cartagena',
@@ -29,15 +30,23 @@ const cities: CityCard[] = [
     region: { es: 'Bolívar', en: 'Bolívar' },
     coast: { es: 'Costa Caribe', en: 'Caribbean Coast' },
     photo: '/ciudades/Cartagena.jpeg',
-    slug: 'cartagena',
+    locationSlug: 'cartagena',
   },
   {
-    id: 'santa-marta',
-    name: 'Ciénaga / Santa Marta',
+    id: 'cienaga',
+    name: 'Ciénaga',
     region: { es: 'Magdalena', en: 'Magdalena' },
     coast: { es: 'Costa Caribe', en: 'Caribbean Coast' },
     photo: '/ciudades/cienaga.jpg',
-    slug: 'cienaga-santa-marta',
+    locationSlug: 'cienaga',
+  },
+  {
+    id: 'santa-marta',
+    name: 'Santa Marta',
+    region: { es: 'Magdalena', en: 'Magdalena' },
+    coast: { es: 'Costa Caribe', en: 'Caribbean Coast' },
+    photo: '/ciudades/Santamarta.jpeg',
+    locationSlug: 'santamarta',
   },
   {
     id: 'riohacha',
@@ -45,7 +54,7 @@ const cities: CityCard[] = [
     region: { es: 'La Guajira', en: 'La Guajira' },
     coast: { es: 'Costa Caribe', en: 'Caribbean Coast' },
     photo: '/ciudades/Rioacha.jpeg',
-    slug: 'riohacha',
+    locationSlug: 'riohacha',
   },
   {
     id: 'puerto-bolivar',
@@ -53,7 +62,7 @@ const cities: CityCard[] = [
     region: { es: 'La Guajira', en: 'La Guajira' },
     coast: { es: 'Costa Caribe', en: 'Caribbean Coast' },
     photo: '/ciudades/PuertoBolivar.jpeg',
-    slug: 'puertobolivar',
+    locationSlug: 'puertobolivar',
   },
   {
     id: 'covenas',
@@ -61,7 +70,7 @@ const cities: CityCard[] = [
     region: { es: 'Sucre', en: 'Sucre' },
     coast: { es: 'Costa Caribe', en: 'Caribbean Coast' },
     photo: '/ciudades/Covenas.jpeg',
-    slug: 'covenas',
+    locationSlug: 'covenas',
   },
   {
     id: 'turbo',
@@ -69,7 +78,7 @@ const cities: CityCard[] = [
     region: { es: 'Antioquia', en: 'Antioquia' },
     coast: { es: 'Costa Caribe', en: 'Caribbean Coast' },
     photo: '/ciudades/Turbouraba.jpeg',
-    slug: 'turbo',
+    locationSlug: 'turbo',
   },
   {
     id: 'buenaventura',
@@ -77,7 +86,7 @@ const cities: CityCard[] = [
     region: { es: 'Valle del Cauca', en: 'Valle del Cauca' },
     coast: { es: 'Costa Pacífico', en: 'Pacific Coast' },
     photo: '/ciudades/Buenaventura.jpeg',
-    slug: 'buenaventura',
+    locationSlug: 'buenaventura',
   },
   {
     id: 'tumaco',
@@ -85,7 +94,23 @@ const cities: CityCard[] = [
     region: { es: 'Nariño', en: 'Nariño' },
     coast: { es: 'Costa Pacífico', en: 'Pacific Coast' },
     photo: '/ciudades/Tumaco.jpeg',
-    slug: 'tumaco',
+    locationSlug: 'tumaco',
+  },
+  {
+    id: 'bogota',
+    name: 'Bogotá',
+    region: { es: 'Cundinamarca', en: 'Cundinamarca' },
+    coast: { es: 'Sede Comercial', en: 'Commercial Office' },
+    photo: '/ciudades/Bogota.jpeg',
+    locationSlug: 'bogota',
+  },
+  {
+    id: 'medellin',
+    name: 'Medellín',
+    region: { es: 'Antioquia', en: 'Antioquia' },
+    coast: { es: 'Sede Comercial', en: 'Commercial Office' },
+    photo: '/ciudades/Medellin.jpeg',
+    locationSlug: 'medellin',
   },
 ]
 
@@ -101,11 +126,11 @@ export function OfficesCarousel() {
           subtitle={t('coverage.subtitle')}
         />
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {cities.map((city, i) => (
-            <Reveal key={city.id} delay={i * 0.05}>
+            <Reveal key={city.id} delay={i * 0.04}>
               <Link
-                href={`/cobertura?ciudad=${city.slug}`}
+                href={`/cobertura?location=${city.locationSlug}`}
                 className="group relative block overflow-hidden rounded-xl border border-border bg-card transition-colors hover:border-primary/40"
               >
                 <div className="relative h-44 overflow-hidden">
@@ -131,7 +156,7 @@ export function OfficesCarousel() {
           ))}
         </div>
 
-        <Reveal delay={0.45} className="mt-10 flex justify-center">
+        <Reveal delay={0.48} className="mt-10 flex justify-center">
           <Link
             href="/cobertura"
             className="inline-flex items-center gap-2 rounded-lg border border-border bg-card px-6 py-3 text-sm font-semibold text-foreground transition-colors hover:border-primary/40 hover:text-primary"

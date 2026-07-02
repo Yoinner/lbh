@@ -200,6 +200,7 @@ const ports: Port[] = [
     },
     type: 'office',
     mapsQuery: 'Bogotá, Colombia',
+    photo: '/ciudades/Bogota.jpeg',
   },
   {
     id: 'medellin',
@@ -222,15 +223,23 @@ const ports: Port[] = [
 // Slug aliases so legacy query params still work
 const SLUG_ALIASES: Record<string, string> = {
   santamarta: 'santa-marta',
+  'santa-marta': 'santa-marta',
   cienaga: 'santa-marta',
   'cienaga-santa-marta': 'santa-marta',
-  'puertobolivar': 'puerto-bolivar',
+  puertobolivar: 'puerto-bolivar',
+  'puerto-bolivar': 'puerto-bolivar',
   turbo: 'turbo-uraba',
+  'turbo-uraba': 'turbo-uraba',
   'uraba-apartado': 'turbo-uraba',
   riohacha: 'riohacha-puerto-brisa',
+  'riohacha-puerto-brisa': 'riohacha-puerto-brisa',
+  covenas: 'covenas',
   medellin: 'medellin',
   bogota: 'bogota',
   tumaco: 'tumaco',
+  barranquilla: 'barranquilla',
+  cartagena: 'cartagena',
+  buenaventura: 'buenaventura',
 }
 
 function resolveSlug(slug: string): Port | undefined {
@@ -320,7 +329,7 @@ function OperationsMapInner() {
   const [active, setActive] = useState<Port>(ports.find((p) => p.id === 'cartagena')!)
 
   useEffect(() => {
-    const slug = searchParams.get('puerto') ?? searchParams.get('ciudad')
+    const slug = searchParams.get('location') ?? searchParams.get('puerto') ?? searchParams.get('ciudad')
     if (!slug) return
     const found = resolveSlug(slug)
     if (found) setActive(found)
@@ -508,27 +517,15 @@ function OperationsMapInner() {
                 {/* Contact block */}
                 <ContactCard contact={active.contact} type={active.type} />
 
-                {/* City photo */}
-                {active.photo && (
-                  <div className="mt-4 overflow-hidden rounded-lg border border-border">
-                    <img
-                      key={`${active.id}-photo`}
-                      src={active.photo}
-                      alt={`Vista de ${active.name}`}
-                      className="h-36 w-full object-cover"
-                    />
-                  </div>
-                )}
-
                 {/* Embedded Google Maps mini view */}
-                <div className="mt-3 overflow-hidden rounded-lg border border-border">
+                <div className="mt-4 overflow-hidden rounded-lg border border-border">
                   <iframe
                     key={active.id}
                     title={`Ubicación de ${active.name}`}
                     src={mapsSrc}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="h-44 w-full"
+                    className="h-48 w-full"
                   />
                 </div>
               </motion.div>
