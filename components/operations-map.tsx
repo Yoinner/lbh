@@ -37,6 +37,8 @@ interface Port {
   mapsQuery?: string
   // If true, use lat/lng from coordinates for the map embed (don't change it)
   keepOriginalMapLocation?: boolean
+  // City photo shown in the detail card
+  photo?: string
 }
 
 const ports: Port[] = [
@@ -54,6 +56,7 @@ const ports: Port[] = [
     },
     type: 'port',
     mapsQuery: 'Carrera 51B #76-136, Of. 607, Edif. La Previsora, Barranquilla, Colombia',
+    photo: '/ciudades/Barranquilla.jpeg',
   },
   {
     id: 'cartagena',
@@ -69,6 +72,7 @@ const ports: Port[] = [
     },
     type: 'port',
     mapsQuery: 'Manga Av California #26-64, Cartagena, Colombia',
+    photo: '/ciudades/Cartagena.jpeg',
   },
   {
     id: 'santa-marta',
@@ -84,6 +88,7 @@ const ports: Port[] = [
     },
     type: 'port',
     mapsQuery: 'Carrera 4 #26-40 Of. 405, CC Prado Plaza, Ciénaga, Magdalena, Colombia',
+    photo: '/ciudades/cienaga.jpg',
   },
   {
     id: 'covenas',
@@ -99,6 +104,7 @@ const ports: Port[] = [
     },
     type: 'port',
     mapsQuery: 'Cra 3ra #3-13, Edif. Socaire Urb. Alicante 2da Etapa, Coveñas, Sucre, Colombia',
+    photo: '/ciudades/Covenas.jpeg',
   },
   {
     id: 'puerto-bolivar',
@@ -114,6 +120,7 @@ const ports: Port[] = [
     },
     type: 'port',
     keepOriginalMapLocation: true,
+    photo: '/ciudades/PuertoBolivar.jpeg',
   },
   {
     id: 'turbo-uraba',
@@ -128,6 +135,7 @@ const ports: Port[] = [
     },
     type: 'port',
     mapsQuery: 'Cr. 100 con Cl. 89 Nueva Milla de Oro de Apartadó, Centro Empresarial Santa María Oficina 326, Apartadó, Antioquia, Colombia',
+    photo: '/ciudades/Turbouraba.jpeg',
   },
   {
     id: 'buenaventura',
@@ -143,6 +151,7 @@ const ports: Port[] = [
     },
     type: 'port',
     mapsQuery: 'Calle 7 #3-11 Of. 200, Edif. Pacific Trade Center, Buenaventura, Colombia',
+    photo: '/ciudades/Buenaventura.jpeg',
   },
   {
     id: 'riohacha-puerto-brisa',
@@ -158,6 +167,23 @@ const ports: Port[] = [
     },
     type: 'port',
     mapsQuery: 'Calle 14G #21A-05, Barrio Cooperativo, Riohacha, La Guajira, Colombia',
+    photo: '/ciudades/Rioacha.jpeg',
+  },
+  {
+    id: 'tumaco',
+    name: 'Tumaco',
+    coordinates: [-78.78, 1.82],
+    coast: 'pacific',
+    cargo: { es: 'Carga general · Pacífico sur', en: 'General cargo · Southern Pacific' },
+    contact: {
+      code: 'OPZ4',
+      address: 'Tumaco, Nariño, Colombia',
+      phones: ['+57 2 2413078'],
+      email: 'opz4@lbhcolombia.com',
+    },
+    type: 'port',
+    mapsQuery: 'Tumaco, Nariño, Colombia',
+    photo: '/ciudades/Tumaco.jpeg',
   },
   {
     id: 'bogota',
@@ -189,6 +215,7 @@ const ports: Port[] = [
     },
     type: 'office',
     mapsQuery: 'Medellín, Antioquia, Colombia',
+    photo: '/ciudades/Medellin.jpeg',
   },
 ]
 
@@ -203,6 +230,7 @@ const SLUG_ALIASES: Record<string, string> = {
   riohacha: 'riohacha-puerto-brisa',
   medellin: 'medellin',
   bogota: 'bogota',
+  tumaco: 'tumaco',
 }
 
 function resolveSlug(slug: string): Port | undefined {
@@ -292,7 +320,7 @@ function OperationsMapInner() {
   const [active, setActive] = useState<Port>(ports.find((p) => p.id === 'cartagena')!)
 
   useEffect(() => {
-    const slug = searchParams.get('puerto')
+    const slug = searchParams.get('puerto') ?? searchParams.get('ciudad')
     if (!slug) return
     const found = resolveSlug(slug)
     if (found) setActive(found)
@@ -480,15 +508,27 @@ function OperationsMapInner() {
                 {/* Contact block */}
                 <ContactCard contact={active.contact} type={active.type} />
 
+                {/* City photo */}
+                {active.photo && (
+                  <div className="mt-4 overflow-hidden rounded-lg border border-border">
+                    <img
+                      key={`${active.id}-photo`}
+                      src={active.photo}
+                      alt={`Vista de ${active.name}`}
+                      className="h-36 w-full object-cover"
+                    />
+                  </div>
+                )}
+
                 {/* Embedded Google Maps mini view */}
-                <div className="mt-4 overflow-hidden rounded-lg border border-border">
+                <div className="mt-3 overflow-hidden rounded-lg border border-border">
                   <iframe
                     key={active.id}
                     title={`Ubicación de ${active.name}`}
                     src={mapsSrc}
                     loading="lazy"
                     referrerPolicy="no-referrer-when-downgrade"
-                    className="h-48 w-full"
+                    className="h-44 w-full"
                   />
                 </div>
               </motion.div>

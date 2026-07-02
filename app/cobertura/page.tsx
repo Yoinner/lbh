@@ -5,9 +5,9 @@ import { Network } from '@/components/network'
 import { CtaBand } from '@/components/cta-band'
 
 export const metadata: Metadata = {
-  title: 'Cobertura | LBH Colombia — Puertos Estratégicos y Sedes Comerciales',
+  title: 'Cobertura Nacional | LBH Colombia — 9 Puertos Estratégicos en Ambas Costas',
   description:
-    'Presencia operativa permanente en los puertos estratégicos de Colombia en ambas costas, más sedes comerciales en Bogotá y Medellín. Conectados con la red LBH en 30+ países.',
+    'Cobertura nacional permanente en los puertos estratégicos de Colombia: Costa Caribe y Pacífico. Sedes comerciales en Bogotá y Medellín. Red LBH en 28+ países desde 1994.',
   alternates: { canonical: 'https://www.lbhcolombia.com/cobertura' },
 }
 

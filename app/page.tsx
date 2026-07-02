@@ -3,6 +3,7 @@ import { Hero } from '@/components/hero'
 import { Services } from '@/components/services'
 import { FleetShowcase } from '@/components/fleet-showcase'
 import { OperationsMap } from '@/components/operations-map'
+import { OfficesCarousel } from '@/components/offices-carousel'
 import { CertificationsMarquee } from '@/components/certifications-marquee'
 import { TrustMetrics } from '@/components/trust-metrics'
 import { ContactForm } from '@/components/contact-form'
@@ -19,6 +20,7 @@ export default function Page() {
       />
       <Services />
       <FleetShowcase />
+      <OfficesCarousel />
       <OperationsMap />
       <TrustMetrics />
       <Suspense fallback={null}>
