@@ -63,23 +63,26 @@ export const SERVICES: ServiceDef[] = [
     whatsappNumber: '573166914871',
     whatsappDisplay: '+57 316 691 4871',
   },
-  {
-    slug: 'logistica',
-    href: '/servicios/agentedecargainternacional',
-    labelKey: 'route.logistics.alternative',
-    shortKey: 'route.logistics.short',
-    leadKey: 'sd.logistics.lead',
-    benefitKeys: ['sd.logistics.b1', 'sd.logistics.b2', 'sd.logistics.b3', 'sd.logistics.b4', 'sd.logistics.b5'],
-    image: '/agente2.png',
-    iconName: 'logistics',
-    whatsappNumber: '573160184100',
-    whatsappDisplay: '+57 316 018 4100',
-  },
 ]
 
 export function getService(slug: string): ServiceDef | undefined {
   return SERVICES.find((s) => s.slug === slug)
 }
+
+// Form service options: these are ONLY for the form selector and do NOT represent 
+// separate services. Both "Agente de carga internacional" and "Logistica" map to 
+// the same service (agentedecargainternacional) but with different labels and messages.
+export interface FormServiceOption {
+  slug: string // 'agencia-maritima' | 'agentedecargainternacional' | 'logistica' | 'husbandry-services'
+  labelKey: string // i18n key for the option label
+}
+
+export const FORM_SERVICE_OPTIONS: FormServiceOption[] = [
+  { slug: 'agencia-maritima', labelKey: 'svc.agency.title' },
+  { slug: 'agentedecargainternacional', labelKey: 'svc.freight.title' },
+  { slug: 'logistica', labelKey: 'route.logistics.alternative' },
+  { slug: 'husbandry-services', labelKey: 'route.husbandry' },
+]
 
 export const NAV_LINKS = [
   { key: 'nav.home', href: '/' },
