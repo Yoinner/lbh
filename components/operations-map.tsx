@@ -356,7 +356,7 @@ function OperationsMapInner() {
               <div className="chart-grid absolute inset-0 opacity-30" />
               <ComposableMap
                 projection="geoMercator"
-                projectionConfig={{ center: [-73.2, 4.6], scale: 1850 }}
+                projectionConfig={{ center: [-73.2, 4.6], scale: 2600 }}
                 className="absolute inset-0 h-full w-full"
                 style={{ width: '100%', height: '100%' }}
               >

@@ -25,7 +25,7 @@ function fmt(n: number) {
 function CountUp({ to, suffix }: { to: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null)
   const inView = useInView(ref, { once: true, margin: '-60px' })
-  const [val, setVal] = useState(0)
+  const [val, setVal] = useState(to * 0.3) // Start at 30% of target value for fallback
 
   useEffect(() => {
     if (!inView) return
