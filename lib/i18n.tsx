@@ -40,8 +40,8 @@ export const dict: Dict = {
     en: 'Across Colombian Ports',
   },
   'hero.desc': {
-    es: '30 años coordinando operaciones marítimas de alta complejidad. 7 puertos estratégicos. Red LBH en 30+ países. Certificaciones BASC y TRACE. Respuesta ágil y acompañamiento operativo.',
-    en: '30 years coordinating complex maritime operations. 7 strategic ports. LBH network across 30+ countries. BASC and TRACE certified. Agile response and operational support.',
+    es: '30 años coordinando operaciones marítimas de alta complejidad. 9 puertos estratégicos. Red LBH en 28+ países. Certificaciones BASC y TRACE. Respuesta ágil y acompañamiento operativo.',
+    en: '30 years coordinating complex maritime operations. 9 strategic ports. LBH network across 28+ countries. BASC and TRACE certified. Agile response and operational support.',
   },
   'hero.ctaPrimary': {
     es: 'Solicitar Consultoría',
@@ -132,14 +132,14 @@ export const dict: Dict = {
   },
 
   // Ports / Operations map
-  'ops.eyebrow': { es: 'Operaciones Globales', en: 'Global Operations' },
+  'ops.eyebrow': { es: 'Mapa de Cobertura', en: 'Coverage Map' },
   'ops.title': {
-    es: 'Cobertura Total en Puertos Colombianos',
-    en: 'Full Coverage Across Colombian Ports',
+    es: 'Seleccione un Puerto o Sede',
+    en: 'Select a Port or Office',
   },
   'ops.subtitle': {
-    es: 'Presencia operativa permanente en los puertos estratégicos de Colombia, en ambas costas, más sedes comerciales en Bogotá y Medellín. Seleccione un punto para ver su perfil.',
-    en: 'Permanent operational presence at Colombia\'s strategic ports on both coasts, plus commercial offices in Bogotá and Medellín. Select a point to view its profile.',
+    es: 'Haga clic en cualquier punto del mapa para ver su perfil operativo, dirección y datos de contacto.',
+    en: 'Click any point on the map to view its operational profile, address and contact details.',
   },
   'ops.coast.caribbean': { es: 'Costa Caribe', en: 'Caribbean Coast' },
   'ops.coast.pacific': { es: 'Costa Pacífico', en: 'Pacific Coast' },
@@ -211,8 +211,8 @@ export const dict: Dict = {
   'why.r4.label': { es: 'Alcance', en: 'Reach' },
   'why.r4.trad': { es: 'Solo local', en: 'Local only' },
   'why.r4.lbh': {
-    es: 'Red LBH en 30+ países',
-    en: 'LBH network in 30+ countries',
+    es: 'Red LBH en 28+ países',
+    en: 'LBH network in 28+ countries',
   },
   'why.r5.label': { es: 'Respaldo', en: 'Backing' },
   'why.r5.trad': { es: 'Operador individual', en: 'Individual operator' },
@@ -224,17 +224,19 @@ export const dict: Dict = {
   // Network
   'network.eyebrow': { es: 'Red Internacional', en: 'International Network' },
   'network.title': {
-    es: 'Una Sola Red. Más de 30 Países.',
-    en: 'One Network. 30+ Countries.',
+    es: 'Una Sola Red. Más de 28 Países.',
+    en: 'One Network. 28+ Countries.',
   },
   'network.subtitle': {
     es: 'Como parte del grupo LBH, integramos estándares globales de servicio en cada operación local, conectando Colombia con los principales corredores marítimos del mundo.',
-    en: 'As part of the LBH group, we embed global service standards into every local operation, connecting Colombia with the world’s major maritime corridors.',
+    en: 'As part of the LBH group, we embed global service standards into every local operation, connecting Colombia with the world\'s major maritime corridors.',
   },
   'network.countries': { es: 'Países', en: 'Countries' },
   'network.offices': { es: 'Oficinas globales', en: 'Global offices' },
   'network.continents': { es: 'Continentes', en: 'Continents' },
   'network.coords': { es: 'Coordinación', en: 'Coordination' },
+  'network.viewAllOffices': { es: 'Ver todas las oficinas LBH Group', en: 'View all LBH Group offices' },
+  'offices.viewMap': { es: 'Ver mapa de cobertura completo', en: 'View full coverage map' },
 
   // Certifications
   'certs.eyebrow': { es: 'Certificaciones & Cumplimiento', en: 'Certifications & Compliance' },
@@ -379,8 +381,8 @@ export const dict: Dict = {
     en: 'An operational team present at the ports to support and coordinate every phase of the operation in a timely manner.',
   },
   'about.p3.title': {
-    es: 'Red LBH en 30+ países',
-    en: 'LBH network in 30+ countries',
+    es: 'Red LBH en 28+ países',
+    en: 'LBH network in 28+ countries',
   },
   'about.p3.desc': {
     es: 'Estándares internacionales de servicio con conocimiento profundo del entorno portuario colombiano.',
@@ -408,8 +410,8 @@ export const dict: Dict = {
 
   // Footer
   'footer.about': {
-    es: 'Agencia marítima con presencia en 11 puertos estratégicos de Colombia. Parte de la red internacional LBH en 28+ países desde 1994.',
-    en: 'Maritime agency with presence at 11 strategic Colombian ports. Part of the international LBH network in 28+ countries since 1994.',
+    es: 'Agencia marítima con presencia en los puertos estratégicos de Colombia. Parte de la red internacional LBH en 28+ países desde 1994.',
+    en: 'Maritime agency with presence at strategic Colombian ports. Part of the international LBH network in 28+ countries since 1994.',
   },
   'footer.services': { es: 'Servicios', en: 'Services' },
   'footer.viewAll': {
@@ -559,12 +561,12 @@ export const dict: Dict = {
   // Coverage page
   'coverage.eyebrow': { es: 'Cobertura Nacional', en: 'National Coverage' },
   'coverage.title': {
-    es: 'Presencia en Puertos Estratégicos y Sedes Comerciales',
-    en: 'Presence at Strategic Ports and Commercial Offices',
+    es: 'Cobertura Nacional',
+    en: 'National Coverage',
   },
   'coverage.subtitle': {
-    es: 'Operación permanente en ambas costas, conectando Colombia con el comercio marítimo global.',
-    en: 'Permanent operations on both coasts, connecting Colombia with global maritime trade.',
+    es: 'Operación permanente en ambas costas colombianas — Caribe y Pacífico — más sedes comerciales en Bogotá y Medellín. Conectamos Colombia con la red LBH en 28+ países.',
+    en: 'Permanent operations on both Colombian coasts — Caribbean and Pacific — plus commercial offices in Bogotá and Medellín. Connecting Colombia to the LBH network in 28+ countries.',
   },
 
   // Clients / sectors served

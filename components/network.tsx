@@ -2,9 +2,10 @@
 
 import { useI18n } from '@/lib/i18n'
 import { SectionHeader, Reveal } from './reveal'
+import { ExternalLink } from 'lucide-react'
 
 const stats = [
-  { value: '30+', key: 'network.countries' },
+  { value: '28+', key: 'network.countries' },
   { value: '120+', key: 'network.offices' },
   { value: '5', key: 'network.continents' },
   { value: 'Oportuna', key: 'network.coords' },
@@ -35,6 +36,18 @@ export function Network() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.32} className="mt-10 flex justify-center">
+          <a
+            href="https://lbh-group.com/offices"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-lg border border-primary/40 bg-primary/10 px-6 py-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/20"
+          >
+            {t('network.viewAllOffices')}
+            <ExternalLink className="h-4 w-4 shrink-0" />
+          </a>
+        </Reveal>
       </div>
     </section>
   )

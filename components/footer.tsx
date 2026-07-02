@@ -18,6 +18,7 @@ const ports = [
   { id: 'puerto-bolivar', name: 'Puerto Bolívar' },
   { id: 'turbo-uraba', name: 'Turbo / Urabá' },
   { id: 'riohacha-puerto-brisa', name: 'Riohacha / P. Brisa' },
+  { id: 'tumaco', name: 'Tumaco' },
   { id: 'bogota', name: 'Bogotá' },
   { id: 'medellin', name: 'Medellín' },
 ]
@@ -120,7 +121,7 @@ export function Footer() {
             {ports.map((p) => (
               <Link
                 key={p.id}
-                href={`/cobertura?puerto=${p.id}`}
+                href={`/cobertura?location=${p.id}`}
                 className="rounded border border-border bg-white/5 px-2.5 py-1 text-xs text-foreground/70 transition-colors hover:border-primary/50 hover:bg-primary/10 hover:text-primary-foreground"
               >
                 {p.name}
