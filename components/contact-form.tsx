@@ -24,8 +24,13 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Record<string, boolean>>({})
 
   // Preselect the service from ?servicio=<slug> (e.g. /contacto?servicio=logistica)
+  // Also support legacy ?servicio=agentedecargainternacional mapping to the main slug
   useEffect(() => {
-    const servicio = searchParams.get('servicio')
+    let servicio = searchParams.get('servicio')
+    // Map legacy slug to correct one if needed
+    if (servicio === 'agentedecargainternacional') {
+      servicio = 'agentedecargainternacional'
+    }
     if (servicio && SERVICES.some((s) => s.slug === servicio)) {
       setData((d) => ({ ...d, servicio }))
     }

@@ -63,6 +63,18 @@ export const SERVICES: ServiceDef[] = [
     whatsappNumber: '573166914871',
     whatsappDisplay: '+57 316 691 4871',
   },
+  {
+    slug: 'logistica',
+    href: '/servicios/agentedecargainternacional',
+    labelKey: 'route.logistics.alternative',
+    shortKey: 'route.logistics.short',
+    leadKey: 'sd.logistics.lead',
+    benefitKeys: ['sd.logistics.b1', 'sd.logistics.b2', 'sd.logistics.b3', 'sd.logistics.b4', 'sd.logistics.b5'],
+    image: '/agente2.png',
+    iconName: 'logistics',
+    whatsappNumber: '573160184100',
+    whatsappDisplay: '+57 316 018 4100',
+  },
 ]
 
 export function getService(slug: string): ServiceDef | undefined {

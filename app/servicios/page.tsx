@@ -4,9 +4,9 @@ import { ServicesGrid } from '@/components/services-grid'
 import { CtaBand } from '@/components/cta-band'
 
 export const metadata: Metadata = {
-  title: 'Servicios Marítimos | LBH Colombia — Agenciamiento, Carga Internacional y Husbandry',
+  title: 'Servicios | LBH Colombia — Agenciamiento Marítimo, Agente de Carga Internacional / Logística y Husbandry Services',
   description:
-    'LBH Colombia ofrece agenciamiento marítimo, agente de carga internacional y husbandry services en los 9 puertos estratégicos de Colombia. Parte de la red LBH en 28+ países.',
+    'LBH Colombia ofrece agenciamiento marítimo, agente de carga internacional / logística y husbandry services en los 9 puertos estratégicos de Colombia. Parte de la red LBH en 28+ países.',
   alternates: { canonical: 'https://www.lbhcolombia.com/servicios' },
 }
 

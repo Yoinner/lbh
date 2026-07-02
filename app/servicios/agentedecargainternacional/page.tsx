@@ -9,9 +9,9 @@ import { getService } from '@/lib/services'
 const service = getService('agentedecargainternacional')!
 
 export const metadata: Metadata = {
-  title: 'Agente de carga internacional (cod. 1218) | LBH Colombia',
+  title: 'Agente de Carga Internacional / Logística | LBH Colombia',
   description:
-    'Servicios de Logistica integrados. Integramos transporte marítimo, terrestre y aéreo con coordinación documental, seguimiento operativo y acompañamiento especializado.',
+    'Servicios de Logística integrados. Integramos transporte marítimo, terrestre y aéreo con coordinación documental, seguimiento operativo y acompañamiento especializado en Colombia.',
   alternates: { canonical: 'https://www.lbhcolombia.com/servicios/agentedecargainternacional' },
 }
 
