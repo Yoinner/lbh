@@ -69,7 +69,7 @@ export function ContactForm() {
             />
             <Reveal delay={0.2}>
               <ul className="space-y-4">
-                {[t('cta.advisor'), t('cta.solution'), t('cta.info')].map((item) => (
+                {[t('cta.advisor'), t('cta.info')].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-sm text-foreground/80">
                     <span className="flex h-7 w-7 items-center justify-center rounded-full bg-primary/12 text-primary">
                       <MessageCircle className="h-3.5 w-3.5" />
