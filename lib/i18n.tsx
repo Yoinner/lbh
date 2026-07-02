@@ -115,7 +115,7 @@ export const dict: Dict = {
     en: 'Medical coordination & welfare',
   },
 
-  'svc.freight.title': { es: 'Agente de carga internacional', en: 'International Freight Forwarding' },
+  'svc.freight.title': { es: 'Agente de carga internacional / Logística', en: 'International Freight Forwarding / Logistics' },
   'svc.freight.desc': {
     es: 'Integramos transporte marítimo, terrestre y aéreo con coordinación documental, seguimiento operativo y acompañamiento especializado para operaciones de importación, exportación y carga proyecto.',
     en: 'We integrate maritime, land and air transport with documentary coordination, operational tracking and specialized support for import, export and project cargo operations.',
@@ -621,8 +621,8 @@ export const dict: Dict = {
 
   // Services index page
   'servicespage.lead': {
-    es: 'Tres líneas de servicio especializadas: agenciamiento marítimo, agente de carga internacional y husbandry services.',
-    en: 'Three specialized service lines: ship agency, international freight agent and husbandry services.',
+    es: 'Tres líneas de servicio especializadas: agenciamiento marítimo, agente de carga internacional / logística y husbandry services.',
+    en: 'Three specialized service lines: ship agency, international freight forwarding / logistics and husbandry services.',
   },
 
   // Contact page
