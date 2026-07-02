@@ -115,7 +115,7 @@ export const dict: Dict = {
     en: 'Medical coordination & welfare',
   },
 
-  'svc.freight.title': { es: 'Agente de carga internacional', en: 'International Freight Agent' },
+  'svc.freight.title': { es: 'Agente de carga internacional / Logística', en: 'International Freight Forwarding / Logistics' },
   'svc.freight.desc': {
     es: 'Integramos transporte marítimo, terrestre y aéreo con coordinación documental, seguimiento operativo y acompañamiento especializado para operaciones de importación, exportación y carga proyecto.',
     en: 'We integrate maritime, land and air transport with documentary coordination, operational tracking and specialized support for import, export and project cargo operations.',
@@ -461,7 +461,7 @@ export const dict: Dict = {
     es: 'Representación integral del buque en puerto.',
     en: 'Full vessel representation in port.',
   },
-  'route.logistics': { es: 'Agente de carga internacional', en: 'International Freight Agent' },
+  'route.logistics': { es: 'Agente de carga internacional / Logística', en: 'International Freight Forwarding / Logistics' },
   'route.logistics.short': {
     es: 'Coordinación de carga de extremo a extremo.',
     en: 'End-to-end cargo coordination.',
@@ -481,6 +481,7 @@ export const dict: Dict = {
     es: 'Soporte integral a tripulación y buque durante la escala.',
     en: 'Comprehensive crew and vessel support during the port call.',
   },
+  'route.logistics.alternative': { es: 'Logística', en: 'Logistics' },
 
   // Hero (simplified)
   'hero.h1.a': { es: 'Agenciamiento Marítimo y Soluciones', en: 'Maritime Agency and Integral' },
@@ -533,8 +534,8 @@ export const dict: Dict = {
   // Commercial form
   'form.eyebrow': { es: 'Asesoría Comercial', en: 'Commercial Advisory' },
   'form.title': {
-    es: 'Cuéntenos su Necesidad Logística',
-    en: 'Tell Us Your Logistics Need',
+    es: 'Cuéntenos su Necesidad',
+    en: 'Tell us about your need',
   },
   'form.subtitle': {
     es: 'Complete el formulario y le responderemos de inmediato por WhatsApp.',
@@ -620,8 +621,8 @@ export const dict: Dict = {
 
   // Services index page
   'servicespage.lead': {
-    es: 'Tres líneas de servicio especializadas: agenciamiento marítimo, agente de carga internacional y husbandry services.',
-    en: 'Three specialized service lines: ship agency, international freight agent and husbandry services.',
+    es: 'Tres líneas de servicio especializadas: agenciamiento marítimo, agente de carga internacional / logística y husbandry services.',
+    en: 'Three specialized service lines: ship agency, international freight forwarding / logistics and husbandry services.',
   },
 
   // Contact page

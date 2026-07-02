@@ -4,7 +4,7 @@ import { useEffect, useState, type FormEvent } from 'react'
 import { useSearchParams } from 'next/navigation'
 import { MessageCircle, Send } from 'lucide-react'
 import { useI18n } from '@/lib/i18n'
-import { SERVICES } from '@/lib/services'
+import { SERVICES, FORM_SERVICE_OPTIONS } from '@/lib/services'
 import { waLink, whatsappForService, composeFormMessage, type FormPayload } from '@/lib/config'
 import { Reveal, SectionHeader } from './reveal'
 
@@ -24,8 +24,13 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Record<string, boolean>>({})
 
   // Preselect the service from ?servicio=<slug> (e.g. /contacto?servicio=logistica)
+  // Also support legacy ?servicio=agentedecargainternacional mapping to the main slug
   useEffect(() => {
-    const servicio = searchParams.get('servicio')
+    let servicio = searchParams.get('servicio')
+    // Map legacy slug to correct one if needed
+    if (servicio === 'agentedecargainternacional') {
+      servicio = 'agentedecargainternacional'
+    }
     if (servicio && SERVICES.some((s) => s.slug === servicio)) {
       setData((d) => ({ ...d, servicio }))
     }
@@ -46,9 +51,17 @@ export function ContactForm() {
     setErrors(next)
     if (Object.keys(next).length > 0) return
 
-    const selected = SERVICES.find((s) => s.slug === data.servicio)
-    const servicioLabel = selected ? t(selected.labelKey) : data.servicio
-    const number = whatsappForService(data.servicio)
+    // Get the option label from FORM_SERVICE_OPTIONS
+    const selectedOption = FORM_SERVICE_OPTIONS.find((opt) => opt.slug === data.servicio)
+    const servicioLabel = selectedOption ? t(selectedOption.labelKey) : data.servicio
+
+    // Determine which WhatsApp number to use
+    // Both 'agentedecargainternacional' and 'logistica' use the same number
+    let number = whatsappForService(data.servicio)
+    if (data.servicio === 'logistica') {
+      number = whatsappForService('agentedecargainternacional')
+    }
+
     const url = waLink(composeFormMessage(data, servicioLabel), number)
     window.open(url, '_blank', 'noopener,noreferrer')
   }
@@ -158,9 +171,9 @@ export function ContactForm() {
                   <option value="" disabled>
                     {t('form.servicePlaceholder')}
                   </option>
-                  {SERVICES.map((s) => (
-                    <option key={s.slug} value={s.slug}>
-                      {t(s.labelKey)}
+                  {FORM_SERVICE_OPTIONS.map((opt) => (
+                    <option key={opt.slug} value={opt.slug}>
+                      {t(opt.labelKey)}
                     </option>
                   ))}
                 </select>

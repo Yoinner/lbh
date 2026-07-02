@@ -113,6 +113,7 @@ export const DEFAULT_WHATSAPP = '573166914871'
  */
 export const WHATSAPP_BY_SERVICE: Record<string, { number: string; display: string }> = {
   'agencia-maritima': { number: '573166914871', display: '+57 316 691 4871' },
+  'agentedecargainternacional': { number: '573160184100', display: '+57 316 018 4100' },
   logistica:          { number: '573160184100', display: '+57 316 018 4100' },
   'husbandry-services': { number: '573166914871', display: '+57 316 691 4871' },
 }
